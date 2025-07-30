@@ -1933,61 +1933,8 @@
         </div>
     </section>
 
-    <script>
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-        
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        };
-        
-        // Intersection Observer to trigger animation when section is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(document.querySelector('.services-section'));
-        
-        // Add hover effect to service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const x = e.clientX - card.getBoundingClientRect().left;
-                const y = e.clientY - card.getBoundingClientRect().top;
-                
-                const centerX = card.offsetWidth / 2;
-                const centerY = card.offsetHeight / 2;
-                
-                const angleX = (y - centerY) / 20;
-                const angleY = (centerX - x) / 20;
-                
-                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
-                card.style.boxShadow = `20px 20px 40px rgba(0,0,0,0.2)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(-10px)';
-                card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.05)';
-            });
-        });
-    </script>
-    <!-- End of service page-->
+
+<!-- End of service page-->
 
     <!--Team Member -->
     <section class="team-section">
@@ -2084,63 +2031,7 @@
         </div>
     </section>
 
-    <script>
-        // Advanced interactive effects
-        document.addEventListener('DOMContentLoaded', () => {
-            const teamMembers = document.querySelectorAll('.team-member');
-            
-            // 3D tilt effect
-            teamMembers.forEach(member => {
-                member.addEventListener('mousemove', (e) => {
-                    const x = e.clientX - member.getBoundingClientRect().left;
-                    const y = e.clientY - member.getBoundingClientRect().top;
-                    
-                    const centerX = member.offsetWidth / 2;
-                    const centerY = member.offsetHeight / 2;
-                    
-                    const angleX = (y - centerY) / 20;
-                    const angleY = (centerX - x) / 20;
-                    
-                    member.style.transform = `translateY(-10px) scale(1.02) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
-                });
-                
-                member.addEventListener('mouseleave', () => {
-                    member.style.transform = 'translateY(-10px) scale(1.02)';
-                });
-            });
-            
-            // Scroll animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = 1;
-                            entry.target.style.transform = 'translateY(0)';
-                        }, index * 150);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            teamMembers.forEach(member => {
-                member.style.opacity = 0;
-                member.style.transform = 'translateY(30px)';
-                member.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-                observer.observe(member);
-            });
-            
-            // Skill tag animation on hover
-            const skillTags = document.querySelectorAll('.skill-tag');
-            skillTags.forEach(tag => {
-                tag.addEventListener('mouseenter', () => {
-                    tag.style.transform = 'translateY(-3px)';
-                });
-                tag.addEventListener('mouseleave', () => {
-                    tag.style.transform = 'translateY(0)';
-                });
-            });
-        });
-    </script>
-    <!--End of team member-->
+<!--End of team member-->
 
     <!--Faq section page goes here...-->
         <section class="faq-section">
@@ -2322,66 +2213,6 @@
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // FAQ Accordion Functionality
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const item = question.parentNode;
-                    item.classList.toggle('active');
-                    
-                    // Close other open items
-                    document.querySelectorAll('.faq-item').forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // FAQ Filter Functionality
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    const category = btn.dataset.category;
-                    
-                    // Filter items
-                    faqItems.forEach(item => {
-                        if (category === 'all' || item.dataset.category === category) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Animate FAQ items on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            faqItems.forEach(item => {
-                item.style.opacity = 0;
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                observer.observe(item);
-            });
-        });
-    </script>
     <!--End Of faq section-->
 
    <!--Testimonial page section goes here...--> 
@@ -2514,12 +2345,12 @@
         <div class="footer-container">
             <div class="footer-col footer-logo-col">
                 <a href="#" class="footer-logo">
-                    <img src="https://via.placeholder.com/42" alt="TechNova Logo">
-                    <span class="footer-logo-text">TechNova</span>
+                    <img src="img/wts.png" alt="TechNova Logo">
+                    <span class="footer-logo-text">WebTestSite</span>
                 </a>
                 
                 <p class="footer-about">
-                    <strong>TechNova Solutions</strong> is a leading software development company specializing in cutting-edge technology solutions for businesses worldwide. We deliver innovative, scalable, and secure software tailored to your needs.
+                    <strong>At WebTestSite</strong> we understand that your website is often the first point of contact between your business and your audience. It's your digital storefront, a reflection of your brand, and a powerful tool for growth. That's why we're here - to be your trusted web partner in this digital journey.
                 </p>
                 
                 <div class="social-links">
@@ -2544,28 +2375,28 @@
             <div class="footer-col">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Solutions</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="our-blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contect.html">Contact</a></li>
                 </ul>
             </div>
             
             <div class="footer-col">
                 <h3 class="footer-heading">Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Custom Software Development</a></li>
-                    <li><a href="#">Web Application Development</a></li>
-                    <li><a href="#">Mobile App Development</a></li>
-                    <li><a href="#">Cloud Solutions</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Quality Assurance</a></li>
-                    <li><a href="#">DevOps Services</a></li>
-                    <li><a href="#">IT Consulting</a></li>
+                    <li><a href="software-developer.html">Custom Software Development</a></li>
+                    <li><a href="website-development.html">Web Application Development</a></li>
+                    <li><a href="app-development.html">Mobile App Development</a></li>
+                    <li><a href="our-cloud-solutions.html">Cloud Solutions</a></li>
+                    <li><a href="ux-ui-designer.html">UI/UX Design</a></li>
+                    <li><a href="ai-development.html">AI Developer</a></li>
+                    <li><a href="devops-services.html">DevOps Services</a></li>
+                    <li><a href="it-services.html">IT Consulting</a></li>
                 </ul>
             </div>
             
@@ -2574,18 +2405,18 @@
                 <div class="footer-contact">
                     <p>
                         <i class="fas fa-map-marker-alt"></i>
-                        123 Tech Park, Silicon Valley<br>
-                        San Francisco, CA 94025, USA
+                        Alpha-2 H-18 pari chawk <br>Greater Noida  Uttar pradesh India
+                        
                     </p>
                     <p>
                         <i class="fas fa-phone-alt"></i>
-                        +1 (123) 456-7890<br>
-                        +1 (987) 654-3210
+                        +91 7011615201<br>
+                        +91 7510028244
                     </p>
                     <p>
                         <i class="fas fa-envelope"></i>
-                        info@technova.com<br>
-                        support@technova.com
+                        contact.csgyan@gmail.com<br>
+                        csgyan@gmail.com
                     </p>
                     <p>
                         <i class="fas fa-clock"></i>
@@ -2599,10 +2430,10 @@
         <div class="footer-bottom">
             <p>&copy; 2023 TechNova Solutions. All rights reserved.</p>
             <ul class="footer-bottom-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-                <li><a href="#">Sitemap</a></li>
+                <li><a href="privecy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-services.html">Terms of Service</a></li>
+                <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                <li><a href="sitemap.xml">Sitemap</a></li>
             </ul>
         </div>
     </footer>
