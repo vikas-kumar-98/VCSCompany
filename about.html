@@ -1282,8 +1282,9 @@
 
     <!-- Main Navigation -->
 
+   <!-- Header Section -->
     <!-- Header Section -->
-    <header id="main-header" class="bg-white shadow-md py-4 px-6 md:px-8 lg:px-12 sticky top-0 z-50">
+    <header id="main-header" class="bg-white shadow-md py-4 px-6 md:px-9 lg:px-12 sticky top-0 z-50">
         <div class="container mx-auto flex items-center justify-between flex-wrap">
             <!-- Logo/Site Title -->
             <div class="flex items-center flex-shrink-0 text-gray-800 mr-6">
@@ -1302,11 +1303,57 @@
 
             <!-- Desktop Navigation -->
             <nav id="desktop-nav" class="hidden lg:flex lg:items-center lg:w-auto w-full">
-                <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
+                <ul class="lg:flex items-center justify-between text-base text-gray-800 pt-1 lg:pt-0">
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="#about" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-home text-blue-500 mr-2"></i> Home
+                        </a>
+                    </li>
                     <!-- Digital Marketing Dropdown -->
-                    <li class="relative group dropdown mr-4 mb-2 lg:mb-0">
-                        <a href="#services" class="block py-2 px-4 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
-                            <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Digital Marketing <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="software-development.html" class="block py-2 px-1 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="Website-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-robot text-purple-500 mr-2"></i> Game Development</a></li>
+                        </ul>
+                    </li>
+                    <!-- Digital Marketing Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="marketing.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Marketing <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-search text-green-500 mr-2"></i> SEO Services</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <!-- IT Services Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="service.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-cloud mr-2 text-blue-400"></i> Cloud Solutions</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shield-alt mr-2 text-red-400"></i> Cybersecurity</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-database mr-2 text-blue-400"></i> Data Backup & Recovery</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-network-wired mr-2 text-indigo-400"></i> Network Solutions</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-cloud text-orange-500 mr-2"></i> AWS (Amazon Web Services)</a></li>
+                        </ul>
+                    </li>
+                    <!-- Tutorial Dropdown -->
+                     <!--
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="#services" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Our Tutorial <i class="fas fa-chevron-down ml-2 text-xs"></i>
                         </a>
                         <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
                             <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-search mr-2 text-blue-400"></i> SEO Services</a></li>
@@ -1316,32 +1363,20 @@
                             <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-blue-400"></i> Email Marketing</a></li>
                         </ul>
                     </li>
-                    <!-- IT Services Dropdown -->
-                    <li class="relative group dropdown mr-4 mb-2 lg:mb-0">
-                        <a href="#services" class="block py-2 px-4 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
-                            <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
-                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-cloud mr-2 text-blue-400"></i> Cloud Solutions</a></li>
-                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-shield-alt mr-2 text-blue-400"></i> Cybersecurity</a></li>
-                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-headset mr-2 text-blue-400"></i> Managed IT Services</a></li>
-                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-database mr-2 text-blue-400"></i> Data Backup & Recovery</a></li>
-                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-blue-400"></i> Network Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li class="mr-4 mb-2 lg:mb-0">
-                        <a href="#about" class="block py-2 px-4 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                -->
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="about-us.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
                             <i class="fas fa-info-circle mr-2 text-blue-500"></i> About Us
                         </a>
                     </li>
-                    <li class="mr-4 mb-2 lg:mb-0">
-                        <a href="#portfolio" class="block py-2 px-4 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="portfolio.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
                             <i class="fas fa-briefcase mr-2 text-blue-500"></i> Portfolio
                         </a>
                     </li>
-                    <li class="mr-4 mb-2 lg:mb-0">
-                        <a href="#contact" class="block py-2 px-4 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
-                            <i class="fas fa-phone-alt mr-2 text-blue-500"></i> Contact Us
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="contact-us.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-phone-alt mr-2 text-blue-900"></i> Contact
                         </a>
                     </li>
                 </ul>
@@ -1349,19 +1384,32 @@
         </div>
 
         <!-- Mobile Menu (Hidden by default) -->
-        <nav id="mobile-menu" class="mobile-menu lg:hidden bg-white shadow-inner rounded-b-lg mt-2 border-t border-gray-100">
+        <nav id="mobile-menu" class="mobile-menu lg:hidden bg-white shadow-inner rounded-b-lg mt-2 border-t border-gray-100" >
             <ul class="flex flex-col text-gray-700 px-4 py-2">
+                <!-- Digital Marketing Mobile -->
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
+                      <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
+                    </button>
+                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-robot text-purple-500 mr-2"></i> Game Development</a></li>
+                    </ul>
+                </li>
                 <!-- Digital Marketing Mobile -->
                 <li class="py-2 border-b border-gray-100 last:border-b-0">
                     <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
                         <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Digital Marketing <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
                     <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-search mr-2 text-blue-400"></i> SEO Services</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-search mr-2 text-green-400"></i> SEO Services</a></li>
                         <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-blue-400"></i> Content Marketing</a></li>
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-money-bill-wave mr-2 text-blue-400"></i> PPC Management</a></li>
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-blue-400"></i> Email Marketing</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
                     </ul>
                 </li>
                 <!-- IT Services Mobile -->
@@ -1370,25 +1418,25 @@
                         <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
                     <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-cloud mr-2 text-blue-400"></i> Cloud Solutions</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-cloud mr-2 text-red-400"></i> Cloud Solutions</a></li>
                         <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shield-alt mr-2 text-blue-400"></i> Cybersecurity</a></li>
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-headset mr-2 text-blue-400"></i> Managed IT Services</a></li>
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-database mr-2 text-blue-400"></i> Data Backup & Recovery</a></li>
-                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-blue-400"></i> Network Solutions</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-database mr-2 text-indigo-400"></i> Data Backup & Recovery</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
                     </ul>
                 </li>
                 <li class="py-2 border-b border-gray-100 last:border-b-0">
-                    <a href="#about" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                    <a href="about.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
                         <i class="fas fa-info-circle mr-2 text-blue-500"></i> About Us
                     </a>
                 </li>
                 <li class="py-2 border-b border-gray-100 last:border-b-0">
-                    <a href="#portfolio" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                    <a href="portfolio.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
                         <i class="fas fa-briefcase mr-2 text-blue-500"></i> Portfolio
                     </a>
                 </li>
                 <li class="py-2 border-b border-gray-100 last:border-b-0">
-                    <a href="#contact" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                    <a href="contact.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
                         <i class="fas fa-phone-alt mr-2 text-blue-500"></i> Contact Us
                     </a>
                 </li>
