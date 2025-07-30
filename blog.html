@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions - Cutting-Edge Software Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --primary-light: #ebf2ff;
+            --secondary: #1e293b;
+            --accent: #f72585;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Top Header Bar */
+        .top-header {
+            background-color: var(--dark);
+            color: white;
+            padding: 0.6rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .header-container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        
+        .header-contact a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .header-contact a:hover {
+            color: var(--primary-light);
+        }
+        
+        .header-contact i {
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        
+        .header-social {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .header-social a {
+            color: white;
+            font-size: 0.9rem;
+            padding: 1px 4px;
+            transition: var(--transition);
+        }
+        
+        .header-social a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .btn-call {
+            background-color: var(--success);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .btn-call:hover {
+            background-color: #0ea371;
+            box-shadow: var(--shadow-sm);
+        }
+        /*Headre navigation*/
+       
+        /* Header specific styles for dynamic changes */
+        header {
+            transition: all 0.3s ease-in-out;
+        }
+        header.scrolled {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Custom styles for dropdowns */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        /* Dropdown link hover effect */
+        .dropdown-menu a:hover {
+            transform: translateX(5px);
+        }
+
+        /* Ensure smooth transitions for mobile menu */
+        .mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .mobile-menu.active {
+            max-height: 500px; /* Adjust as needed to fit content */
+            opacity: 1;
+        }
+        
+        /* End Headre navigation*/
+        
+        /* Main Navigation */
+       
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 5rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23ffffff" opacity=".05"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23ffffff" opacity=".1"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff" opacity=".15"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-logo-col {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+        
+        .footer-logo img {
+            height: 42px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, white, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-about {
+            margin-bottom: 1.5rem;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+        
+        .footer-about strong {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .footer-subscribe {
+            margin-top: auto;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: white;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .footer-links a::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.6rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-links a:hover::before {
+            color: var(--accent);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+        
+        .footer-contact i {
+            margin-right: 12px;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .footer-newsletter p {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.6rem;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .newsletter-form:focus-within {
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 0.95rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: var(--gray-light);
+        }
+        
+        .newsletter-form button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 4rem auto 0;
+            padding: 2rem 2rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-bottom p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .footer-bottom-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .footer-bottom-links a:hover {
+            color: white;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .mega-menu {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .top-header {
+                display: none;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                box-shadow: var(--shadow-lg);
+                padding: 1rem 2rem;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active li {
+                margin: 0;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid var(--gray-light);
+            }
+            
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                padding: 0;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+                background-color: var(--gray-light);
+                border-radius: 0.5rem;
+                margin-top: 0.5rem;
+                margin-left: 1rem;
+            }
+            
+            .dropdown-menu.active {
+                display: block;
+            }
+            
+            .dropdown-menu li {
+                padding: 0.5rem 1rem;
+                border-bottom: none;
+            }
+            
+            .dropdown > a::after {
+                content: '\f078';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                margin-left: 5px;
+                transition: transform 0.3s;
+            }
+            
+            .dropdown.active > a::after {
+                transform: rotate(180deg);
+            }
+            
+            .mega-menu {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .mega-menu h4 {
+                margin-top: 1rem;
+            }
+            
+            .mega-menu h4:first-child {
+                margin-top: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-logo-col {
+                grid-column: span 2;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-logo-col {
+                grid-column: span 1;
+            }
+            
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .footer-col {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .footer-col:nth-child(1) { animation-delay: 0.1s; }
+        .footer-col:nth-child(2) { animation-delay: 0.2s; }
+        .footer-col:nth-child(3) { animation-delay: 0.3s; }
+        .footer-col:nth-child(4) { animation-delay: 0.4s; }
+        .footer-col:nth-child(5) { animation-delay: 0.5s; }
+
+
+
+
+
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Top Header Bar -->
+    <div class="top-header">
+        <div class="header-container">
+            <div class="header-contact">
+                <a href="mailto:info@technova.com">
+                    <i class="fas fa-envelope" style="color: white;"></i>
+                    contact.csgyan@gmail.com
+                </a>
+                <a href="tel:+11234567890">
+                    <i class="fas fa-phone-alt" style="color: white;"></i>
+                    +91 7011615201
+                </a>
+            </div>
+            
+            <div class="header-right">
+                <div class="header-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+
+    <!-- Header Section -->
+    <header id="main-header" class="bg-white shadow-md py-4 px-6 md:px-9 lg:px-12 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between flex-wrap">
+            <!-- Logo/Site Title -->
+            <div class="flex items-center flex-shrink-0 text-gray-800 mr-6">
+                <a href="index.html" class="flex items-center space-x-2">
+              
+                    <img src="img/wts.png" alt="" class="transform hover:scale-105 transition duration-300 ease-in-out" style="width: 40px;height: 40px;">
+                    <span class="font-bold text-2xl text-blue-600">WebTestSite</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center lg:hidden ml-auto">
+                <button id="mobile-menu-button" class="flex items-center px-3 py-2 border rounded-md text-blue-600 border-blue-400 hover:text-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav id="desktop-nav" class="hidden lg:flex lg:items-center lg:w-auto w-full">
+                <ul class="lg:flex items-center justify-between text-base text-gray-800 pt-1 lg:pt-0">
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="#about" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-home text-blue-500 mr-2"></i> Home
+                        </a>
+                    </li>
+                    <!-- Digital Marketing Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="software-development.html" class="block py-2 px-1 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="Website-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-robot text-purple-500 mr-2"></i> Game Development</a></li>
+                        </ul>
+                    </li>
+                    <!-- Digital Marketing Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="marketing.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Marketing <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-search text-green-500 mr-2"></i> SEO Services</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <!-- IT Services Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="service.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-cloud mr-2 text-blue-400"></i> Cloud Solutions</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shield-alt mr-2 text-red-400"></i> Cybersecurity</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-database mr-2 text-blue-400"></i> Data Backup & Recovery</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-network-wired mr-2 text-indigo-400"></i> Network Solutions</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-cloud text-orange-500 mr-2"></i> AWS (Amazon Web Services)</a></li>
+                        </ul>
+                    </li>
+                    <!-- Tutorial Dropdown -->
+                     <!--
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="#services" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Our Tutorial <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-search mr-2 text-blue-400"></i> SEO Services</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-blue-400"></i> Content Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-money-bill-wave mr-2 text-blue-400"></i> PPC Management</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-blue-400"></i> Email Marketing</a></li>
+                        </ul>
+                    </li>
+                -->
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="about-us.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-info-circle mr-2 text-blue-500"></i> About Us
+                        </a>
+                    </li>
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="portfolio.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-briefcase mr-2 text-blue-500"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="contact-us.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-phone-alt mr-2 text-blue-900"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="mobile-menu lg:hidden bg-white shadow-inner rounded-b-lg mt-2 border-t border-gray-100" >
+            <ul class="flex flex-col text-gray-700 px-4 py-2">
+                <!-- Digital Marketing Mobile -->
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
+                      <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
+                    </button>
+                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-robot text-purple-500 mr-2"></i> Game Development</a></li>
+                    </ul>
+                </li>
+                <!-- Digital Marketing Mobile -->
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
+                        <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Digital Marketing <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
+                    </button>
+                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-search mr-2 text-green-400"></i> SEO Services</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
+                    </ul>
+                </li>
+                <!-- IT Services Mobile -->
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
+                        <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
+                    </button>
+                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-cloud mr-2 text-red-400"></i> Cloud Solutions</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shield-alt mr-2 text-blue-400"></i> Cybersecurity</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-database mr-2 text-indigo-400"></i> Data Backup & Recovery</a></li>
+                        <li><a href="#services" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
+                    </ul>
+                </li>
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <a href="about.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                        <i class="fas fa-info-circle mr-2 text-blue-500"></i> About Us
+                    </a>
+                </li>
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <a href="portfolio.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                        <i class="fas fa-briefcase mr-2 text-blue-500"></i> Portfolio
+                    </a>
+                </li>
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <a href="contact.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                        <i class="fas fa-phone-alt mr-2 text-blue-500"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <!-- Main Content (Placeholder) -->
+    <main style="margin-top: 20px; min-height: 80vh; padding: 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="footer-container">
+            <div class="footer-col footer-logo-col">
+                <a href="#" class="footer-logo">
+                    <img src="https://via.placeholder.com/42" alt="TechNova Logo">
+                    <span class="footer-logo-text">TechNova</span>
+                </a>
+                
+                <p class="footer-about">
+                    <strong>TechNova Solutions</strong> is a leading software development company specializing in cutting-edge technology solutions for businesses worldwide. We deliver innovative, scalable, and secure software tailored to your needs.
+                </p>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <div class="footer-subscribe">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest tech insights and company news.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-heading">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Custom Software Development</a></li>
+                    <li><a href="#">Web Application Development</a></li>
+                    <li><a href="#">Mobile App Development</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">Quality Assurance</a></li>
+                    <li><a href="#">DevOps Services</a></li>
+                    <li><a href="#">IT Consulting</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-heading">Contact Us</h3>
+                <div class="footer-contact">
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        123 Tech Park, Silicon Valley<br>
+                        San Francisco, CA 94025, USA
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt"></i>
+                        +1 (123) 456-7890<br>
+                        +1 (987) 654-3210
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        info@technova.com<br>
+                        support@technova.com
+                    </p>
+                    <p>
+                        <i class="fas fa-clock"></i>
+                        Mon-Fri: 9:00 AM - 6:00 PM<br>
+                        Sat-Sun: Closed
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 TechNova Solutions. All rights reserved.</p>
+            <ul class="footer-bottom-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+            <script>
+        // Header shrink on scroll
+        const mainHeader = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            // Toggle the hamburger icon to an 'X'
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Function to toggle sub-menus in mobile navigation
+        function toggleSubMenu(button) {
+            const subMenu = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            subMenu.classList.toggle('hidden');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+    </script>
+
+
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+    </script>
+</body>
+</html>
