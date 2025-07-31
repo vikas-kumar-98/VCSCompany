@@ -152,7 +152,7 @@
             opacity: 0;
         }
         .mobile-menu.active {
-            max-height: 500px; /* Adjust as needed to fit content */
+            max-height: 700px; /* Adjust as needed to fit content */
             opacity: 1;
         }
         
