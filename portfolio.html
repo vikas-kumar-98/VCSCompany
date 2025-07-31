@@ -5,959 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNova Solutions - Cutting-Edge Software Development</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
     <style>
-        /* CSS Variables */
-        :root {
-            --primary: #4361ee;
-            --primary-dark: #3a56d4;
-            --primary-light: #ebf2ff;
-            --secondary: #1e293b;
-            --accent: #f72585;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #fff;
-            overflow-x: hidden;
-        }
-        
-        /* Top Header Bar */
-        .top-header {
-            background-color: var(--dark);
-            color: white;
-            padding: 0.6rem 0;
-            font-size: 0.9rem;
-        }
-        
-        .header-container {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .header-contact {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-        
-        .header-contact a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-        
-        .header-contact a:hover {
-            color: var(--primary-light);
-        }
-        
-        .header-contact i {
-            font-size: 0.9rem;
-            color: var(--primary);
-        }
-        
-        .header-social {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .header-social a {
-            color: white;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-        
-        .header-social a:hover {
-            color: var(--primary);
-            transform: translateY(-2px);
-        }
-        
-        .header-cta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .btn-call {
-            background-color: var(--success);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .btn-call:hover {
-            background-color: #0ea371;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        /* Main Navigation */
-        .navbar {
-            background-color: white;
-            box-shadow: var(--shadow-md);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 0.8rem 0;
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-        }
-        
-        .logo img {
-            height: 42px;
-            transition: var(--transition);
-        }
-        
-        .logo:hover img {
-            transform: rotate(-5deg);
-        }
-        
-        .logo-text {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            align-items: left;
-            gap: 0.5rem;
-        }
-        
-        .nav-links li {
-            position: relative;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            transition: var(--transition);
-            display: flex;
-            align-items: left;
-            padding: 0.8rem 1rem;
-            border-radius: 0.5rem;
-            list-style: none;
-
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-            background-color: var(--primary-light);
-
-        }
-        
-        .nav-links a i {
-            margin-left: 5px;
-            font-size: 0.8rem;
-        }
-        
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            box-shadow: var(--shadow-lg);
-            border-radius: 0.8rem;
-            padding: 0.4rem 0;
-            min-width: 660px;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 100;
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(5px);
-        }
-        
-        .dropdown-menu li {
-            margin: 0;
-        }
-        
-        .dropdown-menu a {
-            padding: 0.1rem .3rem;
-            color: var(--secondary);
-        }
-        
-        .dropdown-menu a:hover {
-            color: var(--primary);
-            background-color: var(--primary-light);
-        }
-        
-        .dropdown-mega {
-            position: static;
-        }
-
-          .dropdown-menu1 {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            box-shadow: var(--shadow-lg);
-            border-radius: 0.8rem;
-            padding: 0.4rem 0;
-            min-width: 260px;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 100;
-        }
-        
-        .dropdown1:hover .dropdown-menu1 {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(5px);
-        }
-        
-        .dropdown-menu1 li {
-            margin: 0;
-        }
-        
-        .dropdown-menu1 a {
-            padding: 0.1rem 1.5rem;
-            color: var(--secondary);
-        }
-        
-        .dropdown-menu1 a:hover {
-            color: var(--primary);
-            background-color: var(--primary-light);
-        }
-        
-        .dropdown-mega {
-            position: static;
-        }
-        
-        .mega-menu {
-            left: 0;
-            right: 0;
-            width: 100%;
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-        
-        .mega-menu h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .mega-menu ul {
-            list-style: none;
-        }
-        
-        .mega-menu li {
-            margin-bottom: 0.6rem;
-        }
-        
-        .btn {
-            padding: 0.7rem 1.4rem;
-            border-radius: 0.6rem;
-            font-weight: 500;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .btn-primary {
-            background-color: blue;
-            color: white;
-            box-shadow: 0 4px 14px rgba(67, 97, 238, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background-color: lightgreen;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-whatsapp {
-            background-color: lightcoral;
-            color: white;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-        }
-        
-        .btn-whatsapp:hover {
-            background-color: #20bd5a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--secondary);
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-        }
-        
-        .mobile-menu-btn:hover {
-            background-color: var(--gray-light);
-        }
-        
-        /* Footer Styles */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 5rem 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .footer-wave {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23ffffff" opacity=".05"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23ffffff" opacity=".1"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff" opacity=".15"/></svg>');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 3rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-logo-col {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            gap: 0.8rem;
-            text-decoration: none;
-        }
-        
-        .footer-logo img {
-            height: 42px;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, white, var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .footer-about {
-            margin-bottom: 1.5rem;
-            color: var(--gray-light);
-            line-height: 1.7;
-        }
-        
-        .footer-about strong {
-            color: white;
-            font-weight: 500;
-        }
-        
-        .footer-subscribe {
-            margin-top: auto;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .social-links a {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-size: 1.1rem;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-        }
-        
-        .footer-heading {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1.8rem;
-            color: white;
-            position: relative;
-            padding-bottom: 0.8rem;
-        }
-        
-        .footer-heading::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 3px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: var(--gray-light);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        
-        .footer-links a::before {
-            content: '\f054';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-size: 0.6rem;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .footer-links a:hover::before {
-            color: var(--accent);
-        }
-        
-        .footer-contact p {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.2rem;
-            color: var(--gray-light);
-            line-height: 1.7;
-        }
-        
-        .footer-contact i {
-            margin-right: 12px;
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-top: 3px;
-        }
-        
-        .footer-newsletter p {
-            color: var(--gray-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            margin-bottom: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 0.6rem;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .newsletter-form:focus-within {
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
-        }
-        
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.9rem 1.2rem;
-            border: none;
-            background: transparent;
-            color: white;
-            font-size: 0.95rem;
-        }
-        
-        .newsletter-form input::placeholder {
-            color: var(--gray-light);
-        }
-        
-        .newsletter-form button {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 0 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .newsletter-form button:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 4rem auto 0;
-            padding: 2rem 2rem 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-bottom p {
-            color: var(--gray-light);
-            font-size: 0.9rem;
-        }
-        
-        .footer-bottom-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-        
-        .footer-bottom-links a {
-            color: var(--gray-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-        
-        .footer-bottom-links a:hover {
-            color: white;
-        }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-lg);
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .mega-menu {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .top-header {
-                display: none;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: white;
-                box-shadow: var(--shadow-lg);
-                padding: 1rem 2rem;
-                overflow-y: auto;
-            }
-            
-            .nav-links.active li {
-                margin: 0;
-                padding: 0.5rem 0;
-                border-bottom: 1px solid var(--gray-light);
-            }
-            
-            .dropdown-menu {
-                position: static;
-                box-shadow: none;
-                padding: 0;
-                opacity: 1;
-                visibility: visible;
-                display: none;
-                background-color: var(--gray-light);
-                border-radius: 0.5rem;
-                margin-top: 0.5rem;
-                margin-left: 1rem;
-            }
-            
-            .dropdown-menu.active {
-                display: block;
-            }
-            
-            .dropdown-menu li {
-                padding: 0.5rem 1rem;
-                border-bottom: none;
-            }
-            
-            .dropdown > a::after {
-                content: '\f078';
-                font-family: 'Font Awesome 6 Free';
-                font-weight: 900;
-                margin-left: 5px;
-                transition: transform 0.3s;
-            }
-            
-            .dropdown.active > a::after {
-                transform: rotate(180deg);
-            }
-            
-            .mega-menu {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-            
-            .mega-menu h4 {
-                margin-top: 1rem;
-            }
-            
-            .mega-menu h4:first-child {
-                margin-top: 0;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .footer-logo-col {
-                grid-column: span 2;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-            
-            .footer-bottom-links {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-logo-col {
-                grid-column: span 1;
-            }
-            
-            .nav-container {
-                padding: 0 1.5rem;
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .footer-col {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        .footer-col:nth-child(1) { animation-delay: 0.1s; }
-        .footer-col:nth-child(2) { animation-delay: 0.2s; }
-        .footer-col:nth-child(3) { animation-delay: 0.3s; }
-        .footer-col:nth-child(4) { animation-delay: 0.4s; }
-        .footer-col:nth-child(5) { animation-delay: 0.5s; }
 
 
-        /*Slider pagoes here.................*/
-                .hero-slider {
-            width: 100%;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(to right, #000428, #004e92);
-            color: var(--text-light);
-        }
-        
-        .slider-background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-            z-index: 1;
-        }
-        
-        .slider-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .slider-badge {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(5px);
-            padding: 0.5rem 1.25rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .slider-headline {
-            font-size: clamp(2rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, #c2e9fb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .slider-description {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            max-width: 600px;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-            color: white;
-            line-height: 1.6;
-        }
-        
-        .cta-container {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .primary-cta, .secondary-cta {
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .primary-cta {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-        
-        .primary-cta:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
-        }
-        
-        .secondary-cta {
-            background: transparent;
-            color: var(--text-light);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .secondary-cta:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .tech-stack {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .tech-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: white;
-            font-size: 0.875rem;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .slider-content {
-                align-items: center;
-                text-align: center;
-            }
-            
-            .slider-description {
-                text-align: center;
-            }
-            
-            .cta-container {
-                justify-content: center;
-                width: 100%;
-            }
-            
-            .primary-cta, .secondary-cta {
-                width: 100%;
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .slider-content > * {
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        .slider-badge { animation-delay: 0.2s; }
-        .slider-headline { animation-delay: 0.4s; }
-        .slider-description { animation-delay: 0.6s; }
-        .cta-container { animation-delay: 0.8s; }
-        .tech-stack { animation-delay: 1s; }
-
-
-        /*Portfolio page sstara................*/
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
+/*...........Start of about us page .........*/
         .container {
             width: 100%;
             max-width: 1400px;
@@ -966,21 +26,48 @@
         }
 
         section {
-            padding: 2rem 0;
+            padding: 3rem 0;
             position: relative;
         }
 
-        /* ===== Portfolio Section Styles ===== */
-        .portfolio-section {
-            background: white;
+        /* ===== Hero Section ===== */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(244,63,94,0.03) 100%);
+            padding: 4rem 0;
+            overflow: hidden;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
         }
 
-        .section-header .subtitle {
+        .hero-text {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover img {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .subtitle {
             display: inline-block;
             font-size: 1rem;
             font-weight: 600;
@@ -988,6 +75,101 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Floating Elements */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: 10%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary);
+            bottom: 15%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite 2s;
+        }
+
+        /* Animation */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* ===== Our Story Section ===== */
+        .story-section {
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
         .section-header h2 {
@@ -1007,280 +189,280 @@
             font-size: 1.1rem;
         }
 
-        /* Portfolio Filter */
-        .portfolio-filter {
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--gray-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            justify-content: flex-end;
         }
 
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+        }
+
+        .timeline-content {
+            width: calc(50% - 4rem);
+            padding: 2rem;
             background: white;
-            color: var(--dark);
-            font-weight: 600;
-            border: 1px solid var(--gray-light);
-            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            position: relative;
             transition: var(--transition);
-            box-shadow: var(--shadow-sm);
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -3.5rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -3.5rem;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
             background: var(--primary);
             color: white;
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        /* Portfolio Grid */
-        .portfolio-grid {
+        .timeline-item:nth-child(even) .timeline-year {
+            background: var(--secondary);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== Values Section ===== */
+        .values-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(244,63,94,0.03) 100%);
+        }
+
+        .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .portfolio-item {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-            height: 280px;
-        }
-
-        .portfolio-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
-            z-index: 1;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .portfolio-item:hover::before {
-            opacity: 1;
-        }
-
-        .portfolio-item:hover .portfolio-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .portfolio-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            z-index: 2;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-content h3 {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-content p {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-tag {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            backdrop-filter: blur(5px);
-        }
-
-        .portfolio-link {
-            display: inline-flex;
-            align-items: center;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .portfolio-link:hover {
-            color: var(--accent);
-        }
-
-        .portfolio-link i {
-            margin-left: 0.5rem;
-            transition: var(--transition);
-        }
-
-        .portfolio-link:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Case Study Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-container {
+        .value-card {
             background: white;
             border-radius: 12px;
-            width: 90%;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 2rem;
-            position: relative;
-            transform: translateY(50px);
-            transition: all 0.3s ease;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
         }
 
-        .modal-overlay.active .modal-container {
-            transform: translateY(0);
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gray-light);
-            width: 36px;
-            height: 36px;
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .modal-close:hover {
-            background: var(--secondary);
+            margin: 0 auto 1.5rem;
             color: white;
-        }
-
-        .modal-header {
-            margin-bottom: 2rem;
-        }
-
-        .modal-header h3 {
             font-size: 1.8rem;
-            margin-bottom: 0.5rem;
         }
 
-        .modal-header p {
-            color: var(--gray);
+        .value-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
         }
 
-        .modal-image {
-            width: 100%;
-            height: 400px;
-            border-radius: 8px;
+        /* ===== Team Section ===== */
+        .team-section {
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
         }
 
-        .modal-image img {
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-image {
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .member-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: var(--transition);
         }
 
-        .modal-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
         }
 
-        .detail-item h4 {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
         }
 
-        .detail-item p {
-            font-weight: 600;
-        }
-
-        .modal-content h4 {
+        .member-info h3 {
             font-size: 1.3rem;
-            margin: 1.5rem 0 1rem;
+            margin-bottom: 0.25rem;
         }
 
-        /* Responsive Adjustments */
+        .member-info p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .member-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gray-light);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .member-social a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-light:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== Responsive Adjustments ===== */
         @media (max-width: 1200px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            h1 {
+                font-size: 3rem;
             }
         }
 
         @media (max-width: 992px) {
-            .section-header h2 {
-                font-size: 2.4rem;
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
             }
 
-            .portfolio-item {
-                height: 250px;
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .timeline::before {
+                left: 2rem;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+            }
+
+            .timeline-content {
+                width: calc(100% - 6rem);
+                margin-left: 4rem;
+            }
+
+            .timeline-content::before {
+                left: -3.5rem;
             }
         }
 
@@ -1289,41 +471,52 @@
                 padding: 4rem 0;
             }
 
+            h1 {
+                font-size: 2.5rem;
+            }
+
             .section-header h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-
-            .modal-details {
-                grid-template-columns: 1fr;
+            .team-member {
+                max-width: 350px;
+                margin: 0 auto;
             }
         }
 
         @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
             .section-header h2 {
                 font-size: 1.8rem;
             }
 
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+            .timeline-content {
+                width: calc(100% - 3rem);
+                margin-left: 2rem;
+                padding: 1.5rem;
             }
 
-            .portfolio-item {
-                height: 220px;
+            .timeline-content::before {
+                left: -2.5rem;
+                width: 16px;
+                height: 16px;
             }
 
-            .modal-image {
-                height: 200px;
+            .value-card {
+                padding: 1.5rem;
             }
         }
-        /*End of portfolio page*/
+        /*End of About us page*/
+
+
 
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
     <!-- Top Header Bar -->
     <div class="top-header">
         <div class="header-container">
@@ -1353,426 +546,393 @@
     </div>
 
     <!-- Main Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="img/wts.png" alt="TechNova Logo">
-                <span class="logo-text">WebTestSite</span>
-            </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                
-                <li class="dropdown dropdown-mega">
-                    <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-menu mega-menu">
-                        <div>
-                            <h4>Enterprise Solutions</h4>
-                            <ul>
-                                <li><a href="#">ERP Systems</a></li>
-                                <li><a href="#">CRM Platforms</a></li>
-                                <li><a href="#">Business Intelligence</a></li>
-                                <li><a href="#">Supply Chain</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Cloud Services</h4>
-                            <ul>
-                                <li><a href="#">Cloud Migration</a></li>
-                                <li><a href="#">SaaS Solutions</a></li>
-                                <li><a href="#">Hybrid Cloud</a></li>
-                                <li><a href="#">Cloud Security</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>AI & Analytics</h4>
-                            <ul>
-                                <li><a href="#">Machine Learning</a></li>
-                                <li><a href="#">Predictive Analytics</a></li>
-                                <li><a href="#">Natural Language Processing</a></li>
-                                <li><a href="#">Computer Vision</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Emerging Tech</h4>
-                            <ul>
-                                <li><a href="#">Blockchain</a></li>
-                                <li><a href="#">IoT Platforms</a></li>
-                                <li><a href="#">AR/VR Solutions</a></li>
-                                <li><a href="#">Quantum Computing</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#">Services <i class="fas fa-chevron-down"></i></a>
-                    <ul class=" dropdown-menu1">
-                        <li><a href="#">Custom Software Development</a></li>
-                        <li><a href="#">Web & Mobile App Development</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Quality Assurance & Testing</a></li>
-                        <li><a href="#">DevOps & Cloud Engineering</a></li>
-                        <li><a href="#">IT Consulting</a></li>
+
+ <!-- Header Section -->
+    <!-- Header Section -->
+    <header id="main-header" class="bg-white shadow-md py-4 px-6 md:px-9 lg:px-12 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between flex-wrap">
+            <!-- Logo/Site Title -->
+            <div class="flex items-center flex-shrink-0 text-gray-800 mr-6">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="img/wts.png" alt="" class="transform hover:scale-105 transition duration-300 ease-in-out" style="width: 40px;height: 40px;">
+                    <span class="font-bold text-2xl text-blue-600">WebTestSite</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center lg:hidden ml-auto">
+                <button id="mobile-menu-button" class="flex items-center px-3 py-2 border rounded-md text-blue-600 border-blue-400 hover:text-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav id="desktop-nav" class="hidden lg:flex lg:items-center lg:w-auto w-full">
+                <ul class="lg:flex items-center justify-between text-base text-gray-800 pt-1 lg:pt-0">
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="index.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-home text-blue-500 mr-2"></i> Home
+                        </a>
+                    </li>
+                    <!-- Digital Marketing Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="software-development.html" class="block py-2 px-1 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="website-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
+                            <li><a href="app-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
+                            <li><a href="e-commerse-solution.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
+                            <li><a href="ai-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
+                            <li><a href="game-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-robot text-purple-500 mr-2"></i> Game Development</a></li>
+                        </ul>
+                    </li>
+                    <!-- Digital Marketing Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="marketing.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Marketing <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="seo-services.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-search text-green-500 mr-2"></i> SEO Services</a></li>
+                            <li><a href="social-media-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                            <li><a href="content-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
+                            <li><a href="ppc-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
+                            <li><a href="email-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <!-- IT Services Dropdown -->
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="service.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="our-cloud-solutions.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-cloud mr-2 text-blue-400"></i> Cloud Solutions</a></li>
+                            <li><a href="cybersecurity.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shield-alt mr-2 text-red-400"></i> Cybersecurity</a></li>
+                            <li><a href="it-services.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
+                            <li><a href="data-backup-recovery.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-database mr-2 text-blue-400"></i> Data Backup & Recovery</a></li>
+                            <li><a href="network-solution.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-network-wired mr-2 text-indigo-400"></i> Network Solutions</a></li>
+                            <li><a href="aws-services.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-cloud text-orange-500 mr-2"></i> AWS (Amazon Web Services)</a></li>
+                        </ul>
+                    </li>
+                    <!-- Tutorial Dropdown -->
+                     <!--
+                    <li class="relative group dropdown mr-2 mb-2 lg:mb-0">
+                        <a href="#services" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Our Tutorial <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-search mr-2 text-blue-400"></i> SEO Services</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-blue-400"></i> Content Marketing</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-money-bill-wave mr-2 text-blue-400"></i> PPC Management</a></li>
+                            <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-blue-400"></i> Email Marketing</a></li>
+                        </ul>
+                    </li>
+                -->
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="about.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-info-circle mr-2 text-blue-500"></i> About Us
+                        </a>
+                    </li>
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="portfolio.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-briefcase mr-2 text-blue-500"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="mr-2 mb-2 lg:mb-0">
+                        <a href="contact.html" class="block py-1 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
+                            <i class="fas fa-phone-alt mr-2 text-blue-900"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="mobile-menu lg:hidden bg-white shadow-inner rounded-b-lg mt-2 border-t border-gray-100" >
+            <ul class="flex flex-col text-gray-700 px-4 py-2">
+                <!-- Digital Marketing Mobile -->
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
+                      <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
+                    </button>
+                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                        <li><a href="website-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
+                        <li><a href="app-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
+                        <li><a href="e-commerse-solution.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
+                        <li><a href="ai-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
+                        <li><a href="game-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-robot text-purple-500 mr-2"></i> Game Development</a></li>
                     </ul>
                 </li>
-                
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About Us</a></li>
-                
-                <li>
-                    <a href="https://wa.me/+917011615201" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                <!-- Digital Marketing Mobile -->
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
+                        <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Digital Marketing <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
+                    </button>
+                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                        <li><a href="seo-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-search mr-2 text-green-400"></i> SEO Services</a></li>
+                        <li><a href="social-media-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                        <li><a href="content-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
+                        <li><a href="ppc-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
+                        <li><a href="email-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
+                    </ul>
+                </li>
+                <!-- IT Services Mobile -->
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
+                        <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
+                    </button>
+                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                        <li><a href="our-cloud-solutions.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-cloud mr-2 text-red-400"></i> Cloud Solutions</a></li>
+                        <li><a href="cybersecurity.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shield-alt mr-2 text-blue-400"></i> Cybersecurity</a></li>
+                        <li><a href="it-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
+                        <li><a href="data-backup-recovery.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-database mr-2 text-indigo-400"></i> Data Backup & Recovery</a></li>
+                        <li><a href="network-solution.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
+                        <li><a href="aws-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
+                    </ul>
+                </li>
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <a href="about.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                        <i class="fas fa-info-circle mr-2 text-blue-500"></i> About Us
                     </a>
                 </li>
-                
-                <li>
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-calendar-alt"></i> Get Demo
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <a href="portfolio.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                        <i class="fas fa-briefcase mr-2 text-blue-500"></i> Portfolio
+                    </a>
+                </li>
+                <li class="py-2 border-b border-gray-100 last:border-b-0">
+                    <a href="contact.html" class="block font-medium text-gray-800 hover:text-blue-700 py-2 flex items-center">
+                        <i class="fas fa-phone-alt mr-2 text-blue-500"></i> Contact Us
                     </a>
                 </li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!--Porfolio page -->
-        <section class="portfolio-section">
+
+
+
+
+    <!--About us page start-->
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        
         <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Our Work</span>
-                <h2>Project Portfolio</h2>
-                <p>Explore our collection of successful web and mobile applications developed for clients across various industries.</p>
-            </div>
-
-            <!-- Portfolio Filter -->
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="app">Mobile Apps</button>
-                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-                <button class="filter-btn" data-filter="saas">SAAS Platforms</button>
-            </div>
-
-            <!-- Portfolio Grid -->
-            <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <div class="portfolio-item" data-category="web saas">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Project Management Dashboard">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">React</span>
-                            <span class="portfolio-tag">Node.js</span>
-                            <span class="portfolio-tag">MongoDB</span>
-                        </div>
-                        <h3>ProjectFlow Dashboard</h3>
-                        <p>Custom project management SAAS for creative teams</p>
-                        <a href="#" class="portfolio-link" data-project="1">View Case Study <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="subtitle">Our Story</span>
+                    <h1>Building Digital Experiences That Matter</h1>
+                    <p>We're a passionate team of developers, designers, and strategists dedicated to creating innovative digital solutions that drive real business results.</p>
+                    <a href="#our-story" class="btn btn-primary">Explore Our Journey <i class="fas fa-arrow-down"></i></a>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fitness Mobile App">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Flutter</span>
-                            <span class="portfolio-tag">Firebase</span>
-                            <span class="portfolio-tag">HealthKit</span>
-                        </div>
-                        <h3>FitTrack Pro</h3>
-                        <p>AI-powered fitness tracking mobile application</p>
-                        <a href="#" class="portfolio-link" data-project="2">View Case Study <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="portfolio-item" data-category="ecommerce web">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="E-Commerce Platform">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Shopify</span>
-                            <span class="portfolio-tag">Liquid</span>
-                            <span class="portfolio-tag">React</span>
-                        </div>
-                        <h3>UrbanStyle Store</h3>
-                        <p>Custom e-commerce solution for fashion retailer</p>
-                        <a href="#" class="portfolio-link" data-project="3">View Case Study <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="portfolio-item" data-category="web saas">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Analytics Dashboard">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Vue.js</span>
-                            <span class="portfolio-tag">D3.js</span>
-                            <span class="portfolio-tag">Python</span>
-                        </div>
-                        <h3>DataVision Analytics</h3>
-                        <p>Interactive data visualization SAAS platform</p>
-                        <a href="#" class="portfolio-link" data-project="4">View Case Study <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banking App">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Swift</span>
-                            <span class="portfolio-tag">Kotlin</span>
-                            <span class="portfolio-tag">Biometrics</span>
-                        </div>
-                        <h3>NeoBank Mobile</h3>
-                        <p>Digital banking application with advanced security</p>
-                        <a href="#" class="portfolio-link" data-project="5">View Case Study <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="portfolio-item" data-category="ecommerce web">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Food Delivery Platform">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">React</span>
-                            <span class="portfolio-tag">Node.js</span>
-                            <span class="portfolio-tag">Mapbox</span>
-                        </div>
-                        <h3>FoodExpress</h3>
-                        <p>On-demand food delivery web platform</p>
-                        <a href="#" class="portfolio-link" data-project="6">View Case Study <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Case Study Modal -->
-        <div class="modal-overlay" id="modalOverlay">
-            <div class="modal-container">
-                <div class="modal-close" id="modalClose">
-                    <i class="fas fa-times"></i>
-                </div>
-                <div class="modal-header">
-                    <h3 id="modalTitle">ProjectFlow Dashboard</h3>
-                    <p id="modalSubtitle">Custom project management SAAS for creative teams</p>
-                </div>
-                <div class="modal-image">
-                    <img id="modalImage" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Project Screenshot">
-                </div>
-                <div class="modal-details">
-                    <div class="detail-item">
-                        <h4>Client</h4>
-                        <p id="modalClient">Creative Solutions Inc.</p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Industry</h4>
-                        <p id="modalIndustry">Project Management</p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Technologies</h4>
-                        <p id="modalTech">React, Node.js, MongoDB</p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Year</h4>
-                        <p id="modalYear">2023</p>
-                    </div>
-                </div>
-                <div class="modal-content">
-                    <h4>Project Overview</h4>
-                    <p id="modalOverview">ProjectFlow Dashboard was designed to streamline project management for creative agencies. The platform offers real-time collaboration, task automation, and integrated time tracking to improve team productivity by 40%. Our solution reduced project delivery times by 30% while increasing client satisfaction scores.</p>
-                    
-                    <h4>Key Features</h4>
-                    <ul id="modalFeatures">
-                        <li>Customizable Kanban boards with drag-and-drop functionality</li>
-                        <li>Automated task assignment based on team workload</li>
-                        <li>Integrated time tracking with reporting</li>
-                        <li>Client portal for transparent communication</li>
-                        <li>API integrations with popular design tools</li>
-                    </ul>
-                    
-                    <h4>Results</h4>
-                    <ul id="modalResults">
-                        <li>40% increase in team productivity</li>
-                        <li>30% reduction in project delivery times</li>
-                        <li>25% higher client satisfaction scores</li>
-                        <li>500+ active monthly users</li>
-                    </ul>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Our Team Working">
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Portfolio Filter Functionality
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    const filter = btn.dataset.filter;
-                    
-                    // Filter items
-                    portfolioItems.forEach(item => {
-                        if (filter === 'all' || item.dataset.category.includes(filter)) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Modal Functionality
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalClose = document.getElementById('modalClose');
-            const portfolioLinks = document.querySelectorAll('.portfolio-link');
-            
-            // Sample project data (in real implementation, you might fetch this from an API)
-            const projects = {
-                1: {
-                    title: "ProjectFlow Dashboard",
-                    subtitle: "Custom project management SAAS for creative teams",
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                    client: "Creative Solutions Inc.",
-                    industry: "Project Management",
-                    tech: "React, Node.js, MongoDB",
-                    year: "2023",
-                    overview: "ProjectFlow Dashboard was designed to streamline project management for creative agencies. The platform offers real-time collaboration, task automation, and integrated time tracking to improve team productivity by 40%. Our solution reduced project delivery times by 30% while increasing client satisfaction scores.",
-                    features: [
-                        "Customizable Kanban boards with drag-and-drop functionality",
-                        "Automated task assignment based on team workload",
-                        "Integrated time tracking with reporting",
-                        "Client portal for transparent communication",
-                        "API integrations with popular design tools"
-                    ],
-                    results: [
-                        "40% increase in team productivity",
-                        "30% reduction in project delivery times",
-                        "25% higher client satisfaction scores",
-                        "500+ active monthly users"
-                    ]
-                },
-                2: {
-                    title: "FitTrack Pro",
-                    subtitle: "AI-powered fitness tracking mobile application",
-                    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                    client: "HealthTech Ventures",
-                    industry: "Fitness & Wellness",
-                    tech: "Flutter, Firebase, HealthKit",
-                    year: "2023",
-                    overview: "FitTrack Pro revolutionizes personal fitness by combining AI-powered workout recommendations with advanced activity tracking. The app syncs with wearable devices and uses machine learning to adapt workout plans based on user progress and feedback.",
-                    features: [
-                        "AI-generated personalized workout plans",
-                        "Real-time form correction using device camera",
-                        "Integration with major fitness wearables",
-                        "Nutrition tracking with barcode scanner",
-                        "Community challenges and social features"
-                    ],
-                    results: [
-                        "250,000+ downloads in first 6 months",
-                        "4.8/5 average app store rating",
-                        "70% user retention after 3 months",
-                        "Featured in 'Top Fitness Apps' by Health Magazine"
-                    ]
-                }
-                // Add more projects as needed
-            };
-            
-            // Open modal with project data
-            portfolioLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const projectId = link.dataset.project;
-                    const project = projects[projectId];
-                    
-                    if (project) {
-                        document.getElementById('modalTitle').textContent = project.title;
-                        document.getElementById('modalSubtitle').textContent = project.subtitle;
-                        document.getElementById('modalImage').src = project.image;
-                        document.getElementById('modalClient').textContent = project.client;
-                        document.getElementById('modalIndustry').textContent = project.industry;
-                        document.getElementById('modalTech').textContent = project.tech;
-                        document.getElementById('modalYear').textContent = project.year;
-                        document.getElementById('modalOverview').textContent = project.overview;
-                        
-                        const featuresList = document.getElementById('modalFeatures');
-                        featuresList.innerHTML = '';
-                        project.features.forEach(feature => {
-                            const li = document.createElement('li');
-                            li.textContent = feature;
-                            featuresList.appendChild(li);
-                        });
-                        
-                        const resultsList = document.getElementById('modalResults');
-                        resultsList.innerHTML = '';
-                        project.results.forEach(result => {
-                            const li = document.createElement('li');
-                            li.textContent = result;
-                            resultsList.appendChild(li);
-                        });
-                        
-                        modalOverlay.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
-            });
-            
-            // Close modal
-            modalClose.addEventListener('click', () => {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-            
-            // Close modal when clicking outside
-            modalOverlay.addEventListener('click', (e) => {
-                if (e.target === modalOverlay) {
-                    modalOverlay.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Animate portfolio items on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            portfolioItems.forEach(item => {
-                item.style.opacity = 0;
-                item.style.transform = 'translateY(30px)';
-                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(item);
-            });
-        });
-    </script>
-    <!--End portfolio page-->
+    <!-- Our Story Section -->
+    <section class="story-section" id="our-story">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Journey</span>
+                <h2>From Humble Beginnings to Industry Leaders</h2>
+                <p>Our evolution reflects our commitment to innovation, quality, and client success at every stage.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2015</span>
+                        <h3>Company Founded</h3>
+                        <p>Started in a small co-working space with just 3 team members focused on WordPress websites for local businesses.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2017</span>
+                        <h3>First Major Client</h3>
+                        <p>Landed our first enterprise client, developing a custom e-commerce platform that doubled their online revenue.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2019</span>
+                        <h3>Expansion to Mobile</h3>
+                        <p>Launched our mobile development division, delivering our first award-winning iOS and Android applications.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2021</span>
+                        <h3>International Recognition</h3>
+                        <p>Named among "Top 100 Digital Agencies" by TechReview for our innovative SAAS solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h3>Global Team</h3>
+                        <p>Now serving clients in 12 countries with a team of 45+ experts across development, design, and marketing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Core</span>
+                <h2>The Principles That Guide Us</h2>
+                <p>These values define how we work, collaborate, and deliver exceptional results for our clients.</p>
+            </div>
+
+            <div class="values-grid">
+                <!-- Value 1 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We constantly explore new technologies and approaches to deliver cutting-edge solutions that give our clients a competitive edge.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>Honest communication and ethical practices form the foundation of every client relationship and project we undertake.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We're committed to delivering work of the highest quality, paying attention to every detail that matters to your success.</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <p>Our team genuinely loves what we do, and that enthusiasm translates into exceptional results for our clients.</p>
+                </div>
+
+                <!-- Value 5 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>We work as an extension of your team, valuing your insights and working together to achieve your vision.</p>
+                </div>
+
+                <!-- Value 6 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Results-Driven</h3>
+                    <p>Every project is measured by the tangible business impact it creates, not just technical execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Meet The Team</span>
+                <h2>Our Expert Team</h2>
+                <p>The talented professionals who turn ideas into exceptional digital experiences.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Alex Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3>Alex Johnson</h3>
+                        <p>CEO & Founder</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sarah Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Chen</h3>
+                        <p>CTO</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Michael Rodriguez">
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Rodriguez</h3>
+                        <p>Creative Director</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Something Amazing Together?</h2>
+            <p>Whether you have a project in mind or just want to explore possibilities, we'd love to hear from you.</p>
+            <a href="#" class="btn btn-light">Get in Touch <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+
+    <!--End of about us-->
+
     <!-- Main Content (Placeholder) -->
     <main style="margin-top: 20px; min-height: 80vh; padding: 2rem;">
         <div style="max-width: 1200px; margin: 0 auto;">
@@ -1781,18 +941,19 @@
         </div>
     </main>
 
+    
     <!-- Footer -->
     <footer>
         <div class="footer-wave"></div>
         <div class="footer-container">
             <div class="footer-col footer-logo-col">
                 <a href="#" class="footer-logo">
-                    <img src="https://via.placeholder.com/42" alt="TechNova Logo">
-                    <span class="footer-logo-text">TechNova</span>
+                    <img src="img/wts.png" alt="TechNova Logo">
+                    <span class="footer-logo-text">WebTestSite</span>
                 </a>
                 
                 <p class="footer-about">
-                    <strong>TechNova Solutions</strong> is a leading software development company specializing in cutting-edge technology solutions for businesses worldwide. We deliver innovative, scalable, and secure software tailored to your needs.
+                    <strong>At WebTestSite</strong> we understand that your website is often the first point of contact between your business and your audience. It's your digital storefront, a reflection of your brand, and a powerful tool for growth. That's why we're here - to be your trusted web partner in this digital journey.
                 </p>
                 
                 <div class="social-links">
@@ -1817,28 +978,28 @@
             <div class="footer-col">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Solutions</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="our-blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contect.html">Contact</a></li>
                 </ul>
             </div>
             
             <div class="footer-col">
                 <h3 class="footer-heading">Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Custom Software Development</a></li>
-                    <li><a href="#">Web Application Development</a></li>
-                    <li><a href="#">Mobile App Development</a></li>
-                    <li><a href="#">Cloud Solutions</a></li>
-                    <li><a href="#">UI/UX Design</a></li>
-                    <li><a href="#">Quality Assurance</a></li>
-                    <li><a href="#">DevOps Services</a></li>
-                    <li><a href="#">IT Consulting</a></li>
+                    <li><a href="software-developer.html">Custom Software Development</a></li>
+                    <li><a href="website-development.html">Web Application Development</a></li>
+                    <li><a href="app-development.html">Mobile App Development</a></li>
+                    <li><a href="our-cloud-solutions.html">Cloud Solutions</a></li>
+                    <li><a href="ux-ui-designer.html">UI/UX Design</a></li>
+                    <li><a href="ai-development.html">AI Developer</a></li>
+                    <li><a href="devops-services.html">DevOps Services</a></li>
+                    <li><a href="it-services.html">IT Consulting</a></li>
                 </ul>
             </div>
             
@@ -1847,18 +1008,18 @@
                 <div class="footer-contact">
                     <p>
                         <i class="fas fa-map-marker-alt"></i>
-                        123 Tech Park, Silicon Valley<br>
-                        San Francisco, CA 94025, USA
+                        Alpha-2 H-18 pari chawk <br>Greater Noida  Uttar pradesh India
+                        
                     </p>
                     <p>
                         <i class="fas fa-phone-alt"></i>
-                        +1 (123) 456-7890<br>
-                        +1 (987) 654-3210
+                        +91 7011615201<br>
+                        +91 7510028244
                     </p>
                     <p>
                         <i class="fas fa-envelope"></i>
-                        info@technova.com<br>
-                        support@technova.com
+                        contact.csgyan@gmail.com<br>
+                        csgyan@gmail.com
                     </p>
                     <p>
                         <i class="fas fa-clock"></i>
@@ -1872,10 +1033,10 @@
         <div class="footer-bottom">
             <p>&copy; 2023 TechNova Solutions. All rights reserved.</p>
             <ul class="footer-bottom-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-                <li><a href="#">Sitemap</a></li>
+                <li><a href="privecy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-services.html">Terms of Service</a></li>
+                <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                <li><a href="sitemap.xml">Sitemap</a></li>
             </ul>
         </div>
     </footer>
@@ -1885,98 +1046,8 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        // Dropdown Menu Toggle for Mobile
-        const dropdowns = document.querySelectorAll('.dropdown');
-        
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            const menu = dropdown.querySelector('.dropdown-menu');
-            
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 992) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                    menu.classList.toggle('active');
-                    
-                    // Close other dropdowns
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.classList.remove('active');
-                            otherDropdown.querySelector('.dropdown-menu').classList.remove('active');
-                        }
-                    });
-                }
-            });
-        });
-        
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992 && !e.target.closest('.dropdown') && !e.target.closest('.mobile-menu-btn')) {
-                dropdowns.forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                    dropdown.querySelector('.dropdown-menu').classList.remove('active');
-                });
-            }
-        });
-        
-        // Close mobile menu when clicking a link
-        const navItems = document.querySelectorAll('.nav-links li:not(.dropdown) a');
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth <= 992) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    document.body.style.overflow = '';
-                }
-            });
-        });
-        
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Smooth scrolling for all links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="js/myjsfile.js"></script>
+
+
 </body>
 </html>
