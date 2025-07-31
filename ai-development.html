@@ -17,500 +17,9 @@
     <style>
 
 
-/*...........Start of about us page .........*/
-        .container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+/*...........Start of s page .........*/
 
-        section {
-            padding: 3rem 0;
-            position: relative;
-        }
-
-        /* ===== Hero Section ===== */
-        .hero-section {
-            background: linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(244,63,94,0.03) 100%);
-            padding: 4rem 0;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .hero-text {
-            flex: 1;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image {
-            flex: 1;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: var(--shadow-xl);
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: var(--transition);
-        }
-
-        .hero-image:hover img {
-            transform: perspective(1000px) rotateY(0deg);
-        }
-
-        .subtitle {
-            display: inline-block;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn i {
-            margin-left: 0.5rem;
-            transition: var(--transition);
-        }
-
-        .btn:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Floating Elements */
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .shape-1 {
-            width: 300px;
-            height: 300px;
-            background: var(--primary);
-            top: 10%;
-            left: 5%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .shape-2 {
-            width: 200px;
-            height: 200px;
-            background: var(--secondary);
-            bottom: 15%;
-            right: 10%;
-            animation: float 6s ease-in-out infinite 2s;
-        }
-
-        /* Animation */
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-        }
-
-        /* ===== Our Story Section ===== */
-        .story-section {
-            background: white;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .section-header p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: var(--gray-light);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 4rem;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .timeline-item:nth-child(even) {
-            justify-content: flex-start;
-        }
-
-        .timeline-content {
-            width: calc(50% - 4rem);
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .timeline-item:hover .timeline-content {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary);
-            transform: translateY(-50%);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: -3.5rem;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: -3.5rem;
-        }
-
-        .timeline-year {
-            display: inline-block;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-item:nth-child(even) .timeline-year {
-            background: var(--secondary);
-        }
-
-        .timeline-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* ===== Values Section ===== */
-        .values-section {
-            background: linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(244,63,94,0.03) 100%);
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .value-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .value-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 1.8rem;
-        }
-
-        .value-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* ===== Team Section ===== */
-        .team-section {
-            background: white;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .team-member {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .member-image {
-            height: 320px;
-            overflow: hidden;
-        }
-
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .team-member:hover .member-image img {
-            transform: scale(1.05);
-        }
-
-        .member-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .member-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .member-info p {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-
-        .member-social a {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--gray-light);
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .member-social a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* ===== CTA Section ===== */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            text-align: center;
-            padding: 6rem 0;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-light {
-            background: white;
-            color: var(--primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-light:hover {
-            background: rgba(255,255,255,0.9);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ===== Responsive Adjustments ===== */
-        @media (max-width: 1200px) {
-            h1 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .timeline::before {
-                left: 2rem;
-            }
-
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                justify-content: flex-start;
-            }
-
-            .timeline-content {
-                width: calc(100% - 6rem);
-                margin-left: 4rem;
-            }
-
-            .timeline-content::before {
-                left: -3.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 4rem 0;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .team-member {
-                max-width: 350px;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 576px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .timeline-content {
-                width: calc(100% - 3rem);
-                margin-left: 2rem;
-                padding: 1.5rem;
-            }
-
-            .timeline-content::before {
-                left: -2.5rem;
-                width: 16px;
-                height: 16px;
-            }
-
-            .value-card {
-                padding: 1.5rem;
-            }
-        }
-        /*End of About us page*/
+/*...........End of page............*/
 
 
 
@@ -657,11 +166,11 @@
                       <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
                     <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
-                        <li><a href="website-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
-                        <li><a href="app-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
-                        <li><a href="e-commerse-solution.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
-                        <li><a href="ai-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
-                        <li><a href="game-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-robot text-purple-500 mr-2"></i> Game Development</a></li>
+                        <li><a href="website-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-globe text-indigo-500 mr-2"></i></i>Website Development</a></li>
+                        <li><a href="app-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
+                        <li><a href="e-commerse-solution.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
+                        <li><a href="ai-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-gamepad text-red-500 mr-2"></i> AI Development</a></li>
+                        <li><a href="game-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-robot text-purple-500 mr-2 "></i> Game Development</a></li>
                     </ul>
                 </li>
                 <!-- Digital Marketing Mobile -->
@@ -670,11 +179,11 @@
                         <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Digital Marketing <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
                     <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
-                        <li><a href="seo-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-search mr-2 text-green-400"></i> SEO Services</a></li>
-                        <li><a href="social-media-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
-                        <li><a href="content-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
-                        <li><a href="ppc-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
-                        <li><a href="email-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
+                        <li><a href="seo-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-search mr-2 text-green-400"></i> SEO Services</a></li>
+                        <li><a href="social-media-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
+                        <li><a href="content-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
+                        <li><a href="ppc-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-money-bill-wave mr-2 text-red-400"></i> PPC Management</a></li>
+                        <li><a href="email-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-envelope mr-2 text-purple-400"></i> Email Marketing</a></li>
                     </ul>
                 </li>
                 <!-- IT Services Mobile -->
@@ -683,12 +192,12 @@
                         <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
                     <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
-                        <li><a href="our-cloud-solutions.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-cloud mr-2 text-red-400"></i> Cloud Solutions</a></li>
-                        <li><a href="cybersecurity.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-shield-alt mr-2 text-blue-400"></i> Cybersecurity</a></li>
-                        <li><a href="it-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
-                        <li><a href="data-backup-recovery.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-database mr-2 text-indigo-400"></i> Data Backup & Recovery</a></li>
-                        <li><a href="network-solution.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
-                        <li><a href="aws-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
+                        <li><a href="our-cloud-solutions.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-cloud mr-2 text-red-400"></i> Cloud Solutions</a></li>
+                        <li><a href="cybersecurity.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-shield-alt mr-2 text-blue-400"></i> Cybersecurity</a></li>
+                        <li><a href="it-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
+                        <li><a href="data-backup-recovery.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-database mr-2 text-indigo-400"></i> Data Backup & Recovery</a></li>
+                        <li><a href="network-solution.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
+                        <li><a href="aws-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-network-wired mr-2 text-orange-400"></i> Network Solutions</a></li>
                     </ul>
                 </li>
                 <li class="py-2 border-b border-gray-100 last:border-b-0">
@@ -714,19 +223,10 @@
 
 
 
-    <!--Ai developr page start-->
+    <!-- page start-->
 
 
-    <!--End of AI development page-->
-
-    <!-- Main Content (Placeholder) -->
-    <main style="margin-top: 20px; min-height: 80vh; padding: 2rem;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-
-
-        </div>
-    </main>
-
+    <!--End of  page-->
     
     <!-- Footer -->
     <footer>
