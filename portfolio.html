@@ -18,7 +18,339 @@
 
 
 /*...........Start of s page .........*/
+        .portfolio-section {
+            padding: 5rem 1rem;
+            max-width: 1800px;
+            margin: 0 auto;
+            position: relative;
+        }
 
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.75rem;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            transition: var(--transition);
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            color: white;
+        }
+
+        .filter-btn:hover::before, .filter-btn.active::before {
+            width: 100%;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+            transition: var(--transition);
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.2);
+        }
+
+        .portfolio-img-container {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease, filter 0.4s ease;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+            filter: brightness(0.9);
+        }
+
+        .portfolio-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+            z-index: 2;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .portfolio-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .portfolio-description {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .portfolio-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .portfolio-tag {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 0.35rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-tag {
+            background: #cbd5e1;
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .portfolio-link:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        }
+
+        /* Service type colors */
+        .design .portfolio-badge {
+            background: linear-gradient(135deg, #f72585, #b5179e);
+        }
+
+        .design .portfolio-link {
+            background: linear-gradient(135deg, #f72585, #b5179e);
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+        }
+
+        .design .portfolio-link:hover {
+            box-shadow: 0 8px 25px rgba(247, 37, 133, 0.4);
+        }
+
+        .it .portfolio-badge {
+            background: linear-gradient(135deg, #4cc9f0, #4895ef);
+        }
+
+        .it .portfolio-link {
+            background: linear-gradient(135deg, #4cc9f0, #4895ef);
+            box-shadow: 0 4px 15px rgba(76, 201, 240, 0.3);
+        }
+
+        .it .portfolio-link:hover {
+            box-shadow: 0 8px 25px rgba(76, 201, 240, 0.4);
+        }
+
+        .digital .portfolio-badge {
+            background: linear-gradient(135deg, #f8961e, #f3722c);
+        }
+
+        .digital .portfolio-link {
+            background: linear-gradient(135deg, #f8961e, #f3722c);
+            box-shadow: 0 4px 15px rgba(248, 150, 30, 0.3);
+        }
+
+        .digital .portfolio-link:hover {
+            box-shadow: 0 8px 25px rgba(248, 150, 30, 0.4);
+        }
+
+        .ai .portfolio-badge {
+            background: linear-gradient(135deg, #7209b7, #560bad);
+        }
+
+        .ai .portfolio-link {
+            background: linear-gradient(135deg, #7209b7, #560bad);
+            box-shadow: 0 4px 15px rgba(114, 9, 183, 0.3);
+        }
+
+        .ai .portfolio-link:hover {
+            box-shadow: 0 8px 25px rgba(114, 9, 183, 0.4);
+        }
+
+        /* Stats section */
+        .portfolio-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .filter-controls {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1.25rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animation delays for grid items */
+        .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+        .portfolio-item:nth-child(2) { animation-delay: 0.2s; }
+        .portfolio-item:nth-child(3) { animation-delay: 0.3s; }
+        .portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+        .portfolio-item:nth-child(5) { animation-delay: 0.5s; }
+        .portfolio-item:nth-child(6) { animation-delay: 0.6s; }
+        .portfolio-item:nth-child(7) { animation-delay: 0.7s; }
+        .portfolio-item:nth-child(8) { animation-delay: 0.8s; }
 /*...........End of page............*/
 
 
@@ -219,11 +551,174 @@
         </nav>
     </header>
 
-
-
-
-
     <!-- page start-->
+    <section class="portfolio-section">
+        <div class="section-header">
+            <h1 class="section-title">Our Digital Masterpieces</h1>
+            <p class="section-subtitle">Explore our curated collection of innovative solutions that have transformed businesses across industries.</p>
+            
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="it">IT Services</button>
+                <button class="filter-btn" data-filter="digital">Digital Marketing</button>
+                <button class="filter-btn" data-filter="ai">AI Solutions</button>
+            </div>
+        </div>
+
+        <div class="portfolio-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="projects-completed">250+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="happy-clients">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="team-members">50+</div>
+                <div class="stat-label">Expert Team</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="years-experience">12</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-container">
+            <!-- AI Project 1 -->
+            <div class="portfolio-item ai" data-category="ai">
+                <div class="portfolio-img-container">
+                    <img src="https://images.unsplash.com/photo-1677442135136-760c813a743d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="AI Predictive Analytics" class="portfolio-img">
+                    <span class="portfolio-badge">AI Solution</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Predictive Analytics Platform</h3>
+                    <p class="portfolio-description">Advanced machine learning system that forecasts market trends with 92% accuracy, helping financial institutions make data-driven decisions.</p>
+                    <div class="portfolio-meta">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Machine Learning</span>
+                            <span class="portfolio-tag">Big Data</span>
+                            <span class="portfolio-tag">Dashboard</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Project 1 -->
+            <div class="portfolio-item design" data-category="design">
+                <div class="portfolio-img-container">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Brand Identity Suite" class="portfolio-img">
+                    <span class="portfolio-badge">Design</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Enterprise Brand Identity</h3>
+                    <p class="portfolio-description">Comprehensive visual identity system for a Fortune 500 company, including logo, typography, color system, and brand guidelines.</p>
+                    <div class="portfolio-meta">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Logo Design</span>
+                            <span class="portfolio-tag">Branding</span>
+                            <span class="portfolio-tag">Visual Identity</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Project 1 -->
+            <div class="portfolio-item it" data-category="it">
+                <div class="portfolio-img-container">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cloud Migration" class="portfolio-img">
+                    <span class="portfolio-badge">IT Services</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Enterprise Cloud Migration</h3>
+                    <p class="portfolio-description">Seamless transition of legacy systems to hybrid cloud infrastructure with zero downtime, reducing operational costs by 45%.</p>
+                    <div class="portfolio-meta">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">AWS</span>
+                            <span class="portfolio-tag">DevOps</span>
+                            <span class="portfolio-tag">Security</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Marketing Project 1 -->
+            <div class="portfolio-item digital" data-category="digital">
+                <div class="portfolio-img-container">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Campaign" class="portfolio-img">
+                    <span class="portfolio-badge">Digital Marketing</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">AI-Powered Marketing Suite</h3>
+                    <p class="portfolio-description">Omnichannel marketing automation platform that increased conversion rates by 210% through personalized customer journeys.</p>
+                    <div class="portfolio-meta">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Automation</span>
+                            <span class="portfolio-tag">Analytics</span>
+                            <span class="portfolio-tag">Personalization</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Project 2 -->
+            <div class="portfolio-item ai" data-category="ai">
+                <div class="portfolio-img-container">
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="AI Chatbot" class="portfolio-img">
+                    <span class="portfolio-badge">AI Solution</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Enterprise Virtual Assistant</h3>
+                    <p class="portfolio-description">Natural language processing chatbot that handles 85% of customer inquiries, reducing support costs by $2.4M annually.</p>
+                    <div class="portfolio-meta">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">NLP</span>
+                            <span class="portfolio-tag">Chatbot</span>
+                            <span class="portfolio-tag">CX</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Project 2 -->
+            <div class="portfolio-item design" data-category="design">
+                <div class="portfolio-img-container">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="UI/UX Design" class="portfolio-img">
+                    <span class="portfolio-badge">Design</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Fintech Mobile App</h3>
+                    <p class="portfolio-description">Award-winning mobile banking interface that increased user engagement by 300% and reduced support calls by 65%.</p>
+                    <div class="portfolio-meta">
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">UI/UX</span>
+                            <span class="portfolio-tag">Mobile Design</span>
+                            <span class="portfolio-tag">Prototyping</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!--End of  page-->
@@ -333,6 +828,75 @@
     </a>
 
     <script src="js/myjsfile.js"></script>
+
+    <!--portfolio script-->
+ <script>
+        // Portfolio filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filter items
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            item.style.animation = 'fadeInUp 0.6s forwards';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Animate stats counters
+            const animateCounters = () => {
+                const projects = document.getElementById('projects-completed');
+                const clients = document.getElementById('happy-clients');
+                const team = document.getElementById('team-members');
+                const years = document.getElementById('years-experience');
+                
+                animateValue(projects, 0, 250, 2000);
+                animateValue(clients, 0, 98, 1500);
+                animateValue(team, 0, 50, 1800);
+                animateValue(years, 0, 12, 1200);
+            };
+            
+            const animateValue = (element, start, end, duration) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    element.textContent = end >= 100 ? `${value}+` : `${value}%`;
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+            
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            observer.observe(document.querySelector('.portfolio-stats'));
+        });
+    </script>
+    <!--End of script--->
 
 
 </body>
