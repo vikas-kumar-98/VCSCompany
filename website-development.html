@@ -15,10 +15,690 @@
 
 
     <style>
-
+        /* Base Styles */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #f59e0b;
+            --secondary-dark: #e67e22;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --lighter: #ffffff;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #e67e22 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
 /*...........Start of s page .........*/
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            font-weight: 900;
+        }
+        
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        h2 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 35px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-secondary {
+            background: var(--gradient-secondary);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section-title33 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
 
+        .section-title33 h2 {
+           font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        .section-title33 p {
+            max-width: 900px;
+            text-align: center;
+            color: black;
+        }
+
+
+        
+        /* Hero Section */
+        .hero22 {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 60px 0 120px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .hero22::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            animation: fadeIn 1s ease-out 0.1s both;
+            
+        }
+        
+        .hero22 h1 {
+            background: unset;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: white;
+            margin-bottom: 1.8rem;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .hero22 p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            bottom: -50px;
+            width: 45%;
+            max-width: 700px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+        }
+        
+        /* Floating Shapes Animation */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            top: -150px;
+            right: -150px;
+            animation: pulse 8s infinite;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: white;
+            bottom: 100px;
+            left: -100px;
+            animation: pulse 12s infinite 2s;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--lighter);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: AntiqueWhite;
+            opacity: 0.5;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card {
+            background-color: var(--lighter);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--gray-light);
+            transform: translateY(0);
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .service-card:nth-child(1) { animation-delay: 0.2s; }
+        .service-card:nth-child(2) { animation-delay: 0.4s; }
+        .service-card:nth-child(3) { animation-delay: 0.6s; }
+        .service-card:nth-child(4) { animation-delay: 0.8s; }
+        .service-card:nth-child(5) { animation-delay: 1s; }
+        .service-card:nth-child(6) { animation-delay: 1.2s; }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            background-color: var(--primary);
+            transform: rotateY(180deg);
+        }
+        
+        .service-card:hover .service-icon i {
+            color: white;
+        }
+        
+        .service-icon i {
+            font-size: 30px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card h3 {
+            transition: color 0.3s ease;
+
+        }
+        
+        .service-card:hover h3 {
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+            overflow: hidden;
+        }
+        
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+        }
+        
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h2 {
+            text-align: left;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        .about-text h2::after {
+            left: 0;
+            transform: none;
+        }
+        
+        .about-features {
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+        
+        .feature-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .feature-item:nth-child(1) { transition-delay: 0.2s; }
+        .feature-item:nth-child(2) { transition-delay: 0.4s; }
+        .feature-item:nth-child(3) { transition-delay: 0.6s; }
+        
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: var(--lighter);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+        
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .faq-answer-inner {
+            padding: 0 0 20px;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: #f8fafc;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: var(--gradient-secondary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .cta .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta h2::after {
+            background: white;
+        }
+        
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+        
+        .cta .btn {
+            background: white;
+            color: var(--secondary-dark);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta .btn i {
+            color: var(--secondary-dark);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .hero-image {
+                width: 40%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero22 {
+                padding: 120px 0 80px;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 80%;
+                right: auto;
+                bottom: auto;
+                margin: 50px auto 0;
+                animation: float 6s ease-in-out infinite;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-text h2 {
+                text-align: center;
+            }
+            
+            .about-text h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .about-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+            
+            .hero-buttons {
+                gap: 15px;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -225,7 +905,309 @@
 
     <!-- page start-->
 
+    <!-- Hero Section -->
+    <section class="hero22">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Digital Presence</h1>
+                <p>We craft stunning, high-performance websites with end-to-end solutions including design, development, security, hosting, and ongoing management. Your complete web partner for digital success.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> Get Started</a>
+                    <a href="#services" class="btn btn-secondary"><i class="fas fa-laptop-code"></i> Our Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for hero image - replace with actual image -->
+                 <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Campaign" class="portfolio-img">
+                   
+            </div>
+        </div>
+    </section>
 
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title33">
+                <h2 class="htitle2">Our Comprehensive Web Solutions</h2>
+                <p>End-to-end website services engineered for performance, security, and business growth</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Custom Website Design</h3>
+                    <p>Beautiful, responsive designs that captivate your audience and reflect your brand identity across all devices with pixel-perfect precision.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Robust, scalable websites built with clean code using React, Vue, or traditional stacks tailored to your specific requirements.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Web Security</h3>
+                    <p>Comprehensive protection including SSL, firewalls, DDoS mitigation, malware scanning, and regular security audits.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Cloud Hosting</h3>
+                    <p>High-performance cloud hosting with 99.99% uptime, automatic scaling, CDN integration, and nightly backups.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Content Management</h3>
+                    <p>Intuitive CMS solutions (WordPress, custom, or headless) that empower your team to update content effortlessly.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Ongoing Maintenance</h3>
+                    <p>Proactive updates, performance optimization, security patches, and dedicated technical support packages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- Placeholder for about image - replace with actual image -->
+                     <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Campaign" class="portfolio-img">
+                
+                </div>
+                <div class="about-text">
+                    <h2>Why Partner With Us?</h2>
+                    <p>We're not just developers - we're strategic partners in your digital success. Our team combines technical mastery with creative vision to deliver websites that drive real business results.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h4>Performance Optimized</h4>
+                                <p>Every site is built for speed with optimized code, efficient assets, and modern architecture.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div>
+                                <h4>Security First</h4>
+                                <p>We implement robust security measures at every layer to protect your business and customers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4>Ongoing Support</h4>
+                                <p>Dedicated support team available 24/7 to ensure your site always performs at its best.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn"><i class="fas fa-handshake"></i> Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title33">
+                <h2>Frequently Asked Questions</h2>
+                <p>Answers to common questions about our web development services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's included in your website development process?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Our comprehensive process includes discovery and planning, UI/UX design, frontend and backend development, content integration, quality assurance testing, security hardening, performance optimization, and final deployment. We also provide training and documentation for your team.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it typically take to build a website?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Timelines vary based on project complexity:
+                                <br>- Basic brochure sites: 4-6 weeks
+                                <br>- Medium business sites: 8-12 weeks
+                                <br>- Complex web applications: 3-6 months
+                                <br><br>We'll provide a detailed timeline after our initial consultation and requirements gathering.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer ongoing maintenance after launch?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we offer flexible maintenance plans that include:
+                                <br>- Regular software updates
+                                <br>- Security monitoring and patches
+                                <br>- Performance optimization
+                                <br>- Content updates
+                                <br>- Technical support
+                                <br>- Monthly analytics reports
+                                <br><br>Plans start at $99/month and can be customized to your needs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What technologies do you work with?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We're technology-agnostic and choose the best stack for each project:
+                                <br><strong>Frontend:</strong> React, Vue, Angular, Next.js, Gatsby
+                                <br><strong>Backend:</strong> Node.js, Python (Django, Flask), PHP (Laravel), .NET
+                                <br><strong>CMS:</strong> WordPress, Craft, Strapi, Contentful
+                                <br><strong>E-commerce:</strong> Shopify, WooCommerce, Magento, custom solutions
+                                <br><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB
+                                <br><strong>DevOps:</strong> AWS, Google Cloud, Docker, Kubernetes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you ensure my website is secure?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Security is built into every layer of our development process:
+                                <br>- Code reviews and static analysis
+                                <br>- Regular dependency updates
+                                <br>- Web Application Firewall (WAF) configuration
+                                <br>- DDoS protection
+                                <br>- SSL/TLS encryption
+                                <br>- Secure authentication systems
+                                <br>- Regular security audits and penetration testing
+                                <br>- Compliance with OWASP security standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Online Presence?</h2>
+            <p>Schedule a free consultation with our web experts to discuss your project requirements and how we can help achieve your business goals.</p>
+            <a href="mailto:contact@webcraftpro.com" class="btn"><i class="fas fa-envelope"></i> Contact Us Now</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Animate features on scroll
+        const featureItems = document.querySelectorAll('.feature-item');
+        
+        const featureObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        featureItems.forEach(item => {
+            featureObserver.observe(item);
+        });
+        
+        // Animate service cards on scroll
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        serviceCards.forEach(card => {
+            cardObserver.observe(card);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
     <!--End of  page-->
     
     <!-- Footer -->
