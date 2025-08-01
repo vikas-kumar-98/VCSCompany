@@ -18,7 +18,434 @@
 
 
 /*...........Start of s page .........*/
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --success: #38b000;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4);
+            background-color: #f97316;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Why Content Marketing ===== */
+        .why-content {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+        }
+
+        /* ===== Content Quality ===== */
+        .content-quality {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .quality-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: var(--gray);
+        }
+
+        /* ===== SEO Content ===== */
+        .seo-content {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .seo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .seo-feature {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .seo-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .seo-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .seo-feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .seo-feature p {
+            color: var(--gray);
+        }
+
+        /* ===== Content Promotion ===== */
+        .content-promotion {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .promotion-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .method-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .method-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .method-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .method-card p {
+            color: var(--gray);
+        }
+
+        /* ===== FAQ Section ===== */
+        .faq {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f3f5;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.show {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .cta-button.white {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .cta-button.white:hover {
+            background-color: #f1f3f5;
+        }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 1024px) {
+            .hero-image {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                margin-top: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -222,7 +649,369 @@
 
 
     <!-- page start-->
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevate Your Brand with Powerful Content</h1>
+                <p>We create high-quality, SEO-optimized content that engages your audience, builds trust, and drives conversions.</p>
+                <a href="#contact" class="cta-button">Get Your Content Strategy</a>
+            </div>
+            <img src="https://via.placeholder.com/600x400?text=Content+Marketing" alt="Content Marketing" class="hero-image">
+        </div>
+    </section>
 
+    <!-- ===== Why Content Marketing ===== -->
+    <section class="why-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why You Need Professional Content Writing</h2>
+                <p>Quality content is the foundation of digital marketing success.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Improved SEO Rankings</h3>
+                    <p>High-quality content helps you rank higher in search engines, driving organic traffic to your site.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Engaged Audience</h3>
+                    <p>Compelling content keeps visitors on your site longer and encourages social sharing.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Brand Authority</h3>
+                    <p>Regular, valuable content establishes you as an industry leader and builds trust.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Higher Conversions</h3>
+                    <p>Strategic content guides visitors through the buyer's journey, increasing sales.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Quality Backlinks</h3>
+                    <p>Great content earns natural backlinks, improving your domain authority.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost-Effective Marketing</h3>
+                    <p>Content continues working for you long after publication, unlike paid ads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Content Quality ===== -->
+    <section class="content-quality">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Content Quality Standards</h2>
+                <p>We follow a rigorous process to ensure every piece of content delivers maximum value.</p>
+            </div>
+
+            <div class="quality-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Research-Driven</h3>
+                    <p>Every article starts with thorough research using credible sources.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Reader-Focused</h3>
+                    <p>Content is crafted to solve problems and answer questions for your audience.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>SEO-Optimized</h3>
+                    <p>Strategic keyword placement without sacrificing readability.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Engaging Structure</h3>
+                    <p>Clear headings, bullet points, and scannable formatting.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Original & Unique</h3>
+                    <p>Plagiarism-free content with fresh perspectives.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Professional Editing</h3>
+                    <p>Multiple rounds of editing for clarity and accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEO Content ===== -->
+    <section class="seo-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>SEO-Optimized Content Writing</h2>
+                <p>We create content that ranks well and drives organic traffic.</p>
+            </div>
+
+            <div class="seo-features">
+                <div class="seo-feature">
+                    <div class="seo-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Keyword Research</h3>
+                    <p>We identify high-intent keywords with strong commercial value and manageable competition.</p>
+                </div>
+
+                <div class="seo-feature">
+                    <div class="seo-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Strategic Placement</h3>
+                    <p>Keywords are naturally integrated into titles, headings, and throughout the content.</p>
+                </div>
+
+                <div class="seo-feature">
+                    <div class="seo-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Internal Linking</h3>
+                    <p>We build a strong internal link structure to improve site architecture and rankings.</p>
+                </div>
+
+                <div class="seo-feature">
+                    <div class="seo-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Optimization</h3>
+                    <p>All content is optimized for mobile users with proper formatting and fast loading.</p>
+                </div>
+
+                <div class="seo-feature">
+                    <div class="seo-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>Content Freshness</h3>
+                    <p>We regularly update existing content to maintain rankings and relevance.</p>
+                </div>
+
+                <div class="seo-feature">
+                    <div class="seo-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Performance Tracking</h3>
+                    <p>We monitor rankings and traffic to continually refine our approach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Content Promotion ===== -->
+    <section class="content-promotion">
+        <div class="container">
+            <div class="section-title">
+                <h2>How We Promote & Improve Your Content</h2>
+                <p>Creating great content is just the beginning - we ensure it gets seen.</p>
+            </div>
+
+            <div class="promotion-methods">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Technical and on-page SEO to help content rank higher in search results.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Media Promotion</h3>
+                    <p>Strategic sharing across relevant platforms to increase visibility.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Marketing</h3>
+                    <p>Including content in newsletters to drive traffic from subscribers.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Influencer Outreach</h3>
+                    <p>Connecting with industry leaders to share your content.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Forum Participation</h3>
+                    <p>Sharing insights and linking to content where appropriate.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Content Repurposing</h3>
+                    <p>Turning blog posts into videos, infographics, and social media snippets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Content Marketing FAQs</h2>
+                <p>Answers to common questions about our content marketing services.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How often should I publish new content?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Consistency is more important than frequency. For most businesses, we recommend 1-2 high-quality blog posts per week or 2-4 per month. The exact frequency depends on your industry, resources, and goals. We'll create a content calendar tailored to your needs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to see results?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Content marketing is a long-term strategy. You may see initial traffic increases within 3-6 months, but significant results typically appear after 6-12 months of consistent, quality content production. Some competitive industries may take longer.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer content writing for specific industries?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We have writers specializing in tech, healthcare, finance, e-commerce, legal, and more. If you're in a niche industry, we'll match you with a writer who understands your field and can speak authoritatively to your audience.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you ensure content quality?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Every piece goes through our 6-step quality process: research, writing, SEO optimization, editing, fact-checking, and final review. We also use plagiarism checkers and readability tools to maintain high standards.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you update my existing content?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Content refreshing is one of our most valuable services. We'll audit your existing content, identify underperforming pieces, and update them with new information, improved SEO, and better readability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's included in your content marketing packages?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our packages typically include: keyword research, content creation, SEO optimization, basic images, publishing, and performance reports. Higher-tier packages may include content promotion, social media sharing, and email newsletter inclusion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Content Strategy?</h2>
+            <p>Let's create content that engages your audience and grows your business.</p>
+            <a href="#contact" class="cta-button white">Get Started Today</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    });
+                    
+                    // Open current if wasn't active
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('show');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     

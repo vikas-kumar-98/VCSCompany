@@ -18,7 +18,485 @@
 
 
 /*...........Start of s page .........*/
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --secondary: #4cc9f0;
+            --accent: #f72585;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #38b000;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.4);
+            background-color: #ff0676;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Benefits Section ===== */
+        .benefits {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+        }
+
+        /* ===== Our Strategy ===== */
+        .strategy {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .strategy-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: var(--gray);
+        }
+
+        /* ===== Platforms We Cover ===== */
+        .platforms {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .platform-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .platform-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* ===== Tools Section ===== */
+        .tools {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tools-column {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .tools-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+
+        .tools-column h3 i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .tools-list {
+            list-style-type: none;
+        }
+
+        .tools-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+        }
+
+        .tools-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tools-list li i {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== AI Tools Section ===== */
+        .ai-tools {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .ai-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .ai-tool-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .ai-tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .ai-tool-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .ai-tool-card p {
+            color: var(--gray);
+        }
+
+        /* ===== FAQ Section ===== */
+        .faq {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f3f5;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.show {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .cta-button.white {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .cta-button.white:hover {
+            background-color: #f1f3f5;
+        }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 1024px) {
+            .hero-image {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                margin-top: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -222,7 +700,430 @@
 
 
     <!-- page start-->
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Social Media Presence</h1>
+                <p>We craft data-driven social media strategies that increase engagement, grow your audience, and drive real business results.</p>
+                <a href="#contact" class="cta-button">Get Your Free Strategy Session</a>
+            </div>
+            <img src="https://via.placeholder.com/600x400?text=Social+Media+Marketing" alt="Social Media Marketing" class="hero-image">
+        </div>
+    </section>
 
+    <!-- ===== Benefits Section ===== -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Social Media Marketing Matters</h2>
+                <p>Harness the power of social media to grow your brand and connect with your audience.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Increased Brand Awareness</h3>
+                    <p>4.9 billion people use social media worldwide. We help you stand out and get noticed by your ideal customers.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Higher Engagement</h3>
+                    <p>Engaged followers are 3x more likely to purchase. We create content that sparks conversations.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>More Conversions</h3>
+                    <p>Social media drives 31% of all referral traffic. We optimize your profiles to turn followers into customers.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Cost-Effective Advertising</h3>
+                    <p>Social ads cost 62% less than traditional ads with better targeting options. We maximize your ad ROI.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Improved Customer Service</h3>
+                    <p>71% of customers who get a quick response on social are likely to recommend you. We help you respond faster.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Precise Audience Targeting</h3>
+                    <p>Reach exactly who you want with advanced demographic, interest, and behavior targeting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Our Strategy ===== -->
+    <section class="strategy">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Social Media Marketing Process</h2>
+                <p>A proven framework to grow your social media presence strategically.</p>
+            </div>
+
+            <div class="strategy-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Audit & Research</h3>
+                    <p>We analyze your current social presence, competitors, and audience to identify opportunities.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Strategy Development</h3>
+                    <p>We create a customized plan with clear goals, content themes, and posting schedules.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Content Creation</h3>
+                    <p>Our designers and copywriters craft engaging posts tailored to each platform.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Community Building</h3>
+                    <p>We grow your following organically through strategic engagement and partnerships.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Paid Advertising</h3>
+                    <p>We run targeted ad campaigns to amplify your best-performing content.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Analytics & Optimization</h3>
+                    <p>We track performance and continuously refine our approach for better results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Platforms We Cover ===== -->
+    <section class="platforms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Platforms We Specialize In</h2>
+                <p>We tailor strategies for each platform to maximize your results.</p>
+            </div>
+
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>2.9B+ users</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>1.4B+ users</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>900M+ users</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>Twitter (X)</h3>
+                    <p>450M+ users</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube</h3>
+                    <p>2.5B+ users</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>TikTok</h3>
+                    <p>1B+ users</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-pinterest"></i>
+                    </div>
+                    <h3>Pinterest</h3>
+                    <p>450M+ users</p>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-snapchat"></i>
+                    </div>
+                    <h3>Snapchat</h3>
+                    <p>375M+ users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Tools Section ===== -->
+    <section class="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Social Media Tools</h2>
+                <p>We use industry-leading tools to manage, analyze, and optimize your campaigns.</p>
+            </div>
+
+            <div class="tools-container">
+                <div class="tools-column">
+                    <h3><i class="fas fa-pencil-alt"></i> Content Creation</h3>
+                    <ul class="tools-list">
+                        <li><i class="fas fa-check"></i> Canva - Graphic design</li>
+                        <li><i class="fas fa-check"></i> Adobe Creative Suite - Professional design</li>
+                        <li><i class="fas fa-check"></i> CapCut - Video editing</li>
+                        <li><i class="fas fa-check"></i> Loom - Screen recording</li>
+                        <li><i class="fas fa-check"></i> Remove.bg - Background removal</li>
+                    </ul>
+                </div>
+
+                <div class="tools-column">
+                    <h3><i class="fas fa-calendar-alt"></i> Scheduling</h3>
+                    <ul class="tools-list">
+                        <li><i class="fas fa-check"></i> Hootsuite - All-in-one scheduler</li>
+                        <li><i class="fas fa-check"></i> Buffer - Simple scheduling</li>
+                        <li><i class="fas fa-check"></i> Later - Instagram-focused</li>
+                        <li><i class="fas fa-check"></i> Sprout Social - Enterprise solution</li>
+                        <li><i class="fas fa-check"></i> Meta Business Suite - Facebook/Instagram</li>
+                    </ul>
+                </div>
+
+                <div class="tools-column">
+                    <h3><i class="fas fa-chart-bar"></i> Analytics</h3>
+                    <ul class="tools-list">
+                        <li><i class="fas fa-check"></i> Google Analytics - Website traffic</li>
+                        <li><i class="fas fa-check"></i> Iconosquare - Instagram analytics</li>
+                        <li><i class="fas fa-check"></i> Socialbakers - Competitive analysis</li>
+                        <li><i class="fas fa-check"></i> BuzzSumo - Content research</li>
+                        <li><i class="fas fa-check"></i> Brandwatch - Social listening</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AI Tools Section ===== -->
+    <section class="ai-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI-Powered Marketing Tools We Use</h2>
+                <p>Leveraging artificial intelligence to enhance your social media performance.</p>
+            </div>
+
+            <div class="ai-tools-grid">
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ChatGPT</h3>
+                    <p>AI-generated content ideas, captions, and ad copy that resonates with your audience.</p>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Midjourney/DALL-E</h3>
+                    <p>AI-generated visuals and graphics tailored to your brand aesthetic.</p>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Synthesia</h3>
+                    <p>AI video creation with virtual presenters for engaging social content.</p>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Predis.ai</h3>
+                    <p>AI-powered hashtag suggestions and content optimization.</p>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <h3>ManyChat</h3>
+                    <p>AI chatbots for Messenger and Instagram automated responses.</p>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>AdCreative.ai</h3>
+                    <p>AI-generated high-converting social media ad creatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about our social media marketing services.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to see results?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see initial improvements in engagement within 30 days, with significant growth in followers and website traffic within 3-6 months. Paid advertising can produce faster results, while organic growth takes more time to build momentum.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Which platforms should my business be on?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>This depends entirely on your target audience and business goals. After our initial audit, we'll recommend the 2-3 platforms that will give you the best ROI. Generally, B2C businesses thrive on Instagram and TikTok, while B2B companies see better results on LinkedIn and Twitter.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How much does social media marketing cost?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our packages start at $1,500/month for basic management. Comprehensive strategies with content creation and advertising typically range from $3,000-$7,000/month. We customize every proposal based on your specific needs and goals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide content creation?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our in-house creative team handles photography, graphic design, video production, and copywriting. We can also work with your existing content or train your team to create on-brand materials.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you measure success?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We track KPIs like engagement rate, follower growth, website traffic, lead generation, and conversion rates. Every month you'll receive a detailed report showing progress toward your specific business goals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I see examples of your work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! During our consultation, we'll share case studies and examples from clients in similar industries. We protect client confidentiality but can show anonymized performance data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Grow Your Social Media Presence?</h2>
+            <p>Let's discuss how we can develop a custom strategy to achieve your business goals through social media marketing.</p>
+            <a href="#contact" class="cta-button white">Get Started Today</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    });
+                    
+                    // Open current if wasn't active
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('show');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     

@@ -18,7 +18,438 @@
 
 
 /*...........Start of s page .........*/
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --secondary: #7C3AED;
+            --dark: #1F2937;
+            --light: #FFFFFF;
+            --gray: #F3F4F6;
+            --text: #374151;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(37, 99, 235, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--gray);
+            padding: 6rem 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .service-link i {
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .service-card:hover .service-link i {
+            transform: translateX(5px);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--gray);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 250px;
+            transition: all 0.2s ease;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(37, 99, 235, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: var(--light);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            font-size: 3rem;
+            color: rgba(37, 99, 235, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            color: var(--dark);
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .btn-transparent {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid var(--light);
+        }
+
+        .btn-transparent:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.625rem 1.5rem;
+                font-size: 0.875rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -225,7 +656,195 @@
 
     <!-- page start-->
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Professional <span>Game Development</span> Services</h1>
+                    <p>We build high-quality games for all platforms with a focus on performance, engagement, and monetization.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#portfolio" class="btn btn-outline">View Work</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Game Development" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive game development solutions for every stage of your project</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Game Development</h3>
+                    <p>Create engaging games for iOS and Android with optimized performance and monetization strategies.</p>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>PC & Console Development</h3>
+                    <p>High-quality games for Steam, PlayStation, Xbox and Nintendo Switch platforms.</p>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3>VR/AR Development</h3>
+                    <p>Immersive virtual and augmented reality experiences for all major VR platforms.</p>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Game Design</h3>
+                    <p>From concept to prototype, we help shape your game vision with professional design.</p>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Multiplayer Systems</h3>
+                    <p>Scalable backend solutions with matchmaking, leaderboards, and social features.</p>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Monetization Strategy</h3>
+                    <p>Maximize revenue through in-app purchases, ads, subscriptions, and premium models.</p>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work</h2>
+                <p>Explore some of our successful game projects across different platforms</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Space Explorers">
+                    <div class="portfolio-overlay">
+                        <h3>Space Explorers</h3>
+                        <p>VR space adventure game</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Puzzle Masters">
+                    <div class="portfolio-overlay">
+                        <h3>Puzzle Masters</h3>
+                        <p>Mobile puzzle game with 100+ levels</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Racing Legends">
+                    <div class="portfolio-overlay">
+                        <h3>Racing Legends</h3>
+                        <p>Multiplayer racing game</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about working with us</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "GameCraft Studios delivered exceptional quality on our mobile game project. Their attention to detail and technical expertise resulted in a top-performing game."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, Pixel Dreams</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The VR game they developed for us exceeded our expectations and helped secure additional funding for our studio."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Creative Director, Neon Realms</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As an indie studio, working with GameCraft was transformative. They helped us optimize our game while maintaining our creative vision."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Founder, Tiny Giant Games</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Start Your Game Project?</h2>
+            <p>Contact us today to discuss how we can bring your game vision to life</p>
+            <div class="cta-btns">
+                <a href="#" class="btn btn-white">Get a Free Quote</a>
+                <a href="#" class="btn btn-transparent">Contact Our Team</a>
+            </div>
+        </div>
+    </section>
     <!--End of  page-->
     
     <!-- Footer -->
