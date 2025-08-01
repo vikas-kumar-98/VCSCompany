@@ -18,7 +18,532 @@
 
 
 /*...........Start of s page .........*/
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary: #10B981;
+            --dark: #1F2937;
+            --light: #FFFFFF;
+            --gray: #F9FAFB;
+            --text: #374151;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(79, 70, 229, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--gray);
+            padding: 6rem 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Why Email Marketing Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+        }
+
+        /* Tools Section */
+        .tools {
+            background-color: var(--gray);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .tool-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+        }
+
+        .tool-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .tool-card p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* AI Automation Section */
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .ai-feature {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .ai-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .ai-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .ai-content p {
+            color: var(--text-light);
+        }
+
+        /* Roadmap Section */
+        .roadmap {
+            background-color: var(--gray);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 2rem);
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: var(--gray);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: rgba(249, 250, 251, 0.8);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            background: var(--light);
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--light);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 4rem);
+                margin-left: 3rem !important;
+            }
+            
+            .timeline-dot {
+                left: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.625rem 1.5rem;
+                font-size: 0.875rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -222,7 +747,374 @@
 
 
     <!-- page start-->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your Business with <span>Email Marketing</span></h1>
+                    <p>Powerful email marketing strategies that drive engagement, increase conversions, and grow your business revenue.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#services" class="btn btn-outline">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Email Marketing" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Why Email Marketing Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Email Marketing?</h2>
+                <p>Email marketing remains one of the most effective digital marketing channels with the highest ROI</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High ROI</h3>
+                    <p>For every $1 spent, email marketing generates $42 in return, making it one of the most cost-effective marketing channels.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Targeted Messaging</h3>
+                    <p>Reach the right audience with personalized content tailored to their interests and behaviors.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Customer Retention</h3>
+                    <p>Nurture relationships with existing customers and keep your brand top-of-mind.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Measurable Results</h3>
+                    <p>Track opens, clicks, conversions, and other key metrics to optimize your campaigns.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Automation</h3>
+                    <p>Set up automated workflows that engage customers at the perfect moment.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile-Friendly</h3>
+                    <p>With most emails opened on mobile devices, you can reach customers wherever they are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="section tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Email Marketing Tools We Use</h2>
+                <p>We work with industry-leading platforms to deliver exceptional results</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/02/Mailchimp-Logo.png" alt="Mailchimp" class="tool-logo">
+                    <h3>Mailchimp</h3>
+                    <p>All-in-one marketing platform with powerful automation and analytics</p>
+                </div>
+                
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Klaviyo_logo_orange.png" alt="Klaviyo" class="tool-logo">
+                    <h3>Klaviyo</h3>
+                    <p>Ecommerce-focused email marketing with advanced segmentation</p>
+                </div>
+                
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/ActiveCampaign_logo.png" alt="ActiveCampaign" class="tool-logo">
+                    <h3>ActiveCampaign</h3>
+                    <p>CRM and marketing automation with powerful workflows</p>
+                </div>
+                
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/ConvertKit_logo.png" alt="ConvertKit" class="tool-logo">
+                    <h3>ConvertKit</h3>
+                    <p>Creator-focused email marketing with visual automation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Automation Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI-Powered Email Automation</h2>
+                <p>Leverage artificial intelligence to optimize your email marketing campaigns</p>
+            </div>
+            
+            <div class="ai-features">
+                <div class="ai-feature">
+                    <div class="ai-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Smart Segmentation</h3>
+                        <p>AI analyzes customer behavior to automatically segment your audience for hyper-targeted campaigns.</p>
+                    </div>
+                </div>
+                
+                <div class="ai-feature">
+                    <div class="ai-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Optimal Send Times</h3>
+                        <p>Machine learning determines the best time to send each email for maximum open rates.</p>
+                    </div>
+                </div>
+                
+                <div class="ai-feature">
+                    <div class="ai-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Content Optimization</h3>
+                        <p>AI suggests subject lines, content, and CTAs that perform best with your audience.</p>
+                    </div>
+                </div>
+                
+                <div class="ai-feature">
+                    <div class="ai-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="ai-content">
+                        <h3>Predictive Analytics</h3>
+                        <p>Forecast campaign performance and customer lifetime value with advanced algorithms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section roadmap">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Email Marketing Process</h2>
+                <p>A proven roadmap to email marketing success</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 1</div>
+                        <h3>Strategy & Planning</h3>
+                        <p>We analyze your business goals, audience, and competitors to develop a customized email marketing strategy.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 2</div>
+                        <h3>List Building & Segmentation</h3>
+                        <p>We help grow your email list and segment it for targeted messaging based on customer behavior and preferences.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 3</div>
+                        <h3>Campaign Creation</h3>
+                        <p>Our designers and copywriters create engaging, mobile-responsive emails that convert.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 4</div>
+                        <h3>Automation Setup</h3>
+                        <p>We implement automated workflows for welcome series, abandoned carts, and other key customer journeys.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 5</div>
+                        <h3>Testing & Optimization</h3>
+                        <p>Continuous A/B testing and performance analysis to improve results over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Answers to common questions about our email marketing services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much does email marketing cost?
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our email marketing services start at $1,500/month for basic campaigns. Pricing depends on list size, frequency, and complexity of automation. We offer custom packages tailored to your business needs and budget.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does it take to see results?
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see measurable improvements within 30-60 days. Immediate metrics like open rates often improve quickly, while revenue impact typically becomes significant after 3-6 months of consistent execution.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need an existing email list?
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, we can help you build an email list from scratch using lead magnets, website opt-ins, and other proven list-building strategies. However, if you have an existing list, we'll help you clean and segment it for better performance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What email marketing platform do you recommend?
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The best platform depends on your business type and goals. For ecommerce, we recommend Klaviyo. For B2B or service businesses, ActiveCampaign is excellent. Mailchimp works well for small businesses starting with email marketing.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do you measure success?
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We track key metrics like open rates, click-through rates, conversion rates, and revenue generated. Ultimately, we measure success by the ROI our email marketing delivers for your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Other Marketing Services</h2>
+                <p>Complement your email marketing with these additional services</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Services</h3>
+                    <p>Improve your website's visibility in search engines and drive organic traffic.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google Ads</h3>
+                    <p>Run targeted pay-per-click campaigns that convert visitors into customers.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Engage your audience and build brand awareness on social platforms.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>Content Marketing</h3>
+                    <p>Create valuable content that attracts and retains your target audience.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Grow Your Business with Email Marketing?</h2>
+            <p>Schedule a free consultation with our email marketing experts to discuss your goals and how we can help.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: white;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     

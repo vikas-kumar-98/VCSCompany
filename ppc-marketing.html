@@ -18,7 +18,482 @@
 
 
 /*...........Start of s page .........*/
+        :root {
+            --primary: #4285F4; /* Google Blue */
+            --primary-dark: #3367D6;
+            --secondary: #34A853; /* Google Green */
+            --accent: #FBBC05; /* Google Yellow */
+            --red: #EA4335; /* Google Red */
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --light-gray: #e8eaed;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(251, 188, 5, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(251, 188, 5, 0.4);
+            background-color: #f8b400;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Benefits Section ===== */
+        .benefits {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+        }
+
+        /* ===== Platforms Section ===== */
+        .platforms {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .platform-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .platform-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .platform-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .platform-features {
+            list-style-type: none;
+            text-align: left;
+        }
+
+        .platform-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .platform-features li:last-child {
+            border-bottom: none;
+        }
+
+        .platform-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Our Approach ===== */
+        .approach {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .approach-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: var(--gray);
+        }
+
+        /* ===== PPC Services ===== */
+        .services {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style-type: none;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FAQ Section ===== */
+        .faq {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f3f5;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.show {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .cta-button.white {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .cta-button.white:hover {
+            background-color: #f1f3f5;
+        }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 1024px) {
+            .hero-image {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                margin-top: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -222,7 +697,441 @@
 
 
     <!-- page start-->
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Expert PPC Marketing Services</h1>
+                <p>Maximize your ad spend with our data-driven paid advertising strategies across all major platforms.</p>
+                <a href="#contact" class="cta-button">Get Free Audit</a>
+            </div>
+            <img src="https://via.placeholder.com/600x400?text=PPC+Marketing+Dashboard" alt="PPC Marketing Dashboard" class="hero-image">
+        </div>
+    </section>
 
+    <!-- ===== Benefits Section ===== -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Invest in PPC Advertising?</h2>
+                <p>Paid advertising delivers immediate, measurable results when done correctly.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Immediate Results</h3>
+                    <p>Unlike SEO, PPC delivers traffic the same day your campaign launches.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Precise Targeting</h3>
+                    <p>Reach specific demographics, locations, and even device types.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Scalable Growth</h3>
+                    <p>Increase or decrease budgets based on performance and seasonality.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Controlled Budgets</h3>
+                    <p>You decide exactly how much to spend each day or month.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Competitive Advantage</h3>
+                    <p>Outbid competitors for prime ad placements.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Measurable ROI</h3>
+                    <p>Track every dollar spent to revenue generated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Platforms Section ===== -->
+    <section class="platforms">
+        <div class="container">
+            <div class="section-title">
+                <h2>PPC Platforms We Master</h2>
+                <p>We manage campaigns across all major advertising platforms.</p>
+            </div>
+
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google Ads</h3>
+                    <p>Search, Display, Shopping, and YouTube advertising</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Search Network campaigns</li>
+                        <li><i class="fas fa-check"></i> Display Network ads</li>
+                        <li><i class="fas fa-check"></i> Shopping campaigns</li>
+                        <li><i class="fas fa-check"></i> YouTube video ads</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3>Meta Ads</h3>
+                    <p>Facebook, Instagram, and Messenger advertising</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Image and video ads</li>
+                        <li><i class="fas fa-check"></i> Carousel and collection ads</li>
+                        <li><i class="fas fa-check"></i> Lead generation ads</li>
+                        <li><i class="fas fa-check"></i> Messenger ads</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn Ads</h3>
+                    <p>B2B targeting and professional network advertising</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Sponsored Content</li>
+                        <li><i class="fas fa-check"></i> Message Ads</li>
+                        <li><i class="fas fa-check"></i> Dynamic Ads</li>
+                        <li><i class="fas fa-check"></i> Text Ads</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>Twitter (X) Ads</h3>
+                    <p>Promoted tweets, accounts, and trends</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Promoted Tweets</li>
+                        <li><i class="fas fa-check"></i> Follower campaigns</li>
+                        <li><i class="fas fa-check"></i> Trend Takeovers</li>
+                        <li><i class="fas fa-check"></i> Conversation ads</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>TikTok Ads</h3>
+                    <p>Short-form video advertising</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> In-Feed ads</li>
+                        <li><i class="fas fa-check"></i> Brand Takeovers</li>
+                        <li><i class="fas fa-check"></i> TopView ads</li>
+                        <li><i class="fas fa-check"></i> Branded Effects</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft Ads</h3>
+                    <p>Bing, Yahoo, and partner network ads</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Search ads</li>
+                        <li><i class="fas fa-check"></i> Shopping campaigns</li>
+                        <li><i class="fas fa-check"></i> Audience ads</li>
+                        <li><i class="fas fa-check"></i> LinkedIn profile targeting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Our Approach ===== -->
+    <section class="approach">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our PPC Management Process</h2>
+                <p>A proven framework to maximize your advertising ROI.</p>
+            </div>
+
+            <div class="approach-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Strategy Development</h3>
+                    <p>We analyze your business goals and create a customized PPC strategy.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Keyword & Audience Research</h3>
+                    <p>Identify high-intent keywords and precise audience segments.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Campaign Setup</h3>
+                    <p>Structure campaigns for optimal performance and easy scaling.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Ad Creation</h3>
+                    <p>Compelling ads tailored to each platform and audience.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Landing Page Optimization</h3>
+                    <p>Ensure seamless user experience from click to conversion.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Ongoing Optimization</h3>
+                    <p>Continuous testing and refinement for better results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PPC Services ===== -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our PPC Marketing Services</h2>
+                <p>Comprehensive paid advertising solutions for all business needs.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Search Advertising</h3>
+                    <p>Text ads on Google, Bing, and other search engines.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Keyword research</li>
+                        <li><i class="fas fa-check"></i> Ad copywriting</li>
+                        <li><i class="fas fa-check"></i> Bid management</li>
+                        <li><i class="fas fa-check"></i> Negative keywords</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Display Advertising</h3>
+                    <p>Banner and visual ads across millions of websites.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Banner ad design</li>
+                        <li><i class="fas fa-check"></i> Placement targeting</li>
+                        <li><i class="fas fa-check"></i> Remarketing</li>
+                        <li><i class="fas fa-check"></i> Audience targeting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Shopping Ads</h3>
+                    <p>Product listings on Google and other marketplaces.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Product feed setup</li>
+                        <li><i class="fas fa-check"></i> Campaign structuring</li>
+                        <li><i class="fas fa-check"></i> Competitor analysis</li>
+                        <li><i class="fas fa-check"></i> Performance optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Advertising</h3>
+                    <p>YouTube, TikTok, and other video platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Video ad production</li>
+                        <li><i class="fas fa-check"></i> Targeting strategy</li>
+                        <li><i class="fas fa-check"></i> Bumper/skippable ads</li>
+                        <li><i class="fas fa-check"></i> Performance tracking</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Social Media Ads</h3>
+                    <p>Paid campaigns on all major social platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Facebook/Instagram</li>
+                        <li><i class="fas fa-check"></i> LinkedIn/Twitter</li>
+                        <li><i class="fas fa-check"></i> Pinterest/Snapchat</li>
+                        <li><i class="fas fa-check"></i> TikTok advertising</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-retweet"></i>
+                    </div>
+                    <h3>Remarketing</h3>
+                    <p>Re-engage visitors who didn't convert.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Audience segmentation</li>
+                        <li><i class="fas fa-check"></i> Cross-platform retargeting</li>
+                        <li><i class="fas fa-check"></i> Dynamic product ads</li>
+                        <li><i class="fas fa-check"></i> Lookalike audiences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>PPC Marketing FAQs</h2>
+                <p>Answers to common questions about our PPC services.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How much does PPC management cost?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our management fees typically range from 15-30% of ad spend, depending on campaign complexity. For smaller budgets (<$5k/month), we often recommend flat-rate packages starting at $750/month. We'll provide transparent pricing after reviewing your business goals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly will I see results?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>PPC can drive traffic immediately, but it typically takes 2-4 weeks to optimize campaigns for maximum performance. During this learning phase, we test different strategies to identify what works best for your business before scaling up.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's your minimum ad spend requirement?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We work with businesses spending at least $1,000/month on ads. For smaller budgets, we recommend focusing on one platform initially. Enterprise clients typically invest $10,000+/month across multiple channels.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you measure PPC success?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We track KPIs like cost per acquisition (CPA), return on ad spend (ROAS), conversion rate, and quality score. Every client receives a monthly performance report with actionable insights.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you work with e-commerce businesses?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We specialize in e-commerce PPC, including Google Shopping, dynamic remarketing, and social media conversion campaigns. We'll integrate with your platform (Shopify, WooCommerce, etc.) for accurate tracking.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you improve my existing campaigns?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We start with a free audit of your current campaigns to identify optimization opportunities. Common improvements include better structure, refined targeting, improved ad copy, and enhanced tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Scale Your Business with PPC?</h2>
+            <p>Let's discuss how we can drive more qualified leads and sales through paid advertising.</p>
+            <a href="#contact" class="cta-button white">Get Your Free Strategy Session</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    });
+                    
+                    // Open current if wasn't active
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('show');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     
