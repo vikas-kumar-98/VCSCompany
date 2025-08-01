@@ -19,490 +19,315 @@
 
 /*...........Start of s page .........*/
         :root {
-            --primary: #0066ff;
-            --primary-dark: #0047b3;
-            --secondary: #00cc99;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --danger: #ff4d4d;
-            --warning: #ffcc00;
+            --shieldstack-primary: #2563eb;
+            --shieldstack-dark: #1e40af;
+            --shieldstack-light: #93c5fd;
+            --shieldstack-accent: #f59e0b;
+            --shieldstack-danger: #dc2626;
+            --shieldstack-success: #10b981;
+            --shieldstack-gray-100: #f3f4f6;
+            --shieldstack-gray-800: #1f2937;
         }
 
-        * {
+        .shieldstack-body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--shieldstack-gray-800);
+            background-color: #f8fafc;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
         }
 
-
-        .container {
+        .shieldstack-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0rem;
+            padding: 0 20px;
         }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        .shieldstack-hero {
+            background: linear-gradient(135deg, var(--shieldstack-primary) 0%, var(--shieldstack-dark) 100%);
             color: white;
-            padding: 5rem 2rem;
+            padding: 80px 0;
             border-radius: 0 0 20px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-            opacity: 0.3;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: white;
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 2;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.1);
-            border-color: rgba(0, 102, 255, 0.2);
-        }
-
-        .service-card::after {
+        .shieldstack-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .service-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            color: var(--secondary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Threat Visualization */
-        .threat-section {
-            background-color: white;
-            border-radius: 15px;
-            padding: 3rem;
-            margin: 4rem 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .threat-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--dark);
-        }
-
-        .threat-visualization {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .threat-item {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-left: 5px solid var(--danger);
-        }
-
-        .threat-item:nth-child(2) {
-            border-left-color: var(--warning);
-        }
-
-        .threat-item:nth-child(3) {
-            border-left-color: #9933ff;
-        }
-
-        .threat-item:nth-child(4) {
-            border-left-color: #00cc66;
-        }
-
-        .threat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .threat-icon {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--danger);
-        }
-
-        .threat-item:nth-child(2) .threat-icon {
-            color: var(--warning);
-        }
-
-        .threat-item:nth-child(3) .threat-icon {
-            color: #9933ff;
-        }
-
-        .threat-item:nth-child(4) .threat-icon {
-            color: #00cc66;
-        }
-
-        .threat-item h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .threat-item p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Security Roadmap */
-        .roadmap-section {
-            margin: 4rem 0;
-        }
-
-        .roadmap-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--dark);
-        }
-
-        .roadmap-container {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .roadmap-line {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-            z-index: 1;
-        }
-
-        .roadmap-steps {
-            position: relative;
-            z-index: 2;
-        }
-
-        .roadmap-step {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .roadmap-step:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .step-content {
-            width: calc(50% - 2rem);
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .step-content::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            transform: translateY(-50%);
-        }
-
-        .roadmap-step:nth-child(odd) .step-content::after {
-            right: -30px;
-        }
-
-        .roadmap-step:nth-child(even) .step-content::after {
-            left: -30px;
-        }
-
-        .step-number {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            box-shadow: 0 3px 10px rgba(0, 102, 255, 0.3);
-        }
-
-        .step-content h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        /* Database Security */
-        .database-section {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
-            padding: 4rem 2rem;
-            border-radius: 15px;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .database-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            right: 0;
+            bottom: 0;
             background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
             opacity: 0.5;
         }
 
-        .database-section h2 {
+        .shieldstack-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            position: relative;
         }
 
-        .security-rules {
+        .shieldstack-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .shieldstack-hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Service Cards */
+        .shieldstack-services {
+            padding: 80px 0;
+        }
+
+        .shieldstack-section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            position: relative;
+            color: var(--shieldstack-dark);
+        }
+
+        .shieldstack-section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--shieldstack-accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .shieldstack-service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .shieldstack-service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .shieldstack-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--shieldstack-light);
+        }
+
+        .shieldstack-service-icon {
+            background: linear-gradient(135deg, var(--shieldstack-primary) 0%, var(--shieldstack-dark) 100%);
+            color: white;
+            font-size: 2rem;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 15px auto 20px;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .shieldstack-service-content {
+            padding: 0 25px 30px;
+            text-align: center;
+        }
+
+        .shieldstack-service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--shieldstack-dark);
+        }
+
+        /* Attack Roadmap */
+        .shieldstack-roadmap {
+            background-color: var(--shieldstack-gray-100);
+            padding: 80px 0;
             position: relative;
         }
 
-        .security-rule {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .shieldstack-roadmap-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .shieldstack-attack-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .shieldstack-attack-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--shieldstack-danger);
             transition: all 0.3s ease;
         }
 
-        .security-rule:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .shieldstack-attack-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .rule-icon {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
+        .shieldstack-attack-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
 
-        .security-rule h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+        .shieldstack-attack-title i {
+            margin-right: 10px;
+            color: var(--shieldstack-danger);
         }
 
-        .security-rule p {
-            opacity: 0.8;
-            font-size: 0.9rem;
+        /* Database Security */
+        .shieldstack-database {
+            padding: 80px 0;
+        }
+
+        .shieldstack-db-rules {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .shieldstack-db-rule {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .shieldstack-db-rule:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .shieldstack-db-icon {
+            background: var(--shieldstack-success);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
 
         /* FAQ Section */
-        .faq-section {
-            margin: 4rem 0;
+        .shieldstack-faq {
+            background-color: var(--shieldstack-gray-100);
+            padding: 80px 0;
         }
 
-        .faq-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--dark);
-        }
-
-        .faq-container {
+        .shieldstack-accordion {
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .faq-item {
-            margin-bottom: 1rem;
-            border-radius: 10px;
+        .shieldstack-accordion-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .faq-question {
-            background: white;
-            padding: 1.5rem;
+        .shieldstack-accordion-header {
+            padding: 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            transition: all 0.3s ease;
+            background: white;
+            transition: background 0.2s ease;
         }
 
-        .faq-question:hover {
-            background: #f5f7ff;
+        .shieldstack-accordion-header:hover {
+            background: var(--shieldstack-gray-100);
         }
 
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--primary);
-            transition: all 0.3s ease;
+        .shieldstack-accordion-header i {
+            transition: transform 0.3s ease;
         }
 
-        .faq-question.active::after {
-            content: '-';
+        .shieldstack-accordion-item.active .shieldstack-accordion-header i {
+            transform: rotate(180deg);
         }
 
-        .faq-answer {
-            background: #f8f9fa;
+        .shieldstack-accordion-content {
+            padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.3s ease, padding 0.3s ease;
         }
 
-        .faq-answer-content {
-            padding: 0 1.5rem 1.5rem;
+        .shieldstack-accordion-item.active .shieldstack-accordion-content {
+            padding: 0 20px 20px;
+            max-height: 500px;
         }
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .hero h1 {
+            .shieldstack-hero-title {
                 font-size: 2.5rem;
             }
-
-            .roadmap-step, .roadmap-step:nth-child(even) {
-                flex-direction: column;
+            
+            .shieldstack-hero-subtitle {
+                font-size: 1.1rem;
             }
-
-            .step-content {
-                width: 100%;
-                margin-bottom: 1rem;
+            
+            .shieldstack-section-title {
+                font-size: 2rem;
             }
+        }
 
-            .step-content::after {
-                display: none;
+        @media (max-width: 480px) {
+            .shieldstack-hero {
+                padding: 60px 0;
             }
-
-            .roadmap-line {
-                left: 20px;
+            
+            .shieldstack-hero-title {
+                font-size: 2rem;
             }
-
-            .roadmap-step:nth-child(odd) .step-content, 
-            .roadmap-step:nth-child(even) .step-content {
-                margin-left: 40px;
+            
+            .shieldstack-service-grid {
+                grid-template-columns: 1fr;
             }
         }
 /*...........End of page............*/
@@ -706,315 +531,288 @@
     </header>
 
     <!-- page start-->
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Advanced Cybersecurity Protection</h1>
-            <p>Enterprise-grade security solutions powered by AI and machine learning to protect your digital assets from evolving threats</p>
-            <button class="cta-button">Get Security Audit</button>
-        </section>
+   <!-- Hero Section -->
+    <section class="shieldstack-hero">
+        <div class="shieldstack-container">
+            <div class="shieldstack-hero-content">
+                <h1 class="shieldstack-hero-title">Advanced Cybersecurity Protection</h1>
+                <p class="shieldstack-hero-subtitle">Comprehensive security solutions tailored to protect your websites, applications, and databases from evolving threats with our cutting-edge defense systems.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Services Grid -->
-        <section>
-            <h2 style="text-align: center; margin: 3rem 0; font-size: 2rem;">Our Comprehensive Security Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
+    <!-- Services Section -->
+    <section class="shieldstack-services">
+        <div class="shieldstack-container">
+            <h2 class="shieldstack-section-title">Our Security Services</h2>
+            <div class="shieldstack-service-grid">
+                <!-- Service 1 -->
+                <div class="shieldstack-service-card">
+                    <div class="shieldstack-service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Web Application Security</h3>
-                    <p>Protect your web applications from OWASP Top 10 vulnerabilities with our multi-layered defense system.</p>
-                    <ul class="service-features">
-                        <li>Real-time threat detection</li>
-                        <li>WAF with custom rulesets</li>
-                        <li>Automated vulnerability scanning</li>
-                        <li>DDoS mitigation</li>
-                        <li>API security gateway</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                    <div class="shieldstack-service-content">
+                        <h3 class="shieldstack-service-title">Web Application Firewall</h3>
+                        <p>Advanced WAF with machine learning to detect and block malicious traffic before it reaches your applications.</p>
                     </div>
-                    <h3>Mobile App Security</h3>
-                    <p>End-to-end protection for iOS and Android applications with runtime protection.</p>
-                    <ul class="service-features">
-                        <li>Binary code obfuscation</li>
-                        <li>Tamper detection</li>
-                        <li>Secure data storage</li>
-                        <li>Certificate pinning</li>
-                        <li>Anti-debugging</li>
-                    </ul>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Database Protection</h3>
-                    <p>Advanced security for your sensitive data with real-time monitoring and encryption.</p>
-                    <ul class="service-features">
-                        <li>Database activity monitoring</li>
-                        <li>Field-level encryption</li>
-                        <li>SQL injection prevention</li>
-                        <li>Masking & anonymization</li>
-                        <li>Backup encryption</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Infrastructure</h3>
-                    <p>Secure your cloud environments across AWS, Azure, and Google Cloud Platform.</p>
-                    <ul class="service-features">
-                        <li>CSPM (Cloud Security Posture Management)</li>
-                        <li>IAM security</li>
-                        <li>Container security</li>
-                        <li>Serverless protection</li>
-                        <li>Cloud-native firewall</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Threat Visualization -->
-        <section class="threat-section">
-            <h2>Threats We Neutralize</h2>
-            <div class="threat-visualization">
-                <div class="threat-item">
-                    <div class="threat-icon">
-                        <i class="fas fa-bug"></i>
-                    </div>
-                    <h3>Zero-Day Exploits</h3>
-                    <p>Our behavior-based detection identifies and blocks previously unknown vulnerabilities before patches are available.</p>
-                </div>
-
-                <div class="threat-item">
-                    <div class="threat-icon">
-                        <i class="fas fa-user-secret"></i>
-                    </div>
-                    <h3>Advanced Persistent Threats</h3>
-                    <p>Multi-stage detection system identifies sophisticated, long-term attack campaigns.</p>
-                </div>
-
-                <div class="threat-item">
-                    <div class="threat-icon">
+                
+                <!-- Service 2 -->
+                <div class="shieldstack-service-card">
+                    <div class="shieldstack-service-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <h3>Ransomware</h3>
-                    <p>File integrity monitoring and behavior analysis prevents encryption attacks.</p>
+                    <div class="shieldstack-service-content">
+                        <h3 class="shieldstack-service-title">Penetration Testing</h3>
+                        <p>Simulated cyber attacks by our certified ethical hackers to identify vulnerabilities in your systems.</p>
+                    </div>
                 </div>
-
-                <div class="threat-item">
-                    <div class="threat-icon">
-                        <i class="fas fa-network-wired"></i>
+                
+                <!-- Service 3 -->
+                <div class="shieldstack-service-card">
+                    <div class="shieldstack-service-icon">
+                        <i class="fas fa-database"></i>
                     </div>
-                    <h3>Supply Chain Attacks</h3>
-                    <p>Dependency scanning and SBOM analysis protects against compromised third-party components.</p>
+                    <div class="shieldstack-service-content">
+                        <h3 class="shieldstack-service-title">Database Encryption</h3>
+                        <p>End-to-end encryption for sensitive data with proper key management and access controls.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Security Roadmap -->
-        <section class="roadmap-section">
-            <h2>Our Security Implementation Roadmap</h2>
-            <div class="roadmap-container">
-                <div class="roadmap-line"></div>
-                <div class="roadmap-steps">
-                    <div class="roadmap-step">
-                        <div class="step-content">
-                            <div class="step-number">1</div>
-                            <h3>Threat Assessment & Analysis</h3>
-                            <p>Comprehensive security audit including penetration testing, code review, and infrastructure scanning to identify vulnerabilities.</p>
-                        </div>
+                
+                <!-- Service 4 -->
+                <div class="shieldstack-service-card">
+                    <div class="shieldstack-service-icon">
+                        <i class="fas fa-eye"></i>
                     </div>
-
-                    <div class="roadmap-step">
-                        <div class="step-content">
-                            <div class="step-number">2</div>
-                            <h3>Security Architecture Design</h3>
-                            <p>Custom security blueprint tailored to your tech stack with defense-in-depth approach and zero-trust principles.</p>
-                        </div>
+                    <div class="shieldstack-service-content">
+                        <h3 class="shieldstack-service-title">24/7 Monitoring</h3>
+                        <p>Continuous security monitoring with real-time alerts and automated threat response systems.</p>
                     </div>
-
-                    <div class="roadmap-step">
-                        <div class="step-content">
-                            <div class="step-number">3</div>
-                            <h3>Implementation & Hardening</h3>
-                            <p>Deployment of security controls including WAF, EDR, SIEM, and encryption with strict configuration standards.</p>
-                        </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="shieldstack-service-card">
+                    <div class="shieldstack-service-icon">
+                        <i class="fas fa-user-shield"></i>
                     </div>
-
-                    <div class="roadmap-step">
-                        <div class="step-content">
-                            <div class="step-number">4</div>
-                            <h3>Continuous Monitoring & Response</h3>
-                            <p>24/7 security operations with AI-powered anomaly detection and dedicated incident response team.</p>
-                        </div>
+                    <div class="shieldstack-service-content">
+                        <h3 class="shieldstack-service-title">Access Management</h3>
+                        <p>Implement Zero Trust architecture with multi-factor authentication and least privilege access.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="shieldstack-service-card">
+                    <div class="shieldstack-service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="shieldstack-service-content">
+                        <h3 class="shieldstack-service-title">Cloud Security</h3>
+                        <p>Comprehensive protection for cloud environments with configuration auditing and data loss prevention.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Database Security -->
-        <section class="database-section">
-            <h2>Enterprise Database Security Framework</h2>
-            <div class="security-rules">
-                <div class="security-rule">
-                    <div class="rule-icon">
-                        <i class="fas fa-fingerprint"></i>
-                    </div>
-                    <h3>Fine-Grained Access Control</h3>
-                    <p>Role-based access with attribute-based conditions and just-in-time privilege elevation.</p>
+    <!-- Attack Roadmap Section -->
+    <section class="shieldstack-roadmap">
+        <div class="shieldstack-container">
+            <h2 class="shieldstack-section-title">Threats We Protect Against</h2>
+            <div class="shieldstack-attack-list">
+                <!-- Attack 1 -->
+                <div class="shieldstack-attack-item">
+                    <h3 class="shieldstack-attack-title"><i class="fas fa-code"></i> SQL Injection</h3>
+                    <p>Prevented through prepared statements, stored procedures, and strict input validation with our proprietary filtering algorithms.</p>
                 </div>
-
-                <div class="security-rule">
-                    <div class="rule-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <h3>Advanced Encryption</h3>
-                    <p>Transparent data encryption with customer-managed keys and hardware security modules.</p>
+                
+                <!-- Attack 2 -->
+                <div class="shieldstack-attack-item">
+                    <h3 class="shieldstack-attack-title"><i class="fas fa-crosshairs"></i> DDoS Attacks</h3>
+                    <p>Mitigated using our global network of scrubbing centers that can absorb attacks exceeding 2Tbps.</p>
                 </div>
-
-                <div class="security-rule">
-                    <div class="rule-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <h3>Immutable Audit Logs</h3>
-                    <p>Tamper-proof logging of all database activities with blockchain-based verification.</p>
+                
+                <!-- Attack 3 -->
+                <div class="shieldstack-attack-item">
+                    <h3 class="shieldstack-attack-title"><i class="fas fa-skull"></i> Zero-Day Exploits</h3>
+                    <p>Protected through behavior-based detection and virtual patching until official fixes are available.</p>
                 </div>
-
-                <div class="security-rule">
-                    <div class="rule-icon">
-                        <i class="fas fa-mask"></i>
-                    </div>
-                    <h3>Dynamic Data Masking</h3>
-                    <p>Real-time obfuscation of sensitive data based on user permissions and context.</p>
+                
+                <!-- Attack 4 -->
+                <div class="shieldstack-attack-item">
+                    <h3 class="shieldstack-attack-title"><i class="fas fa-envelope"></i> Phishing</h3>
+                    <p>Combated with advanced email filtering, domain monitoring, and employee awareness training.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How does your solution differ from traditional security services?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Our solution combines AI-driven threat detection with human expertise, offering real-time adaptive protection that evolves with the threat landscape. Unlike traditional signature-based systems, we use behavioral analysis to detect anomalies and prevent zero-day attacks.</p>
-                        </div>
-                    </div>
+                
+                <!-- Attack 5 -->
+                <div class="shieldstack-attack-item">
+                    <h3 class="shieldstack-attack-title"><i class="fas fa-user-secret"></i> Insider Threats</h3>
+                    <p>Detected through user behavior analytics and strict access controls with activity logging.</p>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What compliance standards do you support?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>We fully support GDPR, CCPA, HIPAA, PCI DSS 4.0, SOC 2 Type II, ISO 27001, and NIST frameworks. Our platform includes automated compliance reporting and evidence collection to simplify audits.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How quickly can you detect and respond to breaches?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Our average detection time is under 15 minutes for critical threats, with automated containment initiated within 5 minutes of detection. For severe incidents, our response team is engaged immediately with a 1-hour maximum response time SLA.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Do you provide security training for our developers?
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            <p>Yes, we offer customized secure coding training programs with hands-on labs, CTF exercises, and real-world attack simulations. Our training covers OWASP Top 10, API security, cloud security, and threat modeling.</p>
-                        </div>
-                    </div>
+                
+                <!-- Attack 6 -->
+                <div class="shieldstack-attack-item">
+                    <h3 class="shieldstack-attack-title"><i class="fas fa-mobile-alt"></i> Mobile Threats</h3>
+                    <p>Protected against with containerization, app shielding, and runtime application self-protection.</p>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- Database Security Section -->
+    <section class="shieldstack-database">
+        <div class="shieldstack-container">
+            <h2 class="shieldstack-section-title">Database Security Standards</h2>
+            <div class="shieldstack-db-rules">
+                <!-- Rule 1 -->
+                <div class="shieldstack-db-rule">
+                    <div class="shieldstack-db-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3>Encryption at Rest and in Transit</h3>
+                        <p>All database content encrypted using AES-256 with regular key rotation and secure key management.</p>
+                    </div>
+                </div>
+                
+                <!-- Rule 2 -->
+                <div class="shieldstack-db-rule">
+                    <div class="shieldstack-db-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3>Fine-Grained Access Control</h3>
+                        <p>Role-based access with attribute-based conditions and just-in-time privilege elevation.</p>
+                    </div>
+                </div>
+                
+                <!-- Rule 3 -->
+                <div class="shieldstack-db-rule">
+                    <div class="shieldstack-db-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3>Real-time Activity Monitoring</h3>
+                        <p>Continuous auditing of all database activities with anomaly detection and alerting.</p>
+                    </div>
+                </div>
+                
+                <!-- Rule 4 -->
+                <div class="shieldstack-db-rule">
+                    <div class="shieldstack-db-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3>Automated Vulnerability Management</h3>
+                        <p>Weekly scans for database vulnerabilities with automated patching where possible.</p>
+                    </div>
+                </div>
+                
+                <!-- Rule 5 -->
+                <div class="shieldstack-db-rule">
+                    <div class="shieldstack-db-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3>Immutable Backups</h3>
+                        <p>Point-in-time recovery capabilities with air-gapped, immutable backups tested monthly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="shieldstack-faq">
+        <div class="shieldstack-container">
+            <h2 class="shieldstack-section-title">Frequently Asked Questions</h2>
+            <div class="shieldstack-accordion">
+                <!-- FAQ 1 -->
+                <div class="shieldstack-accordion-item">
+                    <div class="shieldstack-accordion-header">
+                        <span>How quickly can you respond to a security incident?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="shieldstack-accordion-content">
+                        <p>Our Security Operations Center operates 24/7/365 with an average response time of under 10 minutes for critical incidents. We follow a structured incident response process that includes containment, eradication, recovery, and post-incident analysis phases.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="shieldstack-accordion-item">
+                    <div class="shieldstack-accordion-header">
+                        <span>Do you provide compliance documentation?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="shieldstack-accordion-content">
+                        <p>Yes, we maintain comprehensive documentation for SOC 2 Type II, ISO 27001, PCI DSS, HIPAA, and GDPR compliance. Clients receive regular audit reports and can request specific compliance documentation as needed for their own audits.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="shieldstack-accordion-item">
+                    <div class="shieldstack-accordion-header">
+                        <span>What makes your security approach different?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="shieldstack-accordion-content">
+                        <p>We combine three key differentiators: 1) Offensive security mindset with continuous red team exercises, 2) AI-powered anomaly detection that learns your normal patterns, and 3) Security integrated throughout the development lifecycle rather than bolted on at the end.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="shieldstack-accordion-item">
+                    <div class="shieldstack-accordion-header">
+                        <span>Can you protect legacy systems?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="shieldstack-accordion-content">
+                        <p>Absolutely. We specialize in securing legacy environments through network segmentation, application wrapping, protocol filtering, and virtual patching techniques that provide protection even when systems can't be updated directly.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="shieldstack-accordion-item">
+                    <div class="shieldstack-accordion-header">
+                        <span>How do you handle security updates?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="shieldstack-accordion-content">
+                        <p>We maintain a tiered patching system: Critical vulnerabilities are patched within 24 hours, high-risk within 72 hours, and medium-risk within 14 days. All patches are tested in staging environments before deployment and can be scheduled during maintenance windows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isActive = question.classList.contains('active');
+        // Accordion functionality
+        document.querySelectorAll('.shieldstack-accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
                 
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-question').forEach(q => {
-                    if (q !== question) {
-                        q.classList.remove('active');
-                        q.nextElementSibling.style.maxHeight = null;
-                    }
+                // Close all items first
+                document.querySelectorAll('.shieldstack-accordion-item').forEach(i => {
+                    i.classList.remove('active');
                 });
                 
-                // Toggle current item
-                if (isActive) {
-                    question.classList.remove('active');
-                    answer.style.maxHeight = null;
-                } else {
-                    question.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
                 }
             });
         });
-
-        // Animate elements when they come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .threat-item, .step-content, .security-rule').forEach(el => {
-            observer.observe(el);
         });
-
-        // Add animation styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .service-card, .threat-item, .step-content, .security-rule {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: opacity 0.6s ease, transform 0.6s ease;
-            }
-            
-            .service-card.animate, .threat-item.animate, .step-content.animate, .security-rule.animate {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            .roadmap-step:nth-child(odd) .step-content {
-                transition-delay: 0.1s;
-            }
-            
-            .roadmap-step:nth-child(even) .step-content {
-                transition-delay: 0.3s;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 
     <!--End of  page-->
