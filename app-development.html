@@ -18,7 +18,465 @@
 
 
 /*...........Start of s page .........*/
+        /* ===== Base Variables ===== */
+        :root {
+            --color-primary-500: #4f46e5;
+            --color-primary-600: #4338ca;
+            --color-secondary-500: #ec4899;
+            --color-secondary-600: #db2777;
+            --color-accent-400: #38bdf8;
+            --color-dark-900: #0f172a;
+            --color-dark-800: #1e293b;
+            --color-light-100: #f8fafc;
+            --color-light-200: #f1f5f9;
+            --color-gray-500: #64748b;
+            --gradient-primary: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--color-secondary-500) 0%, var(--color-secondary-600) 100%);
+        }
+        /* ===== Base Reset ===== */
+        .app-dev-reset {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
+        .app-dev-body {
+            background-color: var(--color-light-100);
+            color: var(--color-dark-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== Layout Containers ===== */
+        .app-dev-container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .app-dev-section {
+            padding: 7rem 0;
+            position: relative;
+        }
+
+        /* ===== Typography ===== */
+        .app-dev-heading-xl {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .app-dev-heading-lg {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-dev-heading-md {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .app-dev-text-lg {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--color-gray-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .app-dev-text-center {
+            text-align: center;
+        }
+
+        /* ===== Buttons ===== */
+        .app-dev-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .app-dev-btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .app-dev-btn-secondary {
+            background: var(--gradient-secondary);
+            color: white;
+        }
+
+        .app-dev-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-dev-btn:active {
+            transform: translateY(1px);
+        }
+
+        .app-dev-btn-icon {
+            margin-right: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes app-dev-fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes app-dev-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes app-dev-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ===== Hero Section ===== */
+        .app-dev-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 9rem 0 7rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-dev-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.4;
+        }
+
+        .app-dev-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            animation: app-dev-fade-in 1s ease-out;
+        }
+
+        .app-dev-hero-heading {
+            background: unset;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: white;
+            margin-bottom: 1.8rem;
+        }
+
+        .app-dev-hero-text {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            animation: app-dev-fade-in 1s ease-out 0.3s both;
+        }
+
+        .app-dev-hero-actions {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            animation: app-dev-fade-in 1s ease-out 0.6s both;
+        }
+
+        .app-dev-hero-visual {
+            position: absolute;
+            right: 5%;
+            bottom: -60px;
+            width: 45%;
+            max-width: 700px;
+            animation: app-dev-float 6s ease-in-out infinite;
+        }
+
+        .app-dev-hero-image {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        /* ===== Services Section ===== */
+        .app-dev-services {
+            background-color: white;
+            position: relative;
+        }
+
+        .app-dev-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .app-dev-service-card {
+            background: white;
+            border-radius: 18px;
+            padding: 2.8rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: app-dev-fade-in 0.8s ease-out forwards;
+        }
+
+        .app-dev-service-card:nth-child(1) { animation-delay: 0.2s; }
+        .app-dev-service-card:nth-child(2) { animation-delay: 0.4s; }
+        .app-dev-service-card:nth-child(3) { animation-delay: 0.6s; }
+        .app-dev-service-card:nth-child(4) { animation-delay: 0.8s; }
+        .app-dev-service-card:nth-child(5) { animation-delay: 1s; }
+        .app-dev-service-card:nth-child(6) { animation-delay: 1.2s; }
+
+        .app-dev-service-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--color-primary-500);
+        }
+
+        .app-dev-service-icon {
+            width: 75px;
+            height: 75px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .app-dev-service-card:hover .app-dev-service-icon {
+            background: var(--gradient-primary);
+            transform: rotateY(180deg);
+        }
+
+        .app-dev-service-symbol {
+            font-size: 2rem;
+            color: var(--color-primary-500);
+            transition: all 0.3s ease;
+        }
+
+        .app-dev-service-card:hover .app-dev-service-symbol {
+            color: white;
+        }
+
+        .app-dev-service-title {
+            transition: color 0.3s ease;
+        }
+
+        .app-dev-service-card:hover .app-dev-service-title {
+            color: var(--color-primary-500);
+        }
+
+        /* ===== App Showcase Section ===== */
+        .app-dev-showcase {
+            background-color: var(--color-light-200);
+        }
+
+        .app-dev-showcase-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .app-dev-showcase-visual {
+            position: relative;
+            perspective: 1200px;
+        }
+
+        .app-dev-phone-mock {
+            width: 100%;
+            max-width: 320px;
+            transform: rotateY(-15deg);
+            transition: transform 0.6s ease;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+        }
+
+        .app-dev-showcase-visual:hover .app-dev-phone-mock {
+            transform: rotateY(0deg);
+        }
+
+        .app-dev-feature-list {
+            margin-top: 2.5rem;
+        }
+
+        .app-dev-feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+
+        .app-dev-feature-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .app-dev-feature-item:nth-child(1) { transition-delay: 0.2s; }
+        .app-dev-feature-item:nth-child(2) { transition-delay: 0.4s; }
+        .app-dev-feature-item:nth-child(3) { transition-delay: 0.6s; }
+
+        .app-dev-feature-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .app-dev-feature-symbol {
+            color: var(--color-primary-500);
+            font-size: 1.3rem;
+        }
+
+        /* ===== CTA Section ===== */
+        .app-dev-cta {
+            background: var(--gradient-secondary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-dev-cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+
+        .app-dev-cta-heading {
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+
+        .app-dev-cta-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .app-dev-cta-text {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 1280px) {
+            .app-dev-hero-visual {
+                width: 42%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .app-dev-section {
+                padding: 6rem 0;
+            }
+
+            .app-dev-hero {
+                padding: 7rem 0 5rem;
+                text-align: center;
+            }
+
+            .app-dev-hero-content {
+                max-width: 100%;
+                margin-bottom: 4rem;
+            }
+
+            .app-dev-hero-actions {
+                justify-content: center;
+            }
+
+            .app-dev-hero-visual {
+                position: relative;
+                width: 75%;
+                right: auto;
+                bottom: auto;
+                margin: 0 auto;
+            }
+
+            .app-dev-showcase-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .app-dev-showcase-visual {
+                order: -1;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .app-dev-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-dev-btn {
+                padding: 0.8rem 1.8rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .app-dev-section {
+                padding: 5rem 0;
+            }
+
+            .app-dev-heading-xl {
+                font-size: 2.75rem;
+            }
+
+            .app-dev-heading-lg {
+                font-size: 2.25rem;
+            }
+
+            .app-dev-hero-actions .app-dev-btn {
+                width: 100%;
+            }
+
+            .app-dev-service-card {
+                padding: 2rem;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -219,13 +677,196 @@
         </nav>
     </header>
 
-
-
-
-
     <!-- page start-->
 
+    <!-- ===== Hero Section ===== -->
+    <section class="app-dev-hero pt-5 pb-5">
+        <div class="app-dev-hero-bg"></div>
+        <div class="app-dev-container">
+            <div class="app-dev-hero-content">
+                <h1 class="app-dev-heading-xl app-dev-hero-heading">Transform Your Digital Vision Into Reality</h1>
+                <p class="app-dev-text-lg app-dev-hero-text">We craft premium mobile apps and websites with complete solutions including design, development, security, hosting, and ongoing management.</p>
+                <div class="app-dev-hero-actions">
+                    <a href="#contact" class="app-dev-btn app-dev-btn-primary"><i class="fas fa-paper-plane app-dev-btn-icon"></i> Start Your Project</a>
+                    <a href="#services" class="app-dev-btn app-dev-btn-secondary"><i class="fas fa-laptop-code app-dev-btn-icon"></i> Our Services</a>
+                </div>
+            </div>
+            <div class="app-dev-hero-visual">
+                <!-- App mockup placeholder -->
+                 <img src="img/devs.png" alt="Digital Marketing Campaign" class="portfolio-img">
+                   
+            </div>
+        </div>
+    </section>
 
+    <!-- ===== Services Section ===== -->
+    <section class="app-dev-services" id="services">
+        <div class="app-dev-container">
+            <h2 class="app-dev-heading-lg app-dev-text-center">Our Comprehensive Development Services</h2>
+            <p class="app-dev-text-lg app-dev-text-center">End-to-end digital solutions tailored to your business requirements</p>
+            
+            <div class="app-dev-services-grid">
+                <div class="app-dev-service-card">
+                    <div class="app-dev-service-icon">
+                        <i class="fas fa-mobile-alt app-dev-service-symbol"></i>
+                    </div>
+                    <h3 class="app-dev-heading-md app-dev-service-title">Mobile App Development</h3>
+                    <p class="app-dev-text-lg">Native and cross-platform apps for iOS and Android built with Flutter, React Native, Swift, or Kotlin.</p>
+                </div>
+                
+                <div class="app-dev-service-card">
+                    <div class="app-dev-service-icon">
+                        <i class="fas fa-globe app-dev-service-symbol"></i>
+                    </div>
+                    <h3 class="app-dev-heading-md app-dev-service-title">Web Development</h3>
+                    <p class="app-dev-text-lg">Responsive websites and web apps using React, Vue, Angular, or traditional stacks.</p>
+                </div>
+                
+                <div class="app-dev-service-card">
+                    <div class="app-dev-service-icon">
+                        <i class="fas fa-shield-alt app-dev-service-symbol"></i>
+                    </div>
+                    <h3 class="app-dev-heading-md app-dev-service-title">Security Solutions</h3>
+                    <p class="app-dev-text-lg">Comprehensive protection including SSL, firewalls, and regular security audits.</p>
+                </div>
+                
+                <div class="app-dev-service-card">
+                    <div class="app-dev-service-icon">
+                        <i class="fas fa-cloud app-dev-service-symbol"></i>
+                    </div>
+                    <h3 class="app-dev-heading-md app-dev-service-title">Cloud Hosting</h3>
+                    <p class="app-dev-text-lg">High-performance hosting with 99.99% uptime, auto-scaling, and daily backups.</p>
+                </div>
+                
+                <div class="app-dev-service-card">
+                    <div class="app-dev-service-icon">
+                        <i class="fas fa-code app-dev-service-symbol"></i>
+                    </div>
+                    <h3 class="app-dev-heading-md app-dev-service-title">API Development</h3>
+                    <p class="app-dev-text-lg">Robust RESTful and GraphQL APIs with secure and scalable backends.</p>
+                </div>
+                
+                <div class="app-dev-service-card">
+                    <div class="app-dev-service-icon">
+                        <i class="fas fa-sync-alt app-dev-service-symbol"></i>
+                    </div>
+                    <h3 class="app-dev-heading-md app-dev-service-title">Maintenance & Support</h3>
+                    <p class="app-dev-text-lg">Ongoing updates, optimization, and 24/7 technical support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== App Showcase Section ===== -->
+    <section class="app-dev-showcase pt-5 pb-5">
+        <div class="app-dev-container">
+            <div class="app-dev-showcase-container">
+                <div class="app-dev-showcase-content">
+                    <h2 class="app-dev-heading-lg">Premium App Development Solutions</h2>
+                    <p class="app-dev-text-lg">We build high-performance mobile applications with beautiful UI/UX, seamless functionality, and enterprise-grade infrastructure.</p>
+                    
+                    <div class="app-dev-feature-list">
+                        <div class="app-dev-feature-item">
+                            <div class="app-dev-feature-icon">
+                                <i class="fas fa-bolt app-dev-feature-symbol"></i>
+                            </div>
+                            <div>
+                                <h3 class="app-dev-heading-md">Lightning Fast Performance</h3>
+                                <p class="app-dev-text-lg">Optimized for 60fps animations and instant load times with efficient code architecture.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-dev-feature-item">
+                            <div class="app-dev-feature-icon">
+                                <i class="fas fa-lock app-dev-feature-symbol"></i>
+                            </div>
+                            <div>
+                                <h3 class="app-dev-heading-md">Enterprise Security</h3>
+                                <p class="app-dev-text-lg">End-to-end encryption and secure authentication protocols to protect sensitive data.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-dev-feature-item">
+                            <div class="app-dev-feature-icon">
+                                <i class="fas fa-sync app-dev-feature-symbol"></i>
+                            </div>
+                            <div>
+                                <h3 class="app-dev-heading-md">Real-Time Synchronization</h3>
+                                <p class="app-dev-text-lg">Cloud sync across all devices with offline capabilities and conflict resolution.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="app-dev-btn app-dev-btn-primary"><i class="fas fa-rocket app-dev-btn-icon"></i> Launch Your App</a>
+                </div>
+                
+                <div class="app-dev-showcase-visual">
+                    <img src="img/devs.png" alt="App Mockup" class="app-dev-phone-mock">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="app-dev-cta pt-5 pb-5" id="contact">
+        <div class="app-dev-cta-bg"></div>
+        <div class="app-dev-container">
+            <h2 class="app-dev-heading-lg app-dev-cta-heading">Ready to Build Your Dream App?</h2>
+            <p class="app-dev-text-lg app-dev-cta-text">Contact us today for a free consultation and let's discuss how we can transform your vision into a successful digital product.</p>
+            <a href="mailto:contact@codecraftstudios.dev" class="app-dev-btn app-dev-btn-primary"><i class="fas fa-envelope app-dev-btn-icon"></i> Get in Touch</a>
+        </div>
+    </section>
+
+    <script>
+        // Animate features on scroll
+        const appDevFeatureItems = document.querySelectorAll('.app-dev-feature-item');
+        
+        const appDevFeatureObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        appDevFeatureItems.forEach(item => {
+            appDevFeatureObserver.observe(item);
+        });
+        
+        // Animate service cards on scroll
+        const appDevServiceCards = document.querySelectorAll('.app-dev-service-card');
+        
+        const appDevCardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        appDevServiceCards.forEach(card => {
+            appDevCardObserver.observe(card);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
     <!--End of  page-->
     
     <!-- Footer -->
