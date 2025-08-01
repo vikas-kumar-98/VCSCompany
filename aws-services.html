@@ -18,7 +18,512 @@
 
 
 /*...........Start of s page .........*/
+        :root {
+            --aws-orange: #FF9900;
+            --aws-dark: #232F3E;
+            --aws-light: #EC7211;
+            --aws-blue: #146EB4;
+            --aws-green: #1D8102;
+            --aws-purple: #7D2181;
+            --aws-gray: #1A1A1A;
+            --aws-light-gray: #F2F3F3;
+        }
 
+        .awspro-body {
+            font-family: 'Amazon Ember', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--aws-gray);
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        .awspro-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* AWS Hero Section */
+        .awspro-hero {
+            background: linear-gradient(135deg, var(--aws-dark) 0%, var(--aws-gray) 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 60px;
+        }
+
+        .awspro-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.2;
+        }
+
+        .awspro-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .awspro-hero-title {
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(to right, #FF9900, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .awspro-hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .awspro-hero-cta {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--aws-orange);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .awspro-hero-cta:hover {
+            background-color: var(--aws-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* AWS Services Section */
+        .awspro-services {
+            padding: 100px 0;
+            background-color: var(--aws-light-gray);
+        }
+
+        .awspro-section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            position: relative;
+            color: var(--aws-dark);
+        }
+
+        .awspro-section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--aws-orange);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .awspro-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .awspro-service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .awspro-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--aws-orange);
+        }
+
+        .awspro-service-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--aws-orange);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .awspro-service-header {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .awspro-service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .awspro-service-icon.ec2 {
+            background: linear-gradient(135deg, #FF9900, #FF6600);
+        }
+
+        .awspro-service-icon.rds {
+            background: linear-gradient(135deg, #1D8102, #0F5C00);
+        }
+
+        .awspro-service-icon.lambda {
+            background: linear-gradient(135deg, #146EB4, #0A4D8C);
+        }
+
+        .awspro-service-icon.iot {
+            background: linear-gradient(135deg, #7D2181, #5C1660);
+        }
+
+        .awspro-service-icon.ai {
+            background: linear-gradient(135deg, #FF6B6B, #FF3B3B);
+        }
+
+        .awspro-service-icon.network {
+            background: linear-gradient(135deg, #00BFFF, #0080FF);
+        }
+
+        .awspro-service-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--aws-dark);
+        }
+
+        .awspro-service-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .awspro-service-features {
+            margin: 15px 0;
+        }
+
+        .awspro-feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .awspro-feature-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--aws-orange);
+            border-radius: 50%;
+        }
+
+        .awspro-service-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--aws-dark);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .awspro-service-cta:hover {
+            background-color: var(--aws-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        /* Advanced Services Section */
+        .awspro-advanced {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .awspro-advanced-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .awspro-advanced-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .awspro-advanced-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .awspro-advanced-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .awspro-advanced-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .awspro-advanced-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+        }
+
+        .awspro-advanced-content {
+            padding: 25px;
+        }
+
+        .awspro-advanced-desc {
+            margin-bottom: 20px;
+        }
+
+        .awspro-advanced-features {
+            margin-bottom: 20px;
+        }
+
+        .awspro-advanced-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .awspro-advanced-feature i {
+            color: var(--aws-orange);
+            margin-right: 10px;
+        }
+
+        /* AWS Partners Section */
+        .awspro-partners {
+            padding: 80px 0;
+            background-color: var(--aws-dark);
+            color: white;
+        }
+
+        .awspro-partners-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .awspro-partner-logo {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .awspro-partner-logo:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* AWS CTA Section */
+        .awspro-cta {
+            background: linear-gradient(135deg, var(--aws-dark) 0%, var(--aws-gray) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .awspro-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+
+        .awspro-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .awspro-cta-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .awspro-cta-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .awspro-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .awspro-cta-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .awspro-cta-primary {
+            background-color: var(--aws-orange);
+            color: white;
+        }
+
+        .awspro-cta-primary:hover {
+            background-color: var(--aws-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .awspro-cta-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .awspro-cta-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .awspro-hero-title {
+                font-size: 3rem;
+            }
+            
+            .awspro-section-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .awspro-hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .awspro-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .awspro-section-title {
+                font-size: 2rem;
+            }
+            
+            .awspro-services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .awspro-advanced-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .awspro-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .awspro-hero {
+                padding: 60px 0;
+            }
+            
+            .awspro-hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .awspro-service-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .awspro-service-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -220,7 +725,420 @@
     </header>
 
     <!-- page start-->
+    <!-- AWS Hero Section -->
+    <section class="awspro-hero">
+        <div class="awspro-container">
+            <div class="awspro-hero-content">
+                <h1 class="awspro-hero-title">Advanced AWS Cloud Solutions</h1>
+                <p class="awspro-hero-subtitle">Premier AWS consulting partner delivering enterprise-grade cloud architecture, migration, and optimization services with certified expertise.</p>
+                <a href="#services" class="awspro-hero-cta">
+                    Explore Our Services <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- AWS Core Services Section -->
+    <section id="services" class="awspro-services">
+        <div class="awspro-container">
+            <h2 class="awspro-section-title">Core AWS Services</h2>
+            <div class="awspro-services-grid">
+                <!-- EC2 Service -->
+                <div class="awspro-service-card">
+                    <div class="awspro-service-badge">Popular</div>
+                    <div class="awspro-service-header">
+                        <div class="awspro-service-icon ec2">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="awspro-service-title">EC2 & Compute</h3>
+                    </div>
+                    <div class="awspro-service-content">
+                        <div class="awspro-service-features">
+                            <div class="awspro-feature-item">
+                                <span>Instance optimization and right-sizing</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Auto Scaling configuration</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Spot instance strategies</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Container services (ECS/EKS)</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Graviton processor migration</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- RDS Service -->
+                <div class="awspro-service-card">
+                    <div class="awspro-service-header">
+                        <div class="awspro-service-icon rds">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="awspro-service-title">Databases</h3>
+                    </div>
+                    <div class="awspro-service-content">
+                        <div class="awspro-service-features">
+                            <div class="awspro-feature-item">
+                                <span>Managed database services</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Performance tuning</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Multi-AZ deployments</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Migration services</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Aurora Serverless configuration</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lambda Service -->
+                <div class="awspro-service-card">
+                    <div class="awspro-service-badge">Trending</div>
+                    <div class="awspro-service-header">
+                        <div class="awspro-service-icon lambda">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="awspro-service-title">Serverless</h3>
+                    </div>
+                    <div class="awspro-service-content">
+                        <div class="awspro-service-features">
+                            <div class="awspro-feature-item">
+                                <span>Lambda function development</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>API Gateway configuration</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Event-driven architectures</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Cost optimization</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Step Functions workflows</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced AWS Services Section -->
+    <section class="awspro-advanced">
+        <div class="awspro-container">
+            <h2 class="awspro-section-title">Advanced AWS Solutions</h2>
+            <div class="awspro-advanced-grid">
+                <!-- AI/ML Service -->
+                <div class="awspro-advanced-card">
+                    <div class="awspro-advanced-image" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');">
+                        <div class="awspro-advanced-overlay">
+                            <h3 class="awspro-advanced-title">AI/ML Solutions</h3>
+                        </div>
+                    </div>
+                    <div class="awspro-advanced-content">
+                        <div class="awspro-advanced-desc">
+                            <p>Implement cutting-edge artificial intelligence and machine learning solutions using AWS services.</p>
+                        </div>
+                        <div class="awspro-advanced-features">
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Amazon SageMaker implementation</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Computer vision with Rekognition</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Natural language processing with Comprehend</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Personalization with Personalize</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Generative AI with Bedrock</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Explore AI Solutions <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- IoT Service -->
+                <div class="awspro-advanced-card">
+                    <div class="awspro-advanced-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');">
+                        <div class="awspro-advanced-overlay">
+                            <h3 class="awspro-advanced-title">IoT Platform</h3>
+                        </div>
+                    </div>
+                    <div class="awspro-advanced-content">
+                        <div class="awspro-advanced-desc">
+                            <p>Connect, manage, and analyze IoT devices at scale with AWS IoT services.</p>
+                        </div>
+                        <div class="awspro-advanced-features">
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Device management with IoT Core</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>IoT analytics pipeline</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Predictive maintenance solutions</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Edge computing with Greengrass</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Digital twin implementations</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Explore IoT Solutions <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Networking Service -->
+                <div class="awspro-advanced-card">
+                    <div class="awspro-advanced-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');">
+                        <div class="awspro-advanced-overlay">
+                            <h3 class="awspro-advanced-title">Advanced Networking</h3>
+                        </div>
+                    </div>
+                    <div class="awspro-advanced-content">
+                        <div class="awspro-advanced-desc">
+                            <p>Enterprise-grade networking solutions for hybrid and multi-cloud environments.</p>
+                        </div>
+                        <div class="awspro-advanced-features">
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>SD-WAN implementations</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Direct Connect configuration</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Transit Gateway architectures</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>PrivateLink service integrations</span>
+                            </div>
+                            <div class="awspro-advanced-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Global Accelerator deployments</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Explore Networking <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Advanced Services Section -->
+    <section class="awspro-services">
+        <div class="awspro-container">
+            <h2 class="awspro-section-title">More Advanced AWS Services</h2>
+            <div class="awspro-services-grid">
+                <!-- Security Service -->
+                <div class="awspro-service-card">
+                    <div class="awspro-service-header">
+                        <div class="awspro-service-icon" style="background: linear-gradient(135deg, #FF3B3B, #CC0000);">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="awspro-service-title">Security & Compliance</h3>
+                    </div>
+                    <div class="awspro-service-content">
+                        <div class="awspro-service-features">
+                            <div class="awspro-feature-item">
+                                <span>IAM policy optimization</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Security Hub implementation</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>GuardDuty threat detection</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Compliance frameworks (HIPAA, GDPR)</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Zero Trust architectures</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Data Analytics Service -->
+                <div class="awspro-service-card">
+                    <div class="awspro-service-header">
+                        <div class="awspro-service-icon" style="background: linear-gradient(135deg, #00BFFF, #0080FF);">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="awspro-service-title">Data & Analytics</h3>
+                    </div>
+                    <div class="awspro-service-content">
+                        <div class="awspro-service-features">
+                            <div class="awspro-feature-item">
+                                <span>Data lake architectures</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Redshift performance tuning</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Glue ETL pipelines</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>QuickSight dashboards</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Kinesis real-time analytics</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Migration Service -->
+                <div class="awspro-service-card">
+                    <div class="awspro-service-badge">Popular</div>
+                    <div class="awspro-service-header">
+                        <div class="awspro-service-icon" style="background: linear-gradient(135deg, #7D2181, #5C1660);">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3 class="awspro-service-title">Migration & Modernization</h3>
+                    </div>
+                    <div class="awspro-service-content">
+                        <div class="awspro-service-features">
+                            <div class="awspro-feature-item">
+                                <span>Cloud migration strategy</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Application refactoring</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Database migration (DMS)</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Mainframe modernization</span>
+                            </div>
+                            <div class="awspro-feature-item">
+                                <span>Cost optimization post-migration</span>
+                            </div>
+                        </div>
+                        <a href="#" class="awspro-service-cta">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWS Partners Section -->
+    <section class="awspro-partners">
+        <div class="awspro-container">
+            <h2 class="awspro-section-title" style="color: white;">AWS Advanced Tier Partner</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.2rem;">
+                As an AWS Advanced Tier Services Partner, we have demonstrated technical expertise and proven customer success in delivering AWS solutions.
+            </p>
+            <div class="awspro-partners-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png" alt="AWS Partner" class="awspro-partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Amazon_AWS_Logo.svg/1280px-Amazon_AWS_Logo.svg.png" alt="AWS Advanced Partner" class="awspro-partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/AWS_Well-Architected_Framework_Logo.svg/1280px-AWS_Well-Architected_Framework_Logo.svg.png" alt="AWS Well-Architected" class="awspro-partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- AWS CTA Section -->
+    <section class="awspro-cta">
+        <div class="awspro-cta-content">
+            <h2 class="awspro-cta-title">Ready to Transform Your AWS Infrastructure?</h2>
+            <p class="awspro-cta-subtitle">Our AWS certified team is ready to help you design, migrate, and optimize your cloud environment.</p>
+            <div class="awspro-cta-buttons">
+                <a href="#" class="awspro-cta-button awspro-cta-primary">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#" class="awspro-cta-button awspro-cta-secondary">
+                    Contact Sales <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animate service cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.awspro-service-card, .awspro-advanced-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+                observer.observe(card);
+            });
+
+            // Add hover effect to partner logos
+            const logos = document.querySelectorAll('.awspro-partner-logo');
+            logos.forEach(logo => {
+                logo.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.opacity = '1';
+                });
+                
+                logo.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.opacity = '0.7';
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     
