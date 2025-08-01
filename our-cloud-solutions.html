@@ -18,7 +18,548 @@
 
 
 /*...........Start of s page .........*/
+        :root {
+            --primary: #4285F4; /* Cloud Blue */
+            --primary-dark: #3367D6;
+            --secondary: #34A853; /* Google Green */
+            --accent: #FBBC05; /* Google Yellow */
+            --red: #EA4335; /* Google Red */
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --light-gray: #e8eaed;
+            --cloud-gradient: linear-gradient(135deg, #4285F4, #34A853);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background: var(--cloud-gradient);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(251, 188, 5, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(251, 188, 5, 0.4);
+            background-color: #f8b400;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Benefits Section ===== */
+        .benefits {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--cloud-gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+        }
+
+        /* ===== Our Approach ===== */
+        .approach {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .approach-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--cloud-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: var(--gray);
+        }
+
+        /* ===== Cloud Platforms ===== */
+        .platforms {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .platform-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .platform-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .platform-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .platform-features {
+            list-style-type: none;
+            text-align: left;
+        }
+
+        .platform-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .platform-features li:last-child {
+            border-bottom: none;
+        }
+
+        .platform-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== AI Cloud Tools ===== */
+        .ai-tools {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .ai-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .ai-tool-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .ai-tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .ai-tool-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .ai-tool-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .ai-tool-features {
+            list-style-type: none;
+        }
+
+        .ai-tool-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .ai-tool-features li:last-child {
+            border-bottom: none;
+        }
+
+        .ai-tool-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Hosting Services ===== */
+        .hosting {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .hosting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .hosting-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .hosting-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .hosting-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .hosting-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .hosting-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .hosting-features {
+            list-style-type: none;
+        }
+
+        .hosting-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .hosting-features li:last-child {
+            border-bottom: none;
+        }
+
+        .hosting-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FAQ Section ===== */
+        .faq {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f3f5;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.show {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 120px 0;
+            background: var(--cloud-gradient);
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .cta-button.white {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .cta-button.white:hover {
+            background-color: #f1f3f5;
+        }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 1024px) {
+            .hero-image {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                margin-top: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -221,7 +762,425 @@
 
     <!-- page start-->
 
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Business with Cloud Solutions</h1>
+                <p>Comprehensive cloud services including migration, AI integration, hosting, and domain management tailored for your business needs.</p>
+                <a href="#contact" class="cta-button">Get Cloud Consultation</a>
+            </div>
+            <img src="https://via.placeholder.com/600x400?text=Cloud+Infrastructure" alt="Cloud Infrastructure" class="hero-image">
+        </div>
+    </section>
 
+    <!-- ===== Benefits Section ===== -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Move Your Business to the Cloud?</h2>
+                <p>Cloud computing offers transformative benefits for modern businesses</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Scalability</h3>
+                    <p>Easily scale resources up or down based on demand without expensive hardware investments.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Enhanced Security</h3>
+                    <p>Enterprise-grade security with regular updates and advanced threat protection.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost Efficiency</h3>
+                    <p>Reduce IT costs with pay-as-you-go pricing and no upfront hardware expenses.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Accessibility</h3>
+                    <p>Access your systems and data from anywhere, on any device with internet connectivity.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Automatic Updates</h3>
+                    <p>Always have the latest features and security patches without manual intervention.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Disaster Recovery</h3>
+                    <p>Robust backup solutions and quick recovery options to protect your business data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Our Approach ===== -->
+    <section class="approach">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Cloud Implementation Roadmap</h2>
+                <p>A structured approach to your cloud transformation journey</p>
+            </div>
+
+            <div class="approach-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Assessment</h3>
+                    <p>Evaluate your current infrastructure and identify cloud-ready components.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Strategy</h3>
+                    <p>Develop a customized cloud adoption plan aligned with business goals.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Migration</h3>
+                    <p>Seamlessly move applications and data to the cloud with minimal downtime.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Optimization</h3>
+                    <p>Fine-tune cloud resources for performance and cost-efficiency.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Integration</h3>
+                    <p>Connect cloud services with existing systems and workflows.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Management</h3>
+                    <p>Ongoing monitoring, security, and performance tuning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Cloud Platforms ===== -->
+    <section class="platforms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cloud Platforms We Support</h2>
+                <p>We work with all major cloud service providers</p>
+            </div>
+
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>Amazon Web Services</h3>
+                    <p>Comprehensive cloud services with global infrastructure</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> EC2 Compute</li>
+                        <li><i class="fas fa-check"></i> S3 Storage</li>
+                        <li><i class="fas fa-check"></i> RDS Databases</li>
+                        <li><i class="fas fa-check"></i> Lambda Functions</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft Azure</h3>
+                    <p>Enterprise-grade cloud with Windows integration</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Virtual Machines</li>
+                        <li><i class="fas fa-check"></i> Azure SQL</li>
+                        <li><i class="fas fa-check"></i> Active Directory</li>
+                        <li><i class="fas fa-check"></i> AI Services</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google Cloud</h3>
+                    <p>Data analytics and machine learning focus</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Compute Engine</li>
+                        <li><i class="fas fa-check"></i> BigQuery</li>
+                        <li><i class="fas fa-check"></i> Kubernetes Engine</li>
+                        <li><i class="fas fa-check"></i> AI Platform</li>
+                    </ul>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>IBM Cloud</h3>
+                    <p>Hybrid cloud and enterprise solutions</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Watson AI</li>
+                        <li><i class="fas fa-check"></i> Blockchain</li>
+                        <li><i class="fas fa-check"></i> Kubernetes Service</li>
+                        <li><i class="fas fa-check"></i> Cloud Foundry</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AI Cloud Tools ===== -->
+    <section class="ai-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI-Powered Cloud Solutions</h2>
+                <p>Enhance your cloud infrastructure with artificial intelligence</p>
+            </div>
+
+            <div class="ai-tools-grid">
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Analytics</h3>
+                    <p>Transform data into actionable insights with machine learning</p>
+                    <ul class="ai-tool-features">
+                        <li><i class="fas fa-check"></i> Predictive analytics</li>
+                        <li><i class="fas fa-check"></i> Anomaly detection</li>
+                        <li><i class="fas fa-check"></i> Natural language processing</li>
+                        <li><i class="fas fa-check"></i> Computer vision</li>
+                    </ul>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Automation</h3>
+                    <p>Streamline operations with intelligent process automation</p>
+                    <ul class="ai-tool-features">
+                        <li><i class="fas fa-check"></i> Workflow automation</li>
+                        <li><i class="fas fa-check"></i> IT operations AI</li>
+                        <li><i class="fas fa-check"></i> Chatbots & virtual agents</li>
+                        <li><i class="fas fa-check"></i> Document processing</li>
+                    </ul>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>AI Security</h3>
+                    <p>Protect your cloud environment with intelligent threat detection</p>
+                    <ul class="ai-tool-features">
+                        <li><i class="fas fa-check"></i> Behavioral analytics</li>
+                        <li><i class="fas fa-check"></i> Fraud detection</li>
+                        <li><i class="fas fa-check"></i> Threat intelligence</li>
+                        <li><i class="fas fa-check"></i> Access management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Hosting Services ===== -->
+    <section class="hosting">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hosting & Domain Services</h2>
+                <p>Complete web infrastructure solutions</p>
+            </div>
+
+            <div class="hosting-grid">
+                <div class="hosting-card">
+                    <div class="hosting-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Cloud Hosting</h3>
+                    <p>Scalable, high-performance hosting solutions</p>
+                    <ul class="hosting-features">
+                        <li><i class="fas fa-check"></i> SSD Storage</li>
+                        <li><i class="fas fa-check"></i> Auto-scaling</li>
+                        <li><i class="fas fa-check"></i> 99.9% Uptime</li>
+                        <li><i class="fas fa-check"></i> Global CDN</li>
+                    </ul>
+                </div>
+
+                <div class="hosting-card">
+                    <div class="hosting-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Domain Management</h3>
+                    <p>Complete domain registration and management</p>
+                    <ul class="hosting-features">
+                        <li><i class="fas fa-check"></i> Domain registration</li>
+                        <li><i class="fas fa-check"></i> DNS management</li>
+                        <li><i class="fas fa-check"></i> SSL certificates</li>
+                        <li><i class="fas fa-check"></i> Domain transfers</li>
+                    </ul>
+                </div>
+
+                <div class="hosting-card">
+                    <div class="hosting-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Hosting</h3>
+                    <p>Managed database solutions in the cloud</p>
+                    <ul class="hosting-features">
+                        <li><i class="fas fa-check"></i> MySQL/PostgreSQL</li>
+                        <li><i class="fas fa-check"></i> MongoDB</li>
+                        <li><i class="fas fa-check"></i> Automated backups</li>
+                        <li><i class="fas fa-check"></i> High availability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cloud Solutions FAQs</h2>
+                <p>Answers to common questions about our cloud services</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I know if my business is ready for cloud migration?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most businesses can benefit from cloud solutions. Key indicators include: needing better remote access, facing hardware limitations, experiencing growth, or wanting to reduce IT maintenance costs. We offer free assessments to evaluate your readiness.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the difference between public, private, and hybrid cloud?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Public cloud</strong> uses shared infrastructure (AWS, Azure, GCP). <strong>Private cloud</strong> is dedicated to your organization. <strong>Hybrid cloud</strong> combines both. We'll recommend the best approach based on your security needs, compliance requirements, and budget.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you ensure data security in the cloud?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We implement multiple security layers: encryption (at rest and in transit), multi-factor authentication, network security controls, regular audits, and least-privilege access. All solutions comply with major regulations like GDPR, HIPAA, and PCI DSS where applicable.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you help move our existing applications to the cloud?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We specialize in "lift-and-shift" migrations (moving as-is) and cloud-native transformations (refactoring for cloud). Our team assesses each application to determine the best migration strategy with minimal disruption.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What ongoing management do you provide after migration?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our managed services include 24/7 monitoring, performance optimization, cost management, security updates, backup management, and regular reporting. We act as an extension of your IT team.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does cloud pricing work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cloud services typically use pay-as-you-go pricing based on resources consumed (compute, storage, networking). We help right-size your environment and implement cost controls to avoid surprises. Many providers also offer reserved instances for predictable workloads.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Accelerate Your Business with Cloud Technology?</h2>
+            <p>Let's discuss how we can transform your operations with customized cloud solutions.</p>
+            <a href="#contact" class="cta-button white">Start Your Cloud Journey</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    });
+                    
+                    // Open current if wasn't active
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('show');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
     <!--End of  page-->
     
     <!-- Footer -->
