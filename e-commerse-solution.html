@@ -18,7 +18,444 @@
 
 
 /*...........Start of s page .........*/
-
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --danger: #ef4444;
+            --gray: #94a3b8;
+            --dark-gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fbbf24;
+        }
+        
+        .hero-image {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-card p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        .learn-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .learn-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .learn-more:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+        
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-button {
+            padding: 12px 25px;
+            background-color: white;
+            border: 1px solid var(--gray);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .tab-button.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .tab-button:hover:not(.active) {
+            background-color: #e2e8f0;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .service-card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-card-header i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .service-card-header h3 {
+            font-size: 1.3rem;
+        }
+        
+        .service-card-body {
+            padding: 25px;
+        }
+        
+        .service-features {
+            list-style-type: none;
+        }
+        
+        .service-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-features li i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        /* Analytics Dashboard Preview */
+        .analytics-preview {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .analytics-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+        
+        .analytics-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .analytics-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .analytics-content p {
+            max-width: 700px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .dashboard-mockup {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+        
+        /* Payment Systems */
+        .payment-systems {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .payment-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .payment-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .payment-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .payment-card p {
+            color: var(--dark-gray);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #433306;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button.dark {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .cta-button.dark:hover {
+            background-color: #0f172a;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -219,12 +656,300 @@
         </nav>
     </header>
 
-
-
-
-
     <!-- page start-->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Online Store</h1>
+                <p>We build high-performance e-commerce solutions that drive sales, enhance customer experience, and grow your business with cutting-edge technology.</p>
+                <a href="#contact" class="cta-button">Get Started Today</a>
+                <img src="https://via.placeholder.com/900x500?text=E-Commerce+Dashboard+Preview" alt="E-Commerce Dashboard" class="hero-image">
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Comprehensive E-Commerce Solutions</h2>
+                <p>We provide end-to-end e-commerce development services tailored to your business needs and goals.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Custom Store Development</h3>
+                    <p>Fully responsive online stores built on Shopify, WooCommerce, Magento or custom solutions with unique designs that reflect your brand.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Real-time sales dashboards, customer behavior tracking, and AI-powered recommendations to optimize your store performance.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Payment Systems</h3>
+                    <p>Secure multi-gateway integration with Stripe, PayPal, Square and more, including subscription billing and fraud prevention.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Optimization</h3>
+                    <p>Progressive Web Apps (PWAs) that deliver app-like experiences with offline capabilities and push notifications.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO & Marketing</h3>
+                    <p>Optimized product pages, email automation, and social integrations to drive traffic and increase conversions.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Operations Tools</h3>
+                    <p>Inventory management, order fulfillment tracking, and POS integration to streamline your operations.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our E-Commerce Services</h2>
+                <p>Comprehensive solutions tailored to your business needs at every stage of growth.</p>
+            </div>
+            
+            <div class="services-tabs">
+                <button class="tab-button active" data-tab="development">Development</button>
+                <button class="tab-button" data-tab="analytics">Analytics</button>
+                <button class="tab-button" data-tab="payments">Payments</button>
+                <button class="tab-button" data-tab="marketing">Marketing</button>
+                <button class="tab-button" data-tab="operations">Operations</button>
+            </div>
+            
+            <div id="development" class="tab-content active">
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Custom E-Commerce Development</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>We build online stores from scratch or migrate existing ones to modern platforms with:</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Fully responsive designs that work on all devices</li>
+                            <li><i class="fas fa-check"></i> Platform-specific solutions (Shopify, WooCommerce, Magento)</li>
+                            <li><i class="fas fa-check"></i> Headless commerce architectures for maximum flexibility</li>
+                            <li><i class="fas fa-check"></i> Progressive Web Apps (PWAs) for app-like experiences</li>
+                            <li><i class="fas fa-check"></i> Custom features and functionality tailored to your needs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="analytics" class="tab-content">
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Data Analytics & Business Intelligence</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Turn data into actionable insights with our advanced analytics solutions:</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Real-time sales dashboards and reporting</li>
+                            <li><i class="fas fa-check"></i> Customer behavior tracking and segmentation</li>
+                            <li><i class="fas fa-check"></i> Inventory forecasting and demand planning</li>
+                            <li><i class="fas fa-check"></i> AI-powered product recommendations</li>
+                            <li><i class="fas fa-check"></i> Conversion funnel analysis and optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="payments" class="tab-content">
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Secure Payment Processing</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Offer seamless and secure payment experiences with:</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Multi-gateway integration (Stripe, PayPal, Square, etc.)</li>
+                            <li><i class="fas fa-check"></i> Subscription and recurring billing systems</li>
+                            <li><i class="fas fa-check"></i> Cryptocurrency payment options</li>
+                            <li><i class="fas fa-check"></i> Fraud detection and prevention systems</li>
+                            <li><i class="fas fa-check"></i> PCI-compliant secure checkout flows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="marketing" class="tab-content">
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Marketing & Conversion Optimization</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Drive traffic and maximize conversions with our marketing solutions:</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> SEO-optimized product pages and content</li>
+                            <li><i class="fas fa-check"></i> Email marketing automation sequences</li>
+                            <li><i class="fas fa-check"></i> Loyalty and rewards program integration</li>
+                            <li><i class="fas fa-check"></i> Social media shopping integrations</li>
+                            <li><i class="fas fa-check"></i> Personalized shopping experiences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="operations" class="tab-content">
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <i class="fas fa-warehouse"></i>
+                        <h3>Operations & Management Tools</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Streamline your backend operations with our management solutions:</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Inventory management systems</li>
+                            <li><i class="fas fa-check"></i> Order fulfillment tracking</li>
+                            <li><i class="fas fa-check"></i> Multi-vendor marketplace solutions</li>
+                            <li><i class="fas fa-check"></i> Dropshipping automation</li>
+                            <li><i class="fas fa-check"></i> POS system integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Preview Section -->
+    <section class="analytics-preview">
+        <div class="container">
+            <div class="analytics-content">
+                <h2>Data-Driven E-Commerce Success</h2>
+                <p>Our advanced analytics platform gives you real-time insights into customer behavior, sales performance, and inventory management to make informed business decisions.</p>
+                <img src="https://via.placeholder.com/1000x500?text=Analytics+Dashboard+Preview" alt="Analytics Dashboard" class="dashboard-mockup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Systems Section -->
+    <section class="payment-systems">
+        <div class="container">
+            <div class="section-title">
+                <h2>Secure Payment Solutions</h2>
+                <p>We integrate with all major payment providers to offer your customers a seamless checkout experience.</p>
+            </div>
+            
+            <div class="payment-grid">
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <i class="fab fa-cc-stripe"></i>
+                    </div>
+                    <h3>Stripe Integration</h3>
+                    <p>Accept all major credit cards, Apple Pay, Google Pay, and more with Stripe's powerful payment platform.</p>
+                </div>
+                
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <i class="fab fa-paypal"></i>
+                    </div>
+                    <h3>PayPal & Venmo</h3>
+                    <p>Offer PayPal, Venmo, and credit card payments with buyer and seller protection.</p>
+                </div>
+                
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Alternative Payments</h3>
+                    <p>Integrate with Square, Amazon Pay, Klarna, and other regional payment methods.</p>
+                </div>
+                
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h3>Crypto Payments</h3>
+                    <p>Accept Bitcoin, Ethereum and other cryptocurrencies with our secure gateway solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your E-Commerce Business?</h2>
+            <p>Our team of experts is ready to help you build, optimize, and scale your online store to new heights.</p>
+            <a href="#contact" class="cta-button dark">Get Your Free Consultation</a>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and tabs
+                    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     

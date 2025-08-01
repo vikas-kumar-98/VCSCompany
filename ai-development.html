@@ -18,7 +18,531 @@
 
 
 /*...........Start of s page .........*/
-
+        :root {
+            --primary: #7c3aed;
+            --primary-dark: #6d28d9;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --gray: #9ca3af;
+            --dark-gray: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: #f3f4f6;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            background-color: #fbbf24;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: -80px;
+            width: 50%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* AI Capabilities Section */
+        .capabilities {
+            padding: 120px 0 80px;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .capability-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .capability-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(124, 58, 237, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .capability-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .capability-card p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        .learn-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .learn-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .learn-more:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* AI Solutions Showcase */
+        .solutions {
+            padding: 100px 0;
+            background-color: #f9fafb;
+        }
+        
+        .solutions-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .solution-tab {
+            padding: 12px 25px;
+            background-color: white;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .solution-tab.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .solution-tab:hover:not(.active) {
+            background-color: #e5e7eb;
+        }
+        
+        .solution-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .solution-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .solution-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .solution-card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .solution-card-header i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .solution-card-header h3 {
+            font-size: 1.3rem;
+        }
+        
+        .solution-card-body {
+            padding: 25px;
+        }
+        
+        .solution-features {
+            list-style-type: none;
+        }
+        
+        .solution-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+        }
+        
+        .solution-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .solution-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* AI Technology Stack */
+        .tech-stack {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .tech-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        .tech-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        /* AI Analytics Preview */
+        .analytics-preview {
+            background-color: var(--dark);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .analytics-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(17, 24, 39, 0.9) 100%);
+        }
+        
+        .analytics-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .analytics-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .analytics-content p {
+            max-width: 700px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .dashboard-mockup {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+        
+        /* Use Cases */
+        .use-cases {
+            padding: 100px 0;
+            background-color: #f9fafb;
+        }
+        
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .case-study {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-image {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .case-content {
+            padding: 25px;
+        }
+        
+        .case-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .case-content p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+        
+        .cta-button.white {
+            background-color: white;
+            color: var(--dark);
+        }
+        
+        .cta-button.white:hover {
+            background-color: #f3f4f6;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .hero-image {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                margin-top: 40px;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-section {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+            }
+            
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -219,12 +743,361 @@
         </nav>
     </header>
 
-
-
-
-
     <!-- page start-->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Business with AI</h1>
+                <p>We build cutting-edge artificial intelligence solutions that automate processes, enhance decision-making, and drive innovation across industries.</p>
+                <a href="#contact" class="cta-button">Start Your AI Journey</a>
+            </div>
+            <img src="https://via.placeholder.com/700x400?text=AI+Solutions+Dashboard" alt="AI Solutions Dashboard" class="hero-image">
+        </div>
+    </section>
 
+    <!-- AI Capabilities Section -->
+    <section class="capabilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our AI Development Capabilities</h2>
+                <p>We deliver comprehensive AI solutions tailored to your specific business needs and challenges.</p>
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Agents & Bots</h3>
+                    <p>Intelligent virtual assistants and chatbots that handle customer service, sales, and support 24/7 with natural language processing.</p>
+                    <a href="#" class="learn-more">Explore AI Agents <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>AI Automation</h3>
+                    <p>End-to-end process automation powered by AI to reduce manual work, minimize errors, and increase operational efficiency.</p>
+                    <a href="#" class="learn-more">Explore Automation <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>AI Analytics</h3>
+                    <p>Advanced predictive analytics and business intelligence tools that uncover insights and forecast trends from your data.</p>
+                    <a href="#" class="learn-more">Explore Analytics <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>AI Data Search</h3>
+                    <p>Semantic search and knowledge discovery systems that help users find relevant information across massive datasets.</p>
+                    <a href="#" class="learn-more">Explore Data Search <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <p>Custom ML models that learn from your data to make predictions, classifications, and intelligent recommendations.</p>
+                    <a href="#" class="learn-more">Explore ML <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Computer Vision</h3>
+                    <p>Image and video analysis solutions for object detection, facial recognition, quality control, and more.</p>
+                    <a href="#" class="learn-more">Explore Vision AI <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Solutions Section -->
+    <section class="solutions">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI Solutions for Your Business</h2>
+                <p>Comprehensive AI implementations tailored to your specific industry needs.</p>
+            </div>
+            
+            <div class="solutions-tabs">
+                <button class="solution-tab active" data-tab="agents">AI Agents</button>
+                <button class="solution-tab" data-tab="automation">Automation</button>
+                <button class="solution-tab" data-tab="analytics">Analytics</button>
+                <button class="solution-tab" data-tab="search">Data Search</button>
+                <button class="solution-tab" data-tab="vision">Computer Vision</button>
+            </div>
+            
+            <div id="agents" class="solution-content active">
+                <div class="solution-card">
+                    <div class="solution-card-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Agents & Virtual Assistants</h3>
+                    </div>
+                    <div class="solution-card-body">
+                        <p>Intelligent agents that interact with users and systems to perform tasks autonomously:</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Conversational AI chatbots for customer support</li>
+                            <li><i class="fas fa-check"></i> Sales assistant bots that qualify leads and schedule meetings</li>
+                            <li><i class="fas fa-check"></i> HR virtual assistants for employee onboarding and FAQs</li>
+                            <li><i class="fas fa-check"></i> Voice-enabled assistants with natural language understanding</li>
+                            <li><i class="fas fa-check"></i> Multi-language support and sentiment analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="automation" class="solution-content">
+                <div class="solution-card">
+                    <div class="solution-card-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>AI-Powered Automation</h3>
+                    </div>
+                    <div class="solution-card-body">
+                        <p>Transform repetitive workflows with intelligent automation:</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Document processing and data extraction</li>
+                            <li><i class="fas fa-check"></i> Email classification and automated responses</li>
+                            <li><i class="fas fa-check"></i> Invoice processing and accounts payable automation</li>
+                            <li><i class="fas fa-check"></i> IT operations and infrastructure automation</li>
+                            <li><i class="fas fa-check"></i> End-to-end business process automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="analytics" class="solution-content">
+                <div class="solution-card">
+                    <div class="solution-card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>AI Analytics & Business Intelligence</h3>
+                    </div>
+                    <div class="solution-card-body">
+                        <p>Turn data into actionable insights with our AI analytics solutions:</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Predictive analytics and forecasting</li>
+                            <li><i class="fas fa-check"></i> Anomaly detection and alert systems</li>
+                            <li><i class="fas fa-check"></i> Customer segmentation and personalization</li>
+                            <li><i class="fas fa-check"></i> Real-time dashboards and reporting</li>
+                            <li><i class="fas fa-check"></i> Prescriptive analytics for decision support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="search" class="solution-content">
+                <div class="solution-card">
+                    <div class="solution-card-header">
+                        <i class="fas fa-search"></i>
+                        <h3>AI-Powered Data Search</h3>
+                    </div>
+                    <div class="solution-card-body">
+                        <p>Revolutionize how users find information in your systems:</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Semantic search across documents and databases</li>
+                            <li><i class="fas fa-check"></i> Natural language query understanding</li>
+                            <li><i class="fas fa-check"></i> Knowledge graph construction and exploration</li>
+                            <li><i class="fas fa-check"></i> Enterprise search with access control</li>
+                            <li><i class="fas fa-check"></i> Automated document summarization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="vision" class="solution-content">
+                <div class="solution-card">
+                    <div class="solution-card-header">
+                        <i class="fas fa-eye"></i>
+                        <h3>Computer Vision Solutions</h3>
+                    </div>
+                    <div class="solution-card-body">
+                        <p>Extract insights from visual content with our computer vision AI:</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Object detection and recognition</li>
+                            <li><i class="fas fa-check"></i> Facial recognition and verification</li>
+                            <li><i class="fas fa-check"></i> Quality control and defect detection</li>
+                            <li><i class="fas fa-check"></i> Optical character recognition (OCR)</li>
+                            <li><i class="fas fa-check"></i> Video analytics and surveillance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our AI Technology Stack</h2>
+                <p>We leverage cutting-edge technologies to build robust AI solutions.</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>TensorFlow, PyTorch, scikit-learn</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning</h3>
+                    <p>Neural networks, NLP, Transformers</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud AI</h3>
+                    <p>AWS SageMaker, GCP AI, Azure ML</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Big Data</h3>
+                    <p>Spark, Hadoop, Data Lakes</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>NLP</h3>
+                    <p>BERT, GPT, spaCy, NLTK</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Computer Vision</h3>
+                    <p>OpenCV, YOLO, Detectron2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Preview Section -->
+    <section class="analytics-preview">
+        <div class="container">
+            <div class="analytics-content">
+                <h2>AI-Powered Analytics Platform</h2>
+                <p>Our advanced analytics solutions provide real-time insights, predictive modeling, and automated reporting to drive data-driven decision making.</p>
+                <img src="https://via.placeholder.com/1000x500?text=AI+Analytics+Dashboard" alt="AI Analytics Dashboard" class="dashboard-mockup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI Success Stories</h2>
+                <p>See how we've helped businesses transform with artificial intelligence.</p>
+            </div>
+            
+            <div class="case-studies">
+                <div class="case-study">
+                    <div class="case-image" style="background-color: #3b82f6;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="case-content">
+                        <h3>Customer Support Automation</h3>
+                        <p>Reduced response times by 80% with AI-powered chatbots handling 65% of customer inquiries automatically.</p>
+                        <a href="#" class="learn-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-image" style="background-color: #10b981;">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="case-content">
+                        <h3>Invoice Processing</h3>
+                        <p>Automated 90% of invoice processing with AI document understanding, reducing processing costs by 70%.</p>
+                        <a href="#" class="learn-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-image" style="background-color: #f59e0b;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="case-content">
+                        <h3>Predictive Maintenance</h3>
+                        <p>Reduced equipment downtime by 45% with AI models predicting maintenance needs before failures occur.</p>
+                        <a href="#" class="learn-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Harness the Power of AI?</h2>
+            <p>Our team of AI experts is ready to help you implement cutting-edge artificial intelligence solutions that drive real business results.</p>
+            <a href="#contact" class="cta-button white">Schedule AI Consultation</a>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.solution-tab');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and tabs
+                    document.querySelectorAll('.solution-tab').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.solution-content').forEach(tab => tab.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     
