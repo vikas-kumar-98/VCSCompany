@@ -18,7 +18,426 @@
 
 
 /*...........Start of s page .........*/
-
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #9ca3af;
+            --dark-gray: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: #f3f4f6;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            background-color: #fbbf24;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: -80px;
+            width: 50%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Why SEO Matters Section */
+        .why-seo {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .benefit-card p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        /* SEO Tools Section */
+        .seo-tools {
+            padding: 100px 0;
+            background-color: #f9fafb;
+        }
+        
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .tools-column {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tools-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        .tools-column h3 i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .tools-list {
+            list-style-type: none;
+        }
+        
+        .tools-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tools-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tools-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Our Approach Section */
+        .our-approach {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .approach-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 0 auto 20px;
+        }
+        
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .step-card p {
+            color: var(--dark-gray);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background-color: #f9fafb;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer.show {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+        
+        .cta-button.white {
+            background-color: white;
+            color: var(--dark);
+        }
+        
+        .cta-button.white:hover {
+            background-color: #f3f4f6;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .hero-image {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                margin-top: 40px;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-section {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 /*...........End of page............*/
 
 
@@ -88,7 +507,7 @@
                         <a href="software-development.html" class="block py-2 px-1 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
                             <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down ml-2 text-xs"></i>
                         </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-0 py-2 w-max min-w-[180px] z-10 border border-gray-100">
                             <li><a href="website-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-globe text-indigo-500 mr-2 "></i></i>Website Development</a></li>
                             <li><a href="app-development.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
                             <li><a href="e-commerse-solution.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
@@ -101,7 +520,7 @@
                         <a href="marketing.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
                             <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Marketing <i class="fas fa-chevron-down ml-2 text-xs"></i>
                         </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-0 py-2 w-max min-w-[180px] z-10 border border-gray-100">
                             <li><a href="seo-services.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-search text-green-500 mr-2"></i> SEO Services</a></li>
                             <li><a href="social-media-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
                             <li><a href="content-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
@@ -114,7 +533,7 @@
                         <a href="service.html" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
                             <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
                         </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-0 py-2 w-max min-w-[180px] z-10 border border-gray-100">
                             <li><a href="our-cloud-solutions.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-cloud mr-2 text-blue-400"></i> Cloud Solutions</a></li>
                             <li><a href="cybersecurity.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-shield-alt mr-2 text-red-400"></i> Cybersecurity</a></li>
                             <li><a href="it-services.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap border-t"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
@@ -129,7 +548,7 @@
                         <a href="#services" class="block py-2 px-2 rounded-md hover:bg-blue-100 hover:text-blue-700 transition duration-300 font-medium flex items-center transform hover:translate-y-0.5">
                             <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Our Tutorial <i class="fas fa-chevron-down ml-2 text-xs"></i>
                         </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-max min-w-[180px] z-10 border border-gray-100">
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-0 py-2 w-max min-w-[180px] z-10 border border-gray-100">
                             <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-search mr-2 text-blue-400"></i> SEO Services</a></li>
                             <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
                             <li><a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-700 rounded-md transition duration-300 whitespace-nowrap"><i class="fas fa-file-alt mr-2 text-blue-400"></i> Content Marketing</a></li>
@@ -158,14 +577,14 @@
         </div>
 
         <!-- Mobile Menu (Hidden by default) -->
-        <nav id="mobile-menu" class="mobile-menu lg:hidden bg-white shadow-inner rounded-b-lg mt-2 border-t border-gray-100" >
+        <nav id="mobile-menu" class="mobile-menu lg:hidden bg-white shadow-inner rounded-b-lg mt-0 border-t border-gray-100" >
             <ul class="flex flex-col text-gray-700 px-4 py-2">
                 <!-- Digital Marketing Mobile -->
                 <li class="py-2 border-b border-gray-100 last:border-b-0">
                     <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
                       <i class="fas fa-laptop-code text-blue-500 mr-2"></i> Software <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
-                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                    <ul class="pl-6 mt-0 hidden sub-menu space-y-1">
                         <li><a href="website-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-globe text-indigo-500 mr-2"></i></i>Website Development</a></li>
                         <li><a href="app-development.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-mobile-alt text-pink-500 mr-2"></i> Apps Development</a></li>
                         <li><a href="e-commerse-solution.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-shopping-cart text-yellow-500 mr-2"></i> E-Commerce Solution</a></li>
@@ -178,7 +597,7 @@
                     <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
                         <i class="fas fa-bullhorn mr-2 text-blue-500"></i> Digital Marketing <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
-                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                    <ul class="pl-6 mt-0 hidden sub-menu space-y-1">
                         <li><a href="seo-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-search mr-2 text-green-400"></i> SEO Services</a></li>
                         <li><a href="social-media-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-share-alt mr-2 text-blue-400"></i> Social Media Marketing</a></li>
                         <li><a href="content-marketing.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-file-alt mr-2 text-yellow-400"></i> Content Marketing</a></li>
@@ -191,7 +610,7 @@
                     <button class="w-full text-left font-medium text-gray-800 hover:text-blue-700 flex justify-between items-center py-2" onclick="toggleSubMenu(this)">
                         <i class="fas fa-cogs mr-2 text-blue-500"></i> IT Services <i class="fas fa-chevron-down text-xs ml-auto transition-transform duration-300"></i>
                     </button>
-                    <ul class="pl-6 mt-2 hidden sub-menu space-y-1">
+                    <ul class="pl-6 mt-0 hidden sub-menu space-y-1">
                         <li><a href="our-cloud-solutions.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-cloud mr-2 text-red-400"></i> Cloud Solutions</a></li>
                         <li><a href="cybersecurity.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-shield-alt mr-2 text-blue-400"></i> Cybersecurity</a></li>
                         <li><a href="it-services.html" class="block py-1 text-gray-600 hover:text-blue-700 transition duration-200 whitespace-nowrap border-t"><i class="fas fa-headset mr-2 text-green-400"></i> Managed IT Services</a></li>
@@ -222,7 +641,309 @@
 
 
     <!-- page start-->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional SEO Services</h1>
+                <p>Boost your search rankings, drive qualified traffic, and grow your business with our data-driven SEO strategies.</p>
+                <a href="#contact" class="cta-button">Get Free SEO Audit</a>
+            </div>
+            <img src="https://via.placeholder.com/700x400?text=SEO+Analytics+Dashboard" alt="SEO Analytics Dashboard" class="hero-image">
+        </div>
+    </section>
 
+    <!-- Why SEO Matters Section -->
+    <section class="why-seo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why SEO is Critical for Your Business</h2>
+                <p>Search Engine Optimization is no longer optional - it's essential for online visibility and growth.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Increased Visibility</h3>
+                    <p>93% of online experiences begin with a search engine. SEO helps you appear when potential customers are actively searching for your products or services.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Cost-Effective Marketing</h3>
+                    <p>SEO delivers 20x better ROI than paid advertising. Organic traffic continues to generate results long after the initial optimization work.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Targeted Traffic</h3>
+                    <p>SEO attracts visitors who are actively looking for what you offer, resulting in higher conversion rates compared to other marketing channels.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Competitive Advantage</h3>
+                    <p>Outrank competitors who may have larger marketing budgets by dominating organic search results for your key terms.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Optimization</h3>
+                    <p>With over 60% of searches coming from mobile devices, SEO ensures your site provides an optimal experience across all devices.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Long-Term Results</h3>
+                    <p>Unlike paid ads that stop working when you stop paying, SEO builds lasting assets that continue to deliver value over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Tools Section -->
+    <section class="seo-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Essential SEO Tools We Use</h2>
+                <p>We leverage industry-leading tools to analyze, optimize, and track your SEO performance.</p>
+            </div>
+            
+            <div class="tools-container">
+                <div class="tools-column">
+                    <h3><i class="fas fa-crown"></i> Premium Tools</h3>
+                    <ul class="tools-list">
+                        <li><i class="fas fa-check"></i> Ahrefs - Backlink analysis & competitor research</li>
+                        <li><i class="fas fa-check"></i> SEMrush - Comprehensive SEO suite</li>
+                        <li><i class="fas fa-check"></i> Moz Pro - Domain authority & keyword tracking</li>
+                        <li><i class="fas fa-check"></i> Screaming Frog - Technical SEO crawler</li>
+                        <li><i class="fas fa-check"></i> Majestic - Backlink profile analysis</li>
+                        <li><i class="fas fa-check"></i> BrightEdge - Enterprise SEO platform</li>
+                    </ul>
+                </div>
+                
+                <div class="tools-column">
+                    <h3><i class="fas fa-coins"></i> Free Tools</h3>
+                    <ul class="tools-list">
+                        <li><i class="fas fa-check"></i> Google Search Console - Search performance</li>
+                        <li><i class="fas fa-check"></i> Google Analytics - Traffic analysis</li>
+                        <li><i class="fas fa-check"></i> Google Keyword Planner - Keyword research</li>
+                        <li><i class="fas fa-check"></i> Google PageSpeed Insights - Speed optimization</li>
+                        <li><i class="fas fa-check"></i> Ubersuggest - Basic keyword research</li>
+                        <li><i class="fas fa-check"></i> AnswerThePublic - Content ideas</li>
+                    </ul>
+                </div>
+                
+                <div class="tools-column">
+                    <h3><i class="fas fa-chart-pie"></i> Analytics Tools</h3>
+                    <ul class="tools-list">
+                        <li><i class="fas fa-check"></i> Google Data Studio - Custom reporting</li>
+                        <li><i class="fas fa-check"></i> Hotjar - User behavior analysis</li>
+                        <li><i class="fas fa-check"></i> Crazy Egg - Heatmaps & scroll maps</li>
+                        <li><i class="fas fa-check"></i> Google Optimize - A/B testing</li>
+                        <li><i class="fas fa-check"></i> Kissmetrics - Conversion tracking</li>
+                        <li><i class="fas fa-check"></i> Supermetrics - Data integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="our-approach">
+        <div class="container">
+            <div class="section-title">
+                <h2>How We Boost Your Online Reach</h2>
+                <p>Our comprehensive SEO strategy combines technical excellence with content marketing for maximum impact.</p>
+            </div>
+            
+            <div class="approach-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Technical SEO Audit</h3>
+                    <p>We analyze your website's technical foundation to identify and fix issues that may be hindering your search performance.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Keyword Research</h3>
+                    <p>We identify high-value keywords that align with your business goals and have strong commercial intent.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>On-Page Optimization</h3>
+                    <p>We optimize your content, meta tags, headings, and internal linking structure for maximum relevance.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Content Strategy</h3>
+                    <p>We develop a content plan that establishes your authority and targets key stages of the buyer's journey.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Link Building</h3>
+                    <p>We earn high-quality backlinks from authoritative sites to boost your domain authority.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Local SEO</h3>
+                    <p>For local businesses, we optimize your Google My Business profile and local citations.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">7</div>
+                    <h3>Continuous Monitoring</h3>
+                    <p>We track your rankings, traffic, and conversions to refine our strategy over time.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">8</div>
+                    <h3>Integration with Digital Marketing</h3>
+                    <p>We align SEO with your PPC, social media, and email marketing for maximum impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>SEO Frequently Asked Questions</h2>
+                <p>Get answers to common questions about our SEO services and process.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to see results from SEO?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SEO is a long-term strategy, and results typically begin to appear within 3-6 months. However, this timeline can vary based on factors like your industry competitiveness, website age, and the current state of your SEO. We usually see initial improvements in technical SEO metrics within weeks, while ranking improvements and traffic growth take longer to materialize.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the difference between SEO and PPC?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SEO (Search Engine Optimization) focuses on earning organic traffic through improving your website's visibility in search results. PPC (Pay-Per-Click) involves paying for ads that appear at the top of search results. While PPC delivers immediate but temporary traffic, SEO builds long-term, sustainable visibility. The most effective digital marketing strategies combine both approaches.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you measure SEO success?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We track multiple key performance indicators (KPIs) including: organic traffic growth, keyword rankings, click-through rates, conversion rates, bounce rates, pages per session, domain authority, backlink profile growth, and ultimately, revenue generated from organic search. We provide monthly reports with these metrics and insights for continuous improvement.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is SEO a one-time service?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, SEO requires ongoing effort. Search engines frequently update their algorithms, competitors are constantly optimizing their sites, and your business goals may evolve. We recommend at least 6-12 months of continuous SEO work to establish strong rankings, followed by maintenance to preserve and build upon those results.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I do SEO myself?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While basic SEO can be done in-house, professional SEO requires specialized knowledge, tools, and experience to execute effectively at scale. Our team stays current with algorithm updates, has access to premium tools, and brings proven strategies from working with hundreds of clients. This expertise typically delivers far better results than DIY approaches.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does SEO integrate with other digital marketing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SEO works synergistically with other channels: Content marketing fuels SEO with optimized material, social media can amplify content and build brand signals, PPC data informs SEO keyword strategy, email marketing can boost engagement metrics that influence rankings, and conversion rate optimization ensures SEO traffic converts effectively. We coordinate all these elements for maximum impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Dominate Search Results?</h2>
+            <p>Our SEO experts will analyze your current performance and create a customized strategy to grow your organic traffic and conversions.</p>
+            <a href="#contact" class="cta-button white">Get Your Free SEO Proposal</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    });
+                    
+                    // Open current if wasn't active
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('show');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
     <!--End of  page-->
     
