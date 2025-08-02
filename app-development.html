@@ -73,10 +73,10 @@
         }
 
         .app-dev-heading-lg {
-            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-size: clamp(2.25rem, 3vw, 3.5rem);
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.9rem;
         }
 
         .app-dev-heading-md {
@@ -221,22 +221,23 @@
         .app-dev-services {
             background-color: white;
             position: relative;
+            margin-top: 1rem;
         }
 
         .app-dev-services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
 
         .app-dev-service-card {
             background: white;
             border-radius: 18px;
             padding: 2.8rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(20px);
             animation: app-dev-fade-in 0.8s ease-out forwards;
@@ -701,8 +702,8 @@
 
     <!-- ===== Services Section ===== -->
     <section class="app-dev-services" id="services">
-        <div class="app-dev-container">
-            <h2 class="app-dev-heading-lg app-dev-text-center">Our Comprehensive Development Services</h2>
+        <div class="app-dev-container ">
+            <h2 class="app-dev-heading-lg app-dev-text-center mt-4">Our Comprehensive Development Services</h2>
             <p class="app-dev-text-lg app-dev-text-center">End-to-end digital solutions tailored to your business requirements</p>
             
             <div class="app-dev-services-grid">
