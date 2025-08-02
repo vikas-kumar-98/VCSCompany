@@ -61,9 +61,11 @@
         }
 
         .section-title h2 {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
+              color: #030303;
+              text-shadow: 1px 1px 3px rgba(133, 128, 212, 0.8);
+              font-size: 2.5rem;
+              font-weight: bold;
+              font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .section-title p {
@@ -108,7 +110,8 @@
         /* Hero Section */
         .hero {
             background-color: var(--gray);
-            padding: 6rem 0;
+            padding: 2rem 0;
+            
         }
 
         .hero-content {
@@ -116,11 +119,19 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 3rem;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, .2);
+            
         }
 
         .hero-text {
             flex: 1;
             min-width: 300px;
+            
         }
 
         .hero-image {
@@ -133,6 +144,10 @@
             margin-bottom: 1.5rem;
             color: var(--dark);
             line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(133, 128, 212, 0.8);
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .hero h1 span {
@@ -149,6 +164,7 @@
         .hero-btns {
             display: flex;
             gap: 1rem;
+            content: center;
             flex-wrap: wrap;
         }
 
@@ -170,12 +186,14 @@
             border-radius: 12px;
             padding: 2rem;
             transition: all 0.2s ease;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+
             border: 1px solid var(--border);
         }
 
         .benefit-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.03);
             border-color: var(--primary);
         }
 
@@ -219,6 +237,8 @@
             padding: 2rem;
             text-align: center;
             border: 1px solid var(--border);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+
             transition: all 0.2s ease;
         }
 
@@ -255,6 +275,9 @@
         .ai-feature {
             display: flex;
             gap: 1.5rem;
+            padding: 10px 1px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+
         }
 
         .ai-icon {
@@ -319,7 +342,7 @@
             padding: 1.5rem;
             background: var(--light);
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border);
         }
 
@@ -419,12 +442,13 @@
             padding: 2rem;
             transition: all 0.2s ease;
             border: 1px solid var(--border);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
             border-color: var(--primary);
         }
 
@@ -1084,7 +1108,7 @@
     <!-- CTA Section -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Ready to Grow Your Business with Email Marketing?</h2>
+            <h2 style="font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif;">Ready to Grow Your Business with Email Marketing?</h2>
             <p>Schedule a free consultation with our email marketing experts to discuss your goals and how we can help.</p>
             <div class="hero-btns">
                 <a href="#" class="btn btn-primary">Get Started</a>
